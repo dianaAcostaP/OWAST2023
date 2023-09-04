@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A06 2021 Vulnerable and Outdated Components.it - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A06_2021-Vulnerable_and_Outdated_Components.it.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a062021-vulnerable-and-outdated-components" class="nav-link">A06:2021 – Vulnerable and Outdated Components</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#fattori" class="nav-link">Fattori</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#panoramica" class="nav-link">Panoramica</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#descrizione" class="nav-link">Descrizione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#come-prevenire" class="nav-link">Come prevenire</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#esempi-di-scenari-dattacco" class="nav-link">Esempi di scenari d'attacco</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#riferimenti" class="nav-link">Riferimenti</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#lista-dei-cwe-correlati" class="nav-link">Lista dei CWE correlati</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A06_2021-Vulnerable_and_Outdated_Components/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A06_2021-Vulnerable_and_Outdated_Components.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A06_2021-Vulnerable_and_Outdated_Components.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A06_2021-Vulnerable_and_Outdated_Components.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A06_2021-Vulnerable_and_Outdated_Components.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A06_2021-Vulnerable_and_Outdated_Components.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A06_2021-Vulnerable_and_Outdated_Components.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A06_2021-Vulnerable_and_Outdated_Components.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A06_2021-Vulnerable_and_Outdated_Components.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="a062021-vulnerable-and-outdated-components">A06:2021 – Vulnerable and Outdated Components    <img align="right" alt="icon" src="../assets/TOP_10_Icons_Final_Vulnerable_Outdated_Components.png" style="height:80px;width:80px" /></h1>
+<h2 id="fattori">Fattori</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">CWEs corrispondenti</th>
+<th style="text-align: center;">Tasso di incidenza Max</th>
+<th style="text-align: center;">Tasso di incidenza Medio</th>
+<th style="text-align: center;">Sfruttabilità pesata</th>
+<th style="text-align: center;">Impatto Medio</th>
+<th style="text-align: center;">Copertura Max</th>
+<th style="text-align: center;">Copertura media</th>
+<th style="text-align: center;">Occorrenze Totali</th>
+<th style="text-align: center;">CVE Totali</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">27.96%</td>
+<td style="text-align: center;">8.77%</td>
+<td style="text-align: center;">51.78%</td>
+<td style="text-align: center;">22.47%</td>
+<td style="text-align: center;">5.00</td>
+<td style="text-align: center;">5.00</td>
+<td style="text-align: center;">30,457</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="panoramica">Panoramica</h2>
+<p>Era già la numero #2 dal sondaggio della community della Top 10, ma aveva anche abbastanza evidenze da poter entrare nella Top 10 grazie ai dati. Vulnerable Components sono una problematica nota che si fatica a testare e a calcolarne il rischio, ed è l'unica categoria per cui non abbiamo Common Weakness Enumerations (CWEs) correlate alle CWE incluse, verrà quindi utilizzato un peso predefinito di 5.0 per sfruttabilità/impatto. CWEs incluse sono <em>CWE-1104: Use of
+Unmaintained Third-Party Components</em> and the two CWEs from Top 10 2013
+and 2017.</p>
+<h2 id="descrizione">Descrizione</h2>
+<p>La vulnerabilità si presenta se:</p>
+<ul>
+<li>
+<p>Non conosci le versioni di tutti i componenti utilizzati (sia
+    lato client che lato server). Questo include i componenti utilizzati direttamente
+    così come le dipendenze annidate.</p>
+</li>
+<li>
+<p>Se il software è vulnerabile, non supportato o non aggiornato. Questo
+    include il sistema operativo, il server web/applicazione, il database management system
+    (DBMS), applicazioni, API e tutti i componenti, ambienti di esecuzione,
+    e librerie.</p>
+</li>
+<li>
+<p>Se non si fa la scansione delle vulnerabilità regolarmente e non si consultano i
+    bollettini di sicurezza relativi ai componenti utilizzati.</p>
+</li>
+<li>
+<p>Se non si corregge o non si aggiorna la piattaforma sottostante, i framework,
+    e le dipendenze in modo tempestivo e basato sul rischio. Questo comunemente
+    accade in ambienti in cui le patch vengono applicate mensilmente o trimestralmente
+    sotto change control, lasciando le organizzazioni scoperte per giorni o mesi
+    verso vulnerabilità già risolte.</p>
+</li>
+<li>
+<p>Se gli sviluppatori non testano la compatibilità delle librerie aggiornate,
+    nuove o patchate.</p>
+</li>
+<li>
+<p>Se i componenti non vengono configurati in modo sicuro (vedere
+    A05:2021-Security Misconfiguration).</p>
+</li>
+</ul>
+<h2 id="come-prevenire">Come prevenire</h2>
+<p>Ci dovrebbe essere un processo di gestione delle patch in atto per:</p>
+<ul>
+<li>
+<p>Rimuovere le dipendenze, le funzionalità, i componenti, i file,
+    e la documentazione non utilizzate.</p>
+</li>
+<li>
+<p>Inventariare in modo continuo le versioni dei componenti lato client e
+    lato server (ad esempio, framework, librerie) e le loro
+    dipendenze usando strumenti come OWASP Dependency Check,
+    retire.js, ecc. Monitorare continuamente fonti come Common Vulnerability and 
+    Exposures (CVE) e il National Vulnerability Database (NVD) per
+    vulnerabilità nei componenti. Usare strumenti di software composition per automatizzare il processo. 
+    Sottoscrivere avvisi e-mail per le vulnerabilità di sicurezza relative ai componenti utilizzati.</p>
+</li>
+<li>
+<p>Ottenere i componenti solo da fonti ufficiali tramite link sicuri.
+    Preferire pacchetti firmati per ridurre la possibilità di includere un componente modificato o dannoso (vedere A08:2021-Software and Data Integrity Failures).</p>
+</li>
+<li>
+<p>Controllare le librerie e i componenti che non sono più mantenuti o che non
+    sviluppano più patch di sicurezza per le vecchie versioni. Se il patching non è
+    possibile, considerare l'implementazione di una patch virtuale per monitorare, rilevare o
+    proteggere dal problema individuato.</p>
+</li>
+</ul>
+<p>Ogni organizzazione deve garantire un piano continuo per il monitoraggio, il triage,
+e l'applicazione di aggiornamenti o modifiche di configurazione per tutta la durata dell'applicazione
+o del portafoglio.</p>
+<h2 id="esempi-di-scenari-dattacco">Esempi di scenari d'attacco</h2>
+<p><strong>Scenario #1:</strong> I componenti solitamente vengono eseguiti con gli stessi privilegi dell'applicazione stessa, 
+quindi le falle in qualsiasi componente possono avere un serio
+impatto. Tali difetti possono essere accidentali (ad esempio, un errore nel codice) o intenzionali
+(ad esempio, una backdoor in un componente). Alcuni esempi di vulnerabilità sfruttabili
+scoperte nei componenti sono:</p>
+<ul>
+<li>
+<p>CVE-2017-5638, una vulnerabilità di esecuzione di codice remoto di Struts 2 che
+    permette l'esecuzione di codice arbitrario sul server, è stata
+    causa di breach importanti.</p>
+</li>
+<li>
+<p>Mentre l'internet delle cose (IoT) è spesso difficile o
+    impossibile da patchare, l'importanza nel riuscirci è elevata
+    (ad esempio, i dispositivi biomedici).</p>
+</li>
+</ul>
+<p>Ci sono strumenti automatici per aiutare gli attaccanti a trovare sistemi non patchati o
+sistemi mal configurati. Per esempio, il motore di ricerca Shodan IoT può
+aiutare a trovare i dispositivi che soffrono ancora della vulnerabilità Heartbleed
+patchata nell'aprile 2014.</p>
+<h2 id="riferimenti">Riferimenti</h2>
+<ul>
+<li>
+<p>OWASP Application Security Verification Standard: V1 Architecture,
+    design and threat modelling</p>
+</li>
+<li>
+<p>OWASP Dependency Check (for Java and .NET libraries)</p>
+</li>
+<li>
+<p>OWASP Testing Guide - Map Application Architecture (OTG-INFO-010)</p>
+</li>
+<li>
+<p>OWASP Virtual Patching Best Practices</p>
+</li>
+<li>
+<p>The Unfortunate Reality of Insecure Libraries</p>
+</li>
+<li>
+<p>MITRE Common Vulnerabilities and Exposures (CVE) search</p>
+</li>
+<li>
+<p>National Vulnerability Database (NVD)</p>
+</li>
+<li>
+<p>Retire.js for detecting known vulnerable JavaScript libraries</p>
+</li>
+<li>
+<p>Node Libraries Security Advisories</p>
+</li>
+<li>
+<p><a href="">Ruby Libraries Security Advisory Database and Tools</a></p>
+</li>
+<li>
+<p>https://safecode.org/publication/SAFECode_Software_Integrity_Controls0610.pdf</p>
+</li>
+</ul>
+<h2 id="lista-dei-cwe-correlati">Lista dei CWE correlati</h2>
+<p>CWE-937 OWASP Top 10 2013: Using Components with Known Vulnerabilities</p>
+<p>CWE-1035 2017 Top 10 A9: Using Components with Known Vulnerabilities</p>
+<p>CWE-1104 Use of Unmaintained Third Party Components</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

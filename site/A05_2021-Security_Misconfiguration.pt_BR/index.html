@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A05 2021 Security Misconfiguration.pt BR - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A05_2021-Security_Misconfiguration.pt_BR.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a052021-configuracao-incorreta-de-seguranca" class="nav-link">A05:2021 – Configuração Incorreta de Segurança</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#fatores" class="nav-link">Fatores</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#visao-geral" class="nav-link">Visão Geral</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#descricao" class="nav-link">Descrição</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#como-prevenir" class="nav-link">Como Prevenir</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#exemplos-de-cenarios-de-ataque" class="nav-link">Exemplos de Cenários de Ataque</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#referencias" class="nav-link">Referências</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#lista-dos-cwes-mapeados" class="nav-link">Lista dos CWEs Mapeados</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A05_2021-Security_Misconfiguration/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A05_2021-Security_Misconfiguration.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A05_2021-Security_Misconfiguration.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A05_2021-Security_Misconfiguration.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A05_2021-Security_Misconfiguration.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A05_2021-Security_Misconfiguration.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A05_2021-Security_Misconfiguration.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A05_2021-Security_Misconfiguration.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A05_2021-Security_Misconfiguration.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="a052021-configuracao-incorreta-de-seguranca">A05:2021 – Configuração Incorreta de Segurança    <img align="right" alt="icon" src="../assets/TOP_10_Icons_Final_Security_Misconfiguration.png" style="height:80px;width:80px" /></h1>
+<h2 id="fatores">Fatores</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">CWEs Mapeados</th>
+<th style="text-align: center;">Taxa de Incidência Máxima</th>
+<th style="text-align: center;">Taxa de Incidência Média</th>
+<th style="text-align: center;">Exploração Média Ponderada</th>
+<th style="text-align: center;">Impacto Médio Ponderado</th>
+<th style="text-align: center;">Cobertura Máxima</th>
+<th style="text-align: center;">Cobertura Média</th>
+<th style="text-align: center;">Total de ocorrências</th>
+<th style="text-align: center;">Total de CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">19.84%</td>
+<td style="text-align: center;">4.51%</td>
+<td style="text-align: center;">8.12</td>
+<td style="text-align: center;">6.56</td>
+<td style="text-align: center;">89.58%</td>
+<td style="text-align: center;">44.84%</td>
+<td style="text-align: center;">208,387</td>
+<td style="text-align: center;">789</td>
+</tr>
+</tbody>
+</table>
+<h2 id="visao-geral">Visão Geral</h2>
+<p>Saindo da #6 posição na edição anterior, 90% das aplicações foram testados
+para alguma forma de configuração incorreta, com uma taxa de incidência
+média de 4% e mais de 208 mil ocorrências de <em>Common Weakness Enumeration</em> (CWE)
+nesta categoria de risco. Com mais mudanças em software altamente configurável,
+não é surpreendente ver essa categoria subir. CWEs notáveis incluídos são
+<em>CWE-16 Configuração</em> e <em>CWE-611 Restrição Imprópria de Referência de Entidade Externa XML</em>.</p>
+<h2 id="descricao">Descrição</h2>
+<p>A aplicação pode ser vulnerável se for:</p>
+<ul>
+<li>
+<p>Falta de proteção de segurança apropriada em qualquer parte
+    da <em>stack</em> das aplicações ou permissões configuradas incorretamente
+    em serviços em nuvem.</p>
+</li>
+<li>
+<p>Recursos desnecessários são ativados ou instalados (por exemplo,
+    portas, serviços, páginas, contas ou privilégios desnecessários).</p>
+</li>
+<li>
+<p>As contas padrão e suas senhas ainda estão ativadas e inalteradas.</p>
+</li>
+<li>
+<p>O tratamento de erros revela <em>stack traces</em> ou outras
+    mensagens de erro excessivamente informativas aos usuários.</p>
+</li>
+<li>
+<p>Para sistemas atualizados, os recursos de segurança mais recentes
+    estão desabilitados ou não estão configurados com segurança.</p>
+</li>
+<li>
+<p>As configurações de segurança nos servidores das aplicações, nos
+    <em>frameworks</em> (por exemplo, Struts, Spring, ASP.NET), bibliotecas,
+    bancos de dados, etc., não estão definidas para proteger os valores.</p>
+</li>
+<li>
+<p>O servidor não envia cabeçalhos ou diretivas de segurança, ou eles
+    não estão configurados para proteger os valores.</p>
+</li>
+<li>
+<p>O software está desatualizado ou vulnerável (consulte
+  <a href="../A06_2021-Vulnerable_and_Outdated_Components.pt_BR/">A06: 2021-Componentes Vulneráveis e Desatualizados</a>).</p>
+</li>
+</ul>
+<p>Sem um processo de configuração de segurança de aplicações que seja integrado e
+repetível, os sistemas correm um risco maior.</p>
+<h2 id="como-prevenir">Como Prevenir</h2>
+<p>Devem ser implementados processos de instalação segura, incluindo:</p>
+<ul>
+<li>
+<p>Um processo de proteção repetível torna mais rápido e fácil implantar
+    outro ambiente que esteja devidamente bloqueado. Os ambientes de
+    desenvolvimento, controle de qualidade e produção devem ser todos
+    configurados de forma idêntica, com credenciais diferentes usadas
+    em cada ambiente. Este processo deve ser automatizado para minimizar
+    o esforço necessário para configurar um novo ambiente seguro.</p>
+</li>
+<li>
+<p>Uma plataforma mínima sem recursos, componentes, documentação e outros
+    desnecessários. Remova ou não instale recursos e estruturas não utilizados.</p>
+</li>
+<li>
+<ul>
+<li>Uma tarefa para revisar e atualizar as configurações apropriadas para todas
+    as notas de segurança, atualizações e patches como parte do processo de
+    gerenciamento de patch (consulte
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components.pt_BR/">A06: 2021-Componentes Vulneráveis e Desatualizados</a>).
+    Revise as permissões de armazenamento em nuvem (por exemplo, <em>S3 bucket permissions</em>).</li>
+</ul>
+</li>
+<li>
+<p>Uma arquitetura de aplicação segmentada fornece separação eficaz e
+    segura entre componentes ou <em>tenants</em>, com segmentação,
+    conteinerização ou grupos de segurança em nuvem (ACLs).</p>
+</li>
+<li>
+<p>Envio de diretivas de segurança para clientes, por exemplo, <em>Security Headers</em>.</p>
+</li>
+<li>
+<p>Um processo automatizado para verificar a eficácia das configurações
+    em todos os ambientes.</p>
+</li>
+</ul>
+<h2 id="exemplos-de-cenarios-de-ataque">Exemplos de Cenários de Ataque</h2>
+<p><strong>Cenário #1:</strong> O servidor da aplicação é fornecido com os sistemas de amostra
+não removidos do servidor de produção. Esses aplicativos de amostra têm
+falhas de segurança conhecidas que os invasores usam para comprometer o
+servidor. Suponha que um desses aplicativos seja o console de administração
+e as contas padrão não tenham sido alteradas. Nesse caso, o invasor
+efetua login com as senhas padrão e assume o controle.</p>
+<p><strong>Cenário #2:</strong> A listagem do diretório não está desabilitada no servidor.
+Um invasor descobre que pode simplesmente listar diretórios. O invasor
+encontra e baixa as classes Java compiladas, que ele descompila e
+faz engenharia reversa para visualizar o código. O invasor então
+encontra uma falha grave de controle de acesso no aplicativo.</p>
+<p><strong>Cenário #3:</strong> A configuração do servidor de aplicações permite que os
+detalhes das mensagens de erro, por exemplo, <em>stack trace</em>, sejam retornadas
+aos usuários. Isso potencialmente expõe informações confidenciais ou falhas
+subjacentes, como versões de componentes que são conhecidas por serem vulneráveis.</p>
+<p><strong>Cenário #4:</strong> Um provedor de serviços de nuvem tem permissões de
+compartilhamento padrão abertas para a Internet por outros usuários de
+<em>Content Security Policy header (CSP)</em>. Isso permite que dados confidenciais
+armazenados no armazenamento em nuvem sejam acessados.</p>
+<h2 id="referencias">Referências</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/README">OWASP Testing Guide: Configuration
+    Management</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/01-Testing_For_Improper_Error_Handling">OWASP Testing Guide: Testing for Error Codes</a></p>
+</li>
+<li>
+<p>Application Security Verification Standard V19 Configuration</p>
+</li>
+<li>
+<p><a href="https://csrc.nist.gov/publications/detail/sp/800-123/final">NIST Guide to General Server
+    Hardening</a></p>
+</li>
+<li>
+<p><a href="https://www.cisecurity.org/cis-benchmarks/">CIS Security Configuration
+    Guides/Benchmarks</a></p>
+</li>
+<li>
+<p><a href="https://blog.websecurify.com/2017/10/aws-s3-bucket-discovery.html">Amazon S3 Bucket Discovery and
+    Enumeration</a></p>
+</li>
+</ul>
+<h2 id="lista-dos-cwes-mapeados">Lista dos CWEs Mapeados</h2>
+<p><a href="https://cwe.mitre.org/data/definitions/2.html">CWE-2 7PK - Environment</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/11.html">CWE-11 ASP.NET Misconfiguration: Creating Debug Binary</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/13.html">CWE-13 ASP.NET Misconfiguration: Password in Configuration File</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/15.html">CWE-15 External Control of System or Configuration Setting</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/16.html">CWE-16 Configuration</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/260.html">CWE-260 Password in Configuration File</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/315.html">CWE-315 Cleartext Storage of Sensitive Information in a Cookie</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/520.html">CWE-520 .NET Misconfiguration: Use of Impersonation</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/526.html">CWE-526 Exposure of Sensitive Information Through Environmental Variables</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/537.html">CWE-537 Java Runtime Error Message Containing Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/541.html">CWE-541 Inclusion of Sensitive Information in an Include File</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/547.html">CWE-547 Use of Hard-coded, Security-relevant Constants</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611 Improper Restriction of XML External Entity Reference</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/614.html">CWE-614 Sensitive Cookie in HTTPS Session Without 'Secure' Attribute</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/756.html">CWE-756 Missing Custom Error Page</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/776.html">CWE-776 Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/942.html">CWE-942 Permissive Cross-domain Policy with Untrusted Domains</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1004.html">CWE-1004 Sensitive Cookie Without 'HttpOnly' Flag</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1032.html">CWE-1032 OWASP Top Ten 2017 Category A6 - Security Misconfiguration</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1174.html">CWE-1174 ASP.NET Misconfiguration: Improper Model Validation</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

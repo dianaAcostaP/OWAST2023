@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A02 2021 Cryptographic Failures.zh TW - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A02_2021-Cryptographic_Failures.zh_TW.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a022021" class="nav-link">A02:2021 – 加密機制失效</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">弱點因素</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">弱點簡介</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">弱點描述</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">如何預防</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">攻擊情境範例</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">參考文獻</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cwes" class="nav-link">對應的CWEs清單</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A02_2021-Cryptographic_Failures/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A02_2021-Cryptographic_Failures.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A02_2021-Cryptographic_Failures.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A02_2021-Cryptographic_Failures.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A02_2021-Cryptographic_Failures.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A02_2021-Cryptographic_Failures.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A02_2021-Cryptographic_Failures.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A02_2021-Cryptographic_Failures.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A02_2021-Cryptographic_Failures.zh_CN/">zh_CN - 简体中文</a></li>
+</ul>
+<h1 id="a022021">A02:2021 – 加密機制失效</h1>
+<h2 id="_1">弱點因素</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">可對照 CWEs 數量</th>
+<th style="text-align: center;">最大發生率</th>
+<th style="text-align: center;">平均發生率</th>
+<th style="text-align: center;">最大覆蓋範圍</th>
+<th style="text-align: center;">平均覆蓋範圍</th>
+<th style="text-align: center;">平均加權漏洞</th>
+<th style="text-align: center;">平均加權影響</th>
+<th style="text-align: center;">出現次數</th>
+<th style="text-align: center;">所有相關 CVEs 數量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">46.44%</td>
+<td style="text-align: center;">4.49%</td>
+<td style="text-align: center;">79.33%</td>
+<td style="text-align: center;">34.85%</td>
+<td style="text-align: center;">7.29</td>
+<td style="text-align: center;">6.81</td>
+<td style="text-align: center;">233,788</td>
+<td style="text-align: center;">3,075</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">弱點簡介</h2>
+<p>上升一個名次來到第二名，之前版本稱為"敏感性資料洩漏"，更像是一種廣泛的症狀而非根因，本版本聚焦於密碼學相關的失效(或缺乏加密)，並因此常常導致敏感資料的洩漏。著名的CWE包含"CWE259: Use of Hard-coded Password", "CWE-327: Broken or Risky Crypto Algorithm", 以及"CWE-331: Insufficient Entropy"。</p>
+<h2 id="_3">弱點描述</h2>
+<p>首先確定靜態資料及資料傳輸的防護需求，舉例來說，密碼、信用卡卡號、健康紀錄、個資、以及需要額外保護的營業祕密...等等主要被隱私法所保護的資料，如歐盟GDPR或PCIDSS等等金融業相關的資料保護法或標準。對於這些資料需考量:</p>
+<ul>
+<li>
+<p>上開資料是否以明碼傳輸? 像是HTTP, SMTP, FTP等等協定，使用於對外網際網路的流量是危險的。必須驗證所有的內部流量，如在負載平衡器、網站伺服器、或後端系統之間 。</p>
+</li>
+<li>
+<p>是否有任何老舊或脆弱的加密演算法被預設使用或存在於較舊的程式碼?</p>
+</li>
+<li>
+<p>是否有任何預設的加密金鑰被使用、脆弱的加密金鑰被重複使用，是否有適當的金鑰管理或金鑰輪換?</p>
+</li>
+<li>
+<p>加密是否非強制? 舉例: 使用者代理(瀏覽器)是否有遺失安全相關的指令或標題?</p>
+</li>
+<li>
+<p>使用者代理(如: app, 郵件客戶端)是否有驗證伺服器的憑證是有效的?</p>
+</li>
+</ul>
+<p>請參考 ASVS 加密(V7), 資料保護(V9), 及SSL/TLS(V10)。</p>
+<h2 id="_4">如何預防</h2>
+<p>至少執行以下措施，並參考相關資料:</p>
+<ul>
+<li>
+<p>對應用程式處理、儲存、傳輸的資料進行分類，根據隱私法、法令法規、或商業需求辨識哪些為敏感性資料。</p>
+</li>
+<li>
+<p>依照分類執行對應的控制措施。</p>
+</li>
+<li>
+<p>非必要不儲存敏感性資料，盡快捨棄或使用符合PCIDSS的資料記號化(tokenization)甚至截斷(truncation)。 沒有被保存的數據是不會被竊取的。</p>
+</li>
+<li>
+<p>確保將所有靜態的敏感性資料加密。</p>
+</li>
+<li>
+<p>確認使用最新版且標準的強演算法、協定及金鑰; 使用適當的金鑰管理。</p>
+</li>
+<li>
+<p>使用安全的協定加密傳輸中的資料，像是有完全前向保密(PFS)、伺服器加密優先順序(cipher prioritization by the server)及安全參數的TLS。 使用像是HTTP強制安全傳輸技術(HSTS)的指令強化加密。</p>
+</li>
+<li>
+<p>針對包含敏感資料的回應停用快取。</p>
+</li>
+<li>
+<p>使用具有雜湊迭代次數因素(work factor/delay factor)，如Argon2, scrypt, bcrypt或PBKDF2的強自適應性加鹽雜湊法來儲存密碼。</p>
+</li>
+<li>
+<p>獨立驗證設定的有效性。</p>
+</li>
+</ul>
+<h2 id="_5">攻擊情境範例</h2>
+<p><strong>情境 #1</strong>: 有一個應用程式使用自動化資料庫加密來加密資料庫中的信用卡卡號，但是資料被存取時是被自動解密的，進而允許透過SQL注入缺陷來存取信用卡卡號明文。</p>
+<p><strong>情境 #2</strong>: 有一個站台沒有對所有頁面強制使用TLS或支援脆弱的加密，攻擊者監控網路流量(如在不安全的無線網路), 將連線從HTTPS降級成HTTP，並攔截請求竊取使用者的會話(session) cookies，之後攻擊者重送竊取到的會話(session) cookies並劫持用戶(認證過的)的會話，進而存取或修改使用者的隱私資料。 除了上述以外，攻擊者也能修改傳輸的資料，如匯款收款人。</p>
+<p><strong>情境 #3</strong>: 密碼資料庫使用未被加鹽或簡單的雜湊來儲存每個人的密碼，一個檔案上傳的缺陷可以讓攻擊者存取密碼資料庫，所有未被加鹽的雜湊可以被預先計算好的彩虹表公開。即使雜湊有被加鹽，由簡單或快速的雜湊法算出的雜湊仍能被GPU破解。</p>
+<h2 id="_6">參考文獻</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c8-protect-data-everywhere">OWASP Proactive Controls: Protect Data
+    Everywhere</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP Application Security Verification Standard (V7,
+    9, 10)</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html">OWASP Cheat Sheet: Transport Layer
+    Protection</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/User_Privacy_Protection_Cheat_Sheet.html">OWASP Cheat Sheet: User Privacy
+    Protection</a></p>
+</li>
+<li>
+<p>OWASP Cheat Sheet: Password and Cryptographic Storage</p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html">OWASP Cheat Sheet:
+    HSTS</a></p>
+</li>
+<li>
+<p>OWASP Testing Guide: Testing for weak cryptography</p>
+</li>
+</ul>
+<h2 id="cwes">對應的CWEs清單</h2>
+<p><a href="https://cwe.mitre.org/data/definitions/261.html">CWE-261 Weak Encoding for Password</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/296.html">CWE-296 Improper Following of a Certificate's Chain of Trust</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/310.html">CWE-310 Cryptographic Issues</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319 Cleartext Transmission of Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/321.html">CWE-321 Use of Hard-coded Cryptographic Key</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/322.html">CWE-322 Key Exchange without Entity Authentication</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/323.html">CWE-323 Reusing a Nonce, Key Pair in Encryption</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/324.html">CWE-324 Use of a Key Past its Expiration Date</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/325.html">CWE-325 Missing Required Cryptographic Step</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/326.html">CWE-326 Inadequate Encryption Strength</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327 Use of a Broken or Risky Cryptographic Algorithm</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/328.html">CWE-328 Reversible One-Way Hash</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/329.html">CWE-329 Not Using a Random IV with CBC Mode</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330 Use of Insufficiently Random Values</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/331.html">CWE-331 Insufficient Entropy</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/335.html">CWE-335 Incorrect Usage of Seeds in Pseudo-Random Number Generator(PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/336.html">CWE-336 Same Seed in Pseudo-Random Number Generator (PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/337.html">CWE-337 Predictable Seed in Pseudo-Random Number Generator (PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/338.html">CWE-338 Use of Cryptographically Weak Pseudo-Random Number Generator(PRNG)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/340.html">CWE-340 Generation of Predictable Numbers or Identifiers</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/347.html">CWE-347 Improper Verification of Cryptographic Signature</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/523.html">CWE-523 Unprotected Transport of Credentials</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/720.html">CWE-720 OWASP Top Ten 2007 Category A9 - Insecure Communications</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/757.html">CWE-757 Selection of Less-Secure Algorithm During Negotiation('Algorithm Downgrade')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/759.html">CWE-759 Use of a One-Way Hash without a Salt</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/760.html">CWE-760 Use of a One-Way Hash with a Predictable Salt</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/780.html">CWE-780 Use of RSA Algorithm without OAEP</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/818.html">CWE-818 Insufficient Transport Layer Protection</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/916.html">CWE-916 Use of Password Hash With Insufficient Computational Effort</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

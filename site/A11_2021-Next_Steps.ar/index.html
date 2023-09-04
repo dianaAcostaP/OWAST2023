@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A11 2021 Next Steps.ar - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A11_2021-Next_Steps.ar.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a112021" class="nav-link">A11:2021 – الخطوات المقبلة</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">مشكلات جودة الشفرة المصدرية</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">حجب الخدمة</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">ادارة اخطاء الذاكرة</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A11_2021-Next_Steps/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A11_2021-Next_Steps.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A11_2021-Next_Steps.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A11_2021-Next_Steps.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A11_2021-Next_Steps.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A11_2021-Next_Steps.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A11_2021-Next_Steps.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A11_2021-Next_Steps.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A11_2021-Next_Steps.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="a112021">A11:2021 – الخطوات المقبلة</h1>
+<p>المنظمات التي تعمل لبناء برنامج أمني متكامل للتطبيقات أو تقديم استشارات أمنية أو خلق أدوات برمجية؛ تأمل في توسيع نطاق خدماتها. خلال ذلك قد تواجه هذه المشكلات الأربعة التالية التي تستحق الالتفات لها وتحديدها ومعالجتها:</p>
+<h2 id="_1">مشكلات جودة الشفرة المصدرية</h2>
+<table>
+<thead>
+<tr>
+<th>ربطها مع CWEs</th>
+<th>الحد الأقصى للحدوث</th>
+<th>متوسط معدل الحدوث</th>
+<th>التغطية القصوى</th>
+<th>متوسط معدل التغطية</th>
+<th>متوسط استغلال الثغرات</th>
+<th>متوسط التأثير</th>
+<th>إجمالي التكرار</th>
+<th>إجمالي نقاط الضعف CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>38</td>
+<td>49.46%</td>
+<td>2.22%</td>
+<td>60.85%</td>
+<td>23.42%</td>
+<td></td>
+<td></td>
+<td>101736</td>
+<td>7564</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>الوصف.</strong> تتضمن مشكلات جودة الشفرة المصدرية: عيوبًا أمنية، أو انماطًا معروفة، أو إعادة استخدام المتغيرات لأغراض متعددة، ظهور معلومات حساسة في نمط التصحيح “debugging output”، تكون سلسلة من الأخطاء المتتابعة، ظهور خطأ برمجي بسبب تغير في للنظام ما بين عملية فحص الشرط البرمجي/استخدام مخرجات هذا الشرط، ظهور unassigned أو signed conversion والتي يقوم بها البرنامج باسم” use after free errors”، ومشكلات أخرى.
+ما يميز هذه المشاكل أنها يمكن تحديدها عادةً بأدوات تحليل التعليمات البرمجية الثابتة وstringent compiler flags وlinter IDE plugins، ألغت اللغات الحديثة العديد من هذه المشكلات، مثل ملكية الذاكرة او (memory ownership) او مفهوم (borrowing concept) او مفهوم (Rust’s threading  design) وتطبيق مفاهيم أخرى تطبق في آلية الكتابة.</p>
+</li>
+<li>
+<p><strong>كيفية الحماية منها </strong>.قم بتمكين واستخدام المحرر وخيارات تحليل الكود الثابتة للغة، ضع في اعتبارك استخدام أداة تحليل التعليمات البرمجية الثابتة. ضع في اعتبارك ما إذا كان من الممكن استخدام لغة أو إطار عمل يعمل على التخلص من الأخطاء المعتادة، مثل Rust أو Go.</p>
+</li>
+<li>
+<p><strong>مثال على سيناريو هجوم</strong>. قد يقوم المهاجم بالحصول على معلومات حساسة او يقوم بالتغير الغير مصرح به على المعلومات من خلال استغلال ما يسمى (race condition) عبر مؤشرات مترابطة ومتعددة</p>
+</li>
+<li>
+<p><strong>المصادر</strong></p>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-pdf-archive/OWASP_Code_Review_Guide_v2.pdf">OWASP Code Review Guide</a></p>
+</li>
+<li>
+<p><a href="https://google.github.io/eng-practices/review/">Google Code Review Guide</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_2">حجب الخدمة</h2>
+<table>
+<thead>
+<tr>
+<th>ربطها مع CWEs</th>
+<th>الحد الأقصى للحدوث</th>
+<th>متوسط معدل الحدوث</th>
+<th>التغطية القصوى</th>
+<th>متوسط معدل التغطية</th>
+<th>متوسط استغلال الثغرات</th>
+<th>متوسط التأثير</th>
+<th>إجمالي التكرار</th>
+<th>إجمالي نقاط الضعف CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>17.54%</td>
+<td>4.89%</td>
+<td>79.58%</td>
+<td>33.26%</td>
+<td></td>
+<td></td>
+<td>66985</td>
+<td>973</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>الوصف</strong>. دائمًا ما يكون هجمات حجب الخدمة ممكنًا إذا توفرت المصادر الكافية. ولكن ممارسات التصميم والتشفير لها تأثير كبير على قوة حجب الخدمة. لنفترض ان أي شخص 
+افترض أن أي شخص لديه صلاحية الدخول لملف كبير، أو أنه يقوم بعملية حسابية تستهلك الموارد وتحدث في كل صفحة من صفحات الموقع. في هذه الحالة، تحدث هجمات حجب الخدمة من دون أي جهود تذكر.</p>
+</li>
+<li>
+<p><strong>كيفية الحماية منها</strong>. -   قم بعمل اختبار الشفرة المصدرية لوحدة المعالجة المركزيةCPU، والمدخلات / المخرجات، والذاكرة المستخدمة. قم بإعادة هندسة العمليات التي تستهلك المصادر أو تحسينها أو تخزينها مؤقتًا. ضع في اعتبارك ضوابط الوصول للأشياء ذات الاحجام الكبيرة لضمان أن الأفراد المصرح لهم فقط يمكنهم الوصول إلى ملفات أو أشياء ضخمة أو قم بخدمتهم عن طريق شبكة تخزين مؤقت.</p>
+</li>
+<li>
+<p><strong>مثال على سيناريو هجوم</strong>. -    قد يتوقع المهاجم أن كل عملية تستغرق لتنفيذها من 5 إلى 10 ثوانٍ حتى تكتمل. لذلك يقوم بتشغيل أربع عمليات في نفس الوقت ولها (thread) محدد، سيبدو لك أن الخادم قد يتوقف عن الاستجابة بسبب عملية الضغط. لذلك يعود المهاجم (1000 thread )  لكي يتعطل النظام ولا يستجيب بشكل كامل</p>
+</li>
+<li>
+<p><strong>المصادر</strong></p>
+<ul>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html">OWASP Cheat Sheet: Denial of Service</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-community/attacks/Denial_of_Service">OWASP Attacks: Denial of Service</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">ادارة اخطاء الذاكرة</h2>
+<table>
+<thead>
+<tr>
+<th>ربطها مع CWEs</th>
+<th>الحد الأقصى للحدوث</th>
+<th>متوسط معدل الحدوث</th>
+<th>التغطية القصوى</th>
+<th>متوسط معدل التغطية</th>
+<th>متوسط استغلال الثغرات</th>
+<th>متوسط التأثير</th>
+<th>إجمالي التكرار</th>
+<th>إجمالي نقاط الضعف CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14</td>
+<td>7.03%</td>
+<td>1.16%</td>
+<td>56.06%</td>
+<td>31.74%</td>
+<td></td>
+<td></td>
+<td>26576</td>
+<td>16184</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>الوصف</strong>. غالبًا ما تتم كتابة تطبيقات الويب بلغات يمكن التحكم بذاكرتها، مثل Java أو .NET أو node.js (JavaScript أو TypeScript). ومع ذلك، تتم كتابة هذه اللغات بلغات الأنظمة التي بها مشكلات في إدارة الذاكرة، مثل (buffer or heap  overflows، use after free، integer overflows، ومشكلات أخرى)، كما ان هناك العديد من حالات التهرب من وضع الحماية (Sandbox) على مر السنين، والتي تثبت ان لغة تطبيق الويب اساساً ليست امنه كما تم وصفها.</p>
+</li>
+<li>
+<p><strong>كيفية الحماية منها</strong>. تتم الآن كتابة العديد من واجهات برمجة التطبيقات الحديثة بلغات آمنة للذاكرة مثل Rust أو Go. بالنسبة لـRust، تعتبر سلامة الذاكرة سمة أساسية للغة. بالنسبة للشفرة المصدرية الحالية، يمكن أن يكون استخدام علامات المترجم “strict compiler flags” و (strong typing, static code analysis, ، fuzz testing) مفيدًا في تحديد تسرب الذاكرة والذاكرة وتجاوز الوقت المحدد وغير ذلك</p>
+</li>
+<li>
+<p><strong>مثال على سيناريو هجوم</strong> أن ثغرات (Buffer  و  heap overflows) هي من أخطر الثغرات على مر السنين، حيث يقوم المهاجم بإرسال البيانات الى البرنامج، والتي يقوم البرنامج بتخزينها بشكل مؤقت في مخزن صغير الحجم. وعندما يقوم المهاجم بإرسال بيانات للبرنامج اكبر من حجم المخزن يحدث الكتابة فوق التعليمات المخزنة. والتي تسمح للمهاجم باستدعاء الوظائف التي تمكنه من التحكم والسيطرة على البرنامج ووظائفه،</p>
+</li>
+<li>
+<p><strong>المصادر</strong></p>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-community/vulnerabilities/Buffer_Overflow">OWASP Vulnerabilities: Buffer Overflow</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-community/attacks/Buffer_overflow_attack">OWASP Attacks: Buffer Overflow</a></p>
+</li>
+<li>
+<p><a href="https://www.sciencedirect.com/topics/computer-science/integer-overflow">Science Direct: Integer Overflow</a></p>
+</li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

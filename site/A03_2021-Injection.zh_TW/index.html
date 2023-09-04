@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A03 2021 Injection.zh TW - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A03_2021-Injection.zh_TW.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a032021" class="nav-link">A03:2021 – 注入式攻擊</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">對照因素</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">概述</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">描述</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">如何預防</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">攻擊情境範例</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">參考</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cwe" class="nav-link">對應的 CWE 列表</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A03_2021-Injection/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A03_2021-Injection.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A03_2021-Injection.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A03_2021-Injection.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A03_2021-Injection.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A03_2021-Injection.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A03_2021-Injection.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A03_2021-Injection.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A03_2021-Injection.zh_CN/">zh_CN - 简体中文</a></li>
+</ul>
+<h1 id="a032021">A03:2021 – 注入式攻擊</h1>
+<h2 id="_1">對照因素</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">可對照 CWEs 數量</th>
+<th style="text-align: center;">最大發生率</th>
+<th style="text-align: center;">平均發生率</th>
+<th style="text-align: center;">最大覆蓋範圍</th>
+<th style="text-align: center;">平均覆蓋範圍</th>
+<th style="text-align: center;">平均加權弱點</th>
+<th style="text-align: center;">平均加權影響</th>
+<th style="text-align: center;">出現次數</th>
+<th style="text-align: center;">所有有關 CVEs 數量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;">19.09%</td>
+<td style="text-align: center;">3.37%</td>
+<td style="text-align: center;">94.04%</td>
+<td style="text-align: center;">47.90%</td>
+<td style="text-align: center;">7.25</td>
+<td style="text-align: center;">7.15</td>
+<td style="text-align: center;">274,228</td>
+<td style="text-align: center;">32,078</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">概述</h2>
+<p>植入式攻擊下滑到了第三名。94% 被測試的應用程式都有驗測到某種類型的注入式攻擊問題。值得注意的 CWEs 包括了 CWE-79：跨網站攻擊、CWE-89：SQL 注入式攻擊以及 CWE-73：在外部控制檔案名稱或路徑。 </p>
+<h2 id="_3">描述</h2>
+<p>應用程式在以下情況容易遭受攻擊：</p>
+<ul>
+<li>
+<p>應用程式未驗證、過濾或清理使用者提供的資料。</p>
+</li>
+<li>
+<p>在直譯器中未使用上下文感知轉義的動態查詢或無參數呼叫。</p>
+</li>
+<li>
+<p>在物件關係對映 (ORM) 的搜尋參數中，使用惡意的資料來提取額外的敏感紀錄。</p>
+</li>
+<li>
+<p>在動態查詢、命令或儲存的程序，SQL、指令或儲存的程序中，直接使用或連結了惡意資料。</p>
+</li>
+</ul>
+<p>一些常見的注入式攻擊是 SQL、NoSQL、OS 指令、物件關係對映 (ORM)、LDAP以及表達式語言 (EL) 或對象導航圖語言 (OGNL) 注入。這個概念在所有的直譯器都是相同的。假若應用程式存在注入式攻擊的弱點，源碼檢測是最好的方式。強烈建議對所有輸入的參數、標頭、URL、cookies、JSON、SOAP 以及 XML 的資料進行自動化測試。組織可以將靜態源碼測試 (SAST) 以及動態應用程式檢測 (DAST) 工具，包含到持續整合與持續部署 (CI/CD)管道中，以達成在上線部署前能識別注入攻擊的缺陷。</p>
+<h2 id="_4">如何預防</h2>
+<ul>
+<li>
+<p>需要將命令與查詢資料分開，以防止注入式攻擊。</p>
+</li>
+<li>
+<p>首要的選項是使用安全的應用程式界面 (API)，完全避免使用直譯器，以提供參數化的界面或整合到物件關係對映 (ORMs) 工具中。</p>
+</li>
+<li>
+<p>注意：即使已經參數化了，在儲存的程序中仍然可以引入 SQL 注入攻擊，如果透過 PL/SQL 或 T-SQL 連接查詢與資料，並使用 EXECUTE IMMEDIATE 或 exec() 執行惡意資料。</p>
+</li>
+<li>
+<p>使用正面或白名單在伺服器端驗證輸入的資料。這並不是一個完整的防禦機制，因許多應用程序需要使用特殊的字符，例如：應用程式的文本區域或應用程式界面 (API)應用於行動裝置上的應用程式。</p>
+</li>
+<li>
+<p>對於任何剩餘的動態查詢，在轉譯中使用特殊符號進行查詢將對查詢語法帶來不同的涵義。</p>
+</li>
+<li>
+<p>注意：在 SQL 結構中，例如：資料表名稱、欄位名稱是無法被轉譯的，因此使用者提供資料結構的名稱是危險的，這是一個在編寫軟體時常見的問題。</p>
+</li>
+<li>
+<p>在查詢中使用 LIMIT 以及其它的 SQL 控制器，可以防止當遭受 SQL 注入式攻擊時被大量洩露紀錄。</p>
+</li>
+</ul>
+<h2 id="_5">攻擊情境範例</h2>
+<p><strong>情境 #1:</strong> 應用程式使用了不被信任的資料在脆弱的 SQL 呼叫中：</p>
+<p>String query = "SELECT * FROM accounts WHERE custID='" +
+request.getParameter("id") + "'";</p>
+<p><strong>情境 #2:</strong> 類似地，應用程式對框架的盲目信任，可能導致仍然在漏洞的查詢，(例如：Hibernate 查詢語言 (HQL))： </p>
+<blockquote>
+<p>Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" +
+request.getParameter("id") + "'");</p>
+</blockquote>
+<p>在這兩個情境中，攻擊者在他們的瀏覽器修改了 "id" 參數值，送出 ‘ or ‘1’=’1，例如：</p>
+<p>http://example.com/app/accountView?id=' UNION SELECT SLEEP(10);--</p>
+<p>這兩個查詢的含義將產生改變，而回應所有帳戶資料表中的紀錄，更危險的攻擊將可能修改或刪除資料，以及影響資料的儲存過程。</p>
+<h2 id="_6">參考</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c3-secure-database">OWASP Proactive Controls: Secure Database
+    Access</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP ASVS: V5 Input Validation and
+    Encoding</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection">OWASP Testing Guide: SQL
+    Injection,</a> <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/12-Testing_for_Command_Injection">Command
+    Injection</a>,
+    and <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.7-Testing_for_ORM_Injection">ORM
+    Injection</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html">OWASP Cheat Sheet: Injection
+    Prevention</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">OWASP Cheat Sheet: SQL Injection
+    Prevention</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet_in_Java.html">OWASP Cheat Sheet: Injection Prevention in
+    Java</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Query_Parameterization_Cheat_Sheet.html">OWASP Cheat Sheet: Query
+    Parameterization</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-automated-threats-to-web-applications/">OWASP Automated Threats to Web Applications –
+    OAT-014</a></p>
+</li>
+<li>
+<p><a href="https://portswigger.net/kb/issues/00101080_serversidetemplateinjection">PortSwigger: Server-side template
+    injection</a></p>
+</li>
+</ul>
+<h2 id="cwe">對應的 CWE 列表</h2>
+<p>CWE-20 Improper Input Validation</p>
+<p>CWE-74 Improper Neutralization of Special Elements in Output Used by a
+Downstream Component ('Injection')</p>
+<p>CWE-75 Failure to Sanitize Special Elements into a Different Plane
+(Special Element Injection)</p>
+<p>CWE-77 Improper Neutralization of Special Elements used in a Command
+('Command Injection')</p>
+<p>CWE-78 Improper Neutralization of Special Elements used in an OS Command
+('OS Command Injection')</p>
+<p>CWE-79 Improper Neutralization of Input During Web Page Generation
+('Cross-site Scripting')</p>
+<p>CWE-80 Improper Neutralization of Script-Related HTML Tags in a Web Page
+(Basic XSS)</p>
+<p>CWE-83 Improper Neutralization of Script in Attributes in a Web Page</p>
+<p>CWE-87 Improper Neutralization of Alternate XSS Syntax</p>
+<p>CWE-88 Improper Neutralization of Argument Delimiters in a Command
+('Argument Injection')</p>
+<p>CWE-89 Improper Neutralization of Special Elements used in an SQL
+Command ('SQL Injection')</p>
+<p>CWE-90 Improper Neutralization of Special Elements used in an LDAP Query
+('LDAP Injection')</p>
+<p>CWE-91 XML Injection (aka Blind XPath Injection)</p>
+<p>CWE-93 Improper Neutralization of CRLF Sequences ('CRLF Injection')</p>
+<p>CWE-94 Improper Control of Generation of Code ('Code Injection')</p>
+<p>CWE-95 Improper Neutralization of Directives in Dynamically Evaluated
+Code ('Eval Injection')</p>
+<p>CWE-96 Improper Neutralization of Directives in Statically Saved Code
+('Static Code Injection')</p>
+<p>CWE-97 Improper Neutralization of Server-Side Includes (SSI) Within a
+Web Page</p>
+<p>CWE-98 Improper Control of Filename for Include/Require Statement in PHP
+Program ('PHP Remote File Inclusion')</p>
+<p>CWE-99 Improper Control of Resource Identifiers ('Resource Injection')</p>
+<p>CWE-100 Deprecated: Was catch-all for input validation issues</p>
+<p>CWE-113 Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP
+Response Splitting')</p>
+<p>CWE-116 Improper Encoding or Escaping of Output</p>
+<p>CWE-138 Improper Neutralization of Special Elements</p>
+<p>CWE-184 Incomplete List of Disallowed Inputs</p>
+<p>CWE-470 Use of Externally-Controlled Input to Select Classes or Code
+('Unsafe Reflection')</p>
+<p>CWE-471 Modification of Assumed-Immutable Data (MAID)</p>
+<p>CWE-564 SQL Injection: Hibernate</p>
+<p>CWE-610 Externally Controlled Reference to a Resource in Another Sphere</p>
+<p>CWE-643 Improper Neutralization of Data within XPath Expressions ('XPath
+Injection')</p>
+<p>CWE-644 Improper Neutralization of HTTP Headers for Scripting Syntax</p>
+<p>CWE-652 Improper Neutralization of Data within XQuery Expressions
+('XQuery Injection')</p>
+<p>CWE-917 Improper Neutralization of Special Elements used in an
+Expression Language Statement ('Expression Language Injection')</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

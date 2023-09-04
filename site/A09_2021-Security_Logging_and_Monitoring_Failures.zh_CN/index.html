@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A09 2021 Security Logging and Monitoring Failures.zh CN - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A09_2021-Security_Logging_and_Monitoring_Failures.zh_CN.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a092021-security-logging-and-monitoring-failures" class="nav-link">A09:2021 – Security Logging and Monitoring Failures</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">因素</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">简介</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">描述</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">如何预防</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">攻击情景范例</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">参考文档</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#list-of-mapped-cwes" class="nav-link">List of Mapped CWEs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A09_2021-Security_Logging_and_Monitoring_Failures/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A09_2021-Security_Logging_and_Monitoring_Failures.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A09_2021-Security_Logging_and_Monitoring_Failures.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A09_2021-Security_Logging_and_Monitoring_Failures.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A09_2021-Security_Logging_and_Monitoring_Failures.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A09_2021-Security_Logging_and_Monitoring_Failures.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A09_2021-Security_Logging_and_Monitoring_Failures.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A09_2021-Security_Logging_and_Monitoring_Failures.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A09_2021-Security_Logging_and_Monitoring_Failures.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="a092021-security-logging-and-monitoring-failures">A09:2021 – Security Logging and Monitoring Failures</h1>
+<h2 id="_1">因素</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">可对照 CWEs 数量</th>
+<th style="text-align: center;">最大发生率</th>
+<th style="text-align: center;">平均发生率</th>
+<th style="text-align: center;">最大覆盖范围</th>
+<th style="text-align: center;">平均覆盖范围</th>
+<th style="text-align: center;">平均加权漏洞</th>
+<th style="text-align: center;">平均加权影响</th>
+<th style="text-align: center;">总发生数</th>
+<th style="text-align: center;">相关 CVEs 总数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">19.23%</td>
+<td style="text-align: center;">6.51%</td>
+<td style="text-align: center;">53.67%</td>
+<td style="text-align: center;">39.97%</td>
+<td style="text-align: center;">6.87</td>
+<td style="text-align: center;">4.99</td>
+<td style="text-align: center;">53,615</td>
+<td style="text-align: center;">242</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">简介</h2>
+<p>安全记录及监控是业界调查结果 (#3)，由 2017 年的第十名稍微上升。记录及监控功能验证非常有挑战性，通常需要以访谈或询问之方式检验有无侦测渗透测试的攻击活动。侦测及应变对资安事件至关重要，但此类型之 CVE/CVSS 资料不多。尽管如此，此类型对于事件告警、可见性和鉴识仍然非常有影响力。此类型涵盖 CWE-778 不足地记录，CWE-117 未经适当处理之日志输出，CWE-223 遗漏安全相关资讯及 CWE-532 于日志档案置入敏感资讯。</p>
+<h2 id="_3">描述</h2>
+<p>在 2021 年 OWASP Top 10，此类型有助于对进行中资安事件之侦测，升级及应变。缺乏记录及监控时无法侦测资安事件发生。不足地记录，侦测，监控及主动应变随时会发生：</p>
+<ul>
+<li>
+<p>可稽核事件未记录，如登入成功，登入失败及高价值交易。</p>
+</li>
+<li>
+<p>警告或错误发生时未产生，产生不充足或产生不明确日志。</p>
+</li>
+<li>
+<p>未监控应用程式或应用程式介面(API)日志中的可疑活动。</p>
+</li>
+<li>
+<p>日志仅储存于本地端。</p>
+</li>
+<li>未设有或设有无效之适当告警阀值及应变升级程序。</li>
+<li>
+<p>渗透测试及 DAST 工具(如 OWASP ZAP)扫描没有触发告警。</p>
+</li>
+<li>
+<p>应用程式无法接近即时或即时侦测，升级或警告进行中之攻击。</p>
+</li>
+</ul>
+<p>允许使用者或攻击者读取日志或告警事件可能早成资讯泄漏(参考 A01:2021 权限控制失效)</p>
+<h2 id="_4">如何预防</h2>
+<p>开发者应依据应用程式所面临风险实作下列部分或全部的控制项：</p>
+<ul>
+<li>
+<p>确保记录所有登入，存取控制及服务器端输入验证之失败，日志应包含充足使用者情境以识别可疑或恶意帐号，日志应存留充足时间以利未来可能之鉴识分析要求。</p>
+</li>
+<li>
+<p>确保日志格式符合一般日志管理系统常用格式。</p>
+</li>
+<li>确保日志经正确编码以防止遭受注入攻击或日志/监控系统遭受攻击。</li>
+<li>确保高价值交易进行时产生稽核轨迹(日志)并实作完整性控制以避免窜改或删除，如仅限附加的资料表或类似工具。</li>
+<li>DevSecOps 团队应建立有效地监控及告警机制以利侦测可疑活动并快速应变。</li>
+<li>建立或导入事件应变及复原计画，如 NIST 800-61r2 或更新版本。</li>
+</ul>
+<p>现有多种商业化及开放原始码应用程式保护架构，如 OWASP ModSecurity Core Rule Set 及开放原始码日志关联软体可客制化仪表板及告警，如 ELK stack。</p>
+<h2 id="_5">攻击情景范例</h2>
+<p><strong>情境 1</strong>：一家儿童健康计划供应商的网站运营商因缺乏监控和记录无法侦测资安事件。外部通知该健康计划供应商，攻击者已存取及修改超过 350 万名儿童的敏感健康记录。事后审查发现网站开发者没有处理重大弱点。由于系统没有记录或监控，资料泄漏可能从 2013 年开始至今，时间超过七年。</p>
+<p><strong>情境 2</strong>：印度一家大型航空公司发生涉及数百万乘客超过十年包括护照及信用卡资料等个人资料的资料泄漏。资料泄漏发生在第三方供应商提供的云端服务，该供应商在资料泄漏发生一段时间后通知航空公司。</p>
+<p>情境 3：一家大型欧洲航空公司发生依 GDPR 应报告之个资事故。据报导，攻击者利用支付应用系统之安全漏洞，取得超过 40 万笔客户支付纪录。该航空公司遭隐私主管机关裁罚两千万英镑。</p>
+<h2 id="_6">参考文档</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c9-security-logging.html">OWASP Proactive Controls: Implement Logging and
+  Monitoring</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP Application Security Verification Standard: V8 Logging and
+  Monitoring</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/01-Testing_for_Error_Code">OWASP Testing Guide: Testing for Detailed Error
+  Code</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html">OWASP Cheat Sheet:
+  Logging</a></p>
+</li>
+<li>
+<p><a href="https://csrc.nist.gov/publications/detail/sp/1800-11/final">Data Integrity: Recovering from Ransomware and Other Destructive
+  Events</a></p>
+</li>
+<li>
+<p><a href="https://csrc.nist.gov/publications/detail/sp/1800-25/final">Data Integrity: Identifying and Protecting Assets Against
+  Ransomware and Other Destructive
+  Events</a></p>
+</li>
+<li>
+<p><a href="https://csrc.nist.gov/publications/detail/sp/1800-26/final">Data Integrity: Detecting and Responding to Ransomware and Other
+  Destructive
+  Events</a></p>
+</li>
+</ul>
+<h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
+<p>CWE-117 Improper Output Neutralization for Logs</p>
+<p>CWE-117 未经适当处理之日志输出</p>
+<p>CWE-223 Omission of Security-relevant Information</p>
+<p>CWE-223 遗漏安全相关资讯</p>
+<p>CWE-532 Insertion of Sensitive Information into Log File</p>
+<p>CWE-532 于日志档案置入敏感资讯</p>
+<p>CWE-778 Insufficient Logging</p>
+<p>CWE-778 不足地记录</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

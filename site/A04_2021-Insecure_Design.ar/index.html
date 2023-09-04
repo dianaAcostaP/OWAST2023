@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A04 2021 Insecure Design.ar - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A04_2021-Insecure_Design.ar.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a042021" class="nav-link">A04:2021 – التصميم الغير آمن</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">العوامل</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">نظرة عامة</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">الوصف</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">كيفية الحماية منها</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">أمثلة على سيناريوهات الهجوم</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">المصادر</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cwes" class="nav-link">قائمة الربط مع إطار CWEs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A04_2021-Insecure_Design/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A04_2021-Insecure_Design.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A04_2021-Insecure_Design.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A04_2021-Insecure_Design.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A04_2021-Insecure_Design.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A04_2021-Insecure_Design.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A04_2021-Insecure_Design.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A04_2021-Insecure_Design.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A04_2021-Insecure_Design.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="a042021">A04:2021 – التصميم الغير آمن</h1>
+<h2 id="_1">العوامل</h2>
+<table>
+<thead>
+<tr>
+<th>ربطها مع CWEs</th>
+<th>الحد الأقصى للحدوث</th>
+<th>متوسط معدل الحدوث</th>
+<th>التغطية القصوى</th>
+<th>متوسط معدل التغطية</th>
+<th>متوسط استغلال الثغرات</th>
+<th>متوسط التأثير</th>
+<th>إجمالي التكرار</th>
+<th>إجمالي نقاط الضعف CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>40</td>
+<td>24.19%</td>
+<td>3.00%</td>
+<td>77.25%</td>
+<td>42.51%</td>
+<td>6.46</td>
+<td>6.78</td>
+<td>262,407</td>
+<td>2,691</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">نظرة عامة</h2>
+<p>هو تصنيف جديد تمت إضافته في هذه النسخة لعام 2021 والذي يركّز على المخاطر المتعلقة بعيوب وأخطاء التصميم، مما يدعو إلى المزيد من استخدام نمذجة التهديدات، وأنماط التصميم الآمنة وبنية تحتية مبنيّة على أفضل الامتثالات. الجدير بالذكر أن إطار CWE تضمن الـ CWEs التالية: CWE-209، CWE-256، CWE-501، CWE-522.</p>
+<h2 id="_3">الوصف</h2>
+<p>التصميم الغير آمن تصنيف واسع يشمل العديد من نقاط الضعف المختلفة، ويُعرف على أنه " تصميم ذو عنصر تحكم " Control “مفقود أو غير فعّال، التصميم الغير آمن هو المكان الذي يكون فيه عنصر التحكم غائبًا، على سبيل المثال، لنفرض أن هناك <strong>شفّرة مصدرية</strong> يجب أن تُراعي تشفير البيانات الحساسة ولكن لا توجد طريقة لتطبيق التشّفير.
+ التصميم الغير آمن والغير فعّال هو: المكان حينما يمكن إدراك وجود التهديد، لكن التحقّق المنطقي الغير فعّال من فضاء العمل (الأعمال) يمنع تنفيذ الإجراء. على سبيل المثال لنفرض أن هناك فضاء عمل يجب أن يقوم بمعالجة الإعفاء الضريبي للجائحة بناءً على فئات الدخل لكنه لا يقوم بالتحقّق فيما إذا كانت البيانات المدخلة موقعة بشكل صحيح أو لا، مما قد يؤدي إلى فائدة أكثر مما ينبغي     . 
+التصميم الآمن عبارة عن ثقافة ومنهجيّة تقوم بتقييم التهديدات باستمرار وتضمن أن <strong>الشّفرة المصدرية</strong> مصمّمة بشكل قوي ومختبرة ضد طرق الهجوم المعروفة. يتطلّب التصميم الآمن دورة حياة تطوير آمنة، والبعض من أنماط التصميم الآمنة أو مكتبات المكونات المجهزة مُسبقًا أو الأدوات ونمذجة التهديدات. </p>
+<h2 id="_4">كيفية الحماية منها</h2>
+<ul>
+<li>
+<p>إنشاء واستخدام دورة حياة تطوير آمنة مع الاستعانة بأخصائي أمن تطبيقات لتقييم وتصميم عناصر التحكّم المتعلقة بالأمان والخصوصية.</p>
+</li>
+<li>
+<p>إنشاء واستخدام مكتبة تحتوي على أنماط التصميم الآمن ومكونات مُسبقة وجاهزة للاستخدام. </p>
+</li>
+<li>
+<p>نمذجة التهديدات لعمليات المصادقة "التحقّق من الهوية" الحساسة، والتحكّم في الوصول، والتسلسل المنطقي التطبيق، والمسارات الأساسية للتطبيق.</p>
+</li>
+<li>
+<p>وحدة للكتابة ولاختبارات التكامل للتحقّق من أن جميع المسارات الحرجة مقاومة لنموذج التهديد المتوقّع.</p>
+</li>
+</ul>
+<h2 id="_5">أمثلة على سيناريوهات الهجوم</h2>
+<p><strong>سيناريو #1:</strong>  قد يتضمّن مسار عملية استرداد عناصر اعتماد المصداقية" أسئلة وإجابات"، الذي يحظره إطار NIST 800-63b وOWASP ASVS وOWASP Top 10، فلا يمكن الوثوق في الأسئلة والإجابات كأدلّة على صحة هوية المستخدم حيث يمكن لأكثر من شخص معرفة الإجابات، وهذا هو سبب حظره. يجب إزالة الشّفرة المصدرية تلك واستبدالها بتصميم أكثر أمانًا.</p>
+<p><strong>سيناريو #2:</strong> تقوم دور سينما بعمل خصومات لعمليات الحجز الجماعي لـ١٥ شخص كحد أقصى قبل الدفع. هذا المسار قد يُشكّل خطرًا ويسمح للمهاجم باختبار ما إذا كان بإمكانه حجز ٦٠٠ مقعد دفعة واحدة من خلال طلبات قليلة، مما يتسبّب في خسارة هائلة للدخل.</p>
+<p><strong>سيناريو #3:</strong> لا تتمتّع مواقع التجارة الإلكترونية من الحماية ضد الروبوتات التي يُديرها مستثمرون يقومون بشراء بطاقات المعالجة الرسومية المطوّرة لإعادة بيعها لاحقًا في مواقع المزادات بأسعار أعلى. هذا يضع صانعيّ كروت الفيديو وكذلك متاجر البيع بالتجزئة في موقف حرج، التصاميم اليقظة ضد الروبوتات وإضافة قواعد تصميم النطاق المعتمدة على المنطق " مثل رصد عمليات الشراء التي تتم في غضون ثوانٍ معدودة "قد ترصد عمليات الشراء الغير طبيعية وتقوم برفضها.</p>
+<h2 id="_6">المصادر</h2>
+<ul>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Secure_Product_Design_Cheat_Sheet.html">OWASP Cheat Sheet: Secure Design Principles</a></p>
+</li>
+<li>
+<p><a href="https://owaspsamm.org/model/design/security-architecture/">OWASP SAMM: Design:Security Architecture</a></p>
+</li>
+<li>
+<p><a href="https://owaspsamm.org/model/design/threat-assessment/">OWASP SAMM: Design:Threat Assessment</a> </p>
+</li>
+<li>
+<p><a href="https://www.nist.gov/publications/guidelines-minimum-standards-developer-verification-software">NIST – Guidelines on Minimum Standards for Developer Verification of Software</a></p>
+</li>
+<li>
+<p><a href="https://threatmodelingmanifesto.org">The Threat Modeling Manifesto</a></p>
+</li>
+<li>
+<p><a href="https://github.com/hysnsec/awesome-threat-modelling">Awesome Threat Modeling</a></p>
+</li>
+</ul>
+<h2 id="cwes">قائمة الربط مع إطار CWEs</h2>
+<p><a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73 External Control of File Name or Path</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/183.html">CWE-183 Permissive List of Allowed Inputs</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209 Generation of Error Message Containing Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/213.html">CWE-213 Exposure of Sensitive Information Due to Incompatible Policies</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/235.html">CWE-235 Improper Handling of Extra Parameters</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/256.html">CWE-256 Unprotected Storage of Credentials</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/257.html">CWE-257 Storing Passwords in a Recoverable Format</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/266.html">CWE-266 Incorrect Privilege Assignment</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/269.html">CWE-269 Improper Privilege Management</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/280.html">CWE-280 Improper Handling of Insufficient Permissions or Privileges</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/311.html">CWE-311 Missing Encryption of Sensitive Data</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/312.html">CWE-312 Cleartext Storage of Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/313.html">CWE-313 Cleartext Storage in a File or on Disk</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/316.html">CWE-316 Cleartext Storage of Sensitive Information in Memory</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/419.html">CWE-419 Unprotected Primary Channel</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/430.html">CWE-430 Deployment of Wrong Handler</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/434.html">CWE-434 Unrestricted Upload of File with Dangerous Type</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/444.html">CWE-444 Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/451.html">CWE-451 User Interface (UI) Misrepresentation of Critical Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/472.html">CWE-472 External Control of Assumed-Immutable Web Parameter</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/501.html">CWE-501 Trust Boundary Violation</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/522.html">CWE-522 Insufficiently Protected Credentials</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/525.html">CWE-525 Use of Web Browser Cache Containing Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/539.html">CWE-539 Use of Persistent Cookies Containing Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/579.html">CWE-579 J2EE Bad Practices: Non-serializable Object Stored in Session</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/598.html">CWE-598 Use of GET Request Method With Sensitive Query Strings</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/602.html">CWE-602 Client-Side Enforcement of Server-Side Security</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/642.html">CWE-642 External Control of Critical State Data</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/646.html">CWE-646 Reliance on File Name or Extension of Externally-Supplied File</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/650.html">CWE-650 Trusting HTTP Permission Methods on the Server Side</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/653.html">CWE-653 Insufficient Compartmentalization</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/656.html">CWE-656 Reliance on Security Through Obscurity</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/657.html">CWE-657 Violation of Secure Design Principles</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/799.html">CWE-799 Improper Control of Interaction Frequency</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/807.html">CWE-807 Reliance on Untrusted Inputs in a Security Decision</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/840.html">CWE-840 Business Logic Errors</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/841.html">CWE-841 Improper Enforcement of Behavioral Workflow</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/927.html">CWE-927 Use of Implicit Intent for Sensitive Communication</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1021.html">CWE-1021 Improper Restriction of Rendered UI Layers or Frames</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1173.html">CWE-1173 Improper Use of Validation Framework</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

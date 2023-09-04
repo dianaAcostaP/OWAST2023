@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A07 2021 Identification and Authentication Failures.es - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A07_2021-Identification_and_Authentication_Failures.es.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a072021-fallas-de-identificacion-y-autenticacion" class="nav-link">A07:2021 – Fallas de Identificación y Autenticación</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#factores" class="nav-link">Factores</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resumen" class="nav-link">Resumen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#descripcion" class="nav-link">Descripción</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#como-se-previene" class="nav-link">Cómo se previene</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ejemplos-de-escenarios-de-ataque" class="nav-link">Ejemplos de escenarios de ataque</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#referencias" class="nav-link">Referencias</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#lista-de-cwes-mapeadas" class="nav-link">Lista de CWEs mapeadas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A07_2021-Identification_and_Authentication_Failures/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A07_2021-Identification_and_Authentication_Failures.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A07_2021-Identification_and_Authentication_Failures.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A07_2021-Identification_and_Authentication_Failures.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A07_2021-Identification_and_Authentication_Failures.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A07_2021-Identification_and_Authentication_Failures.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A07_2021-Identification_and_Authentication_Failures.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A07_2021-Identification_and_Authentication_Failures.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A07_2021-Identification_and_Authentication_Failures.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="a072021-fallas-de-identificacion-y-autenticacion">A07:2021 – Fallas de Identificación y Autenticación    <img align="right" alt="icon" src="../assets/TOP_10_Icons_Final_Identification_and_Authentication_Failures.png" style="height:80px;width:80px" /></h1>
+<h2 id="factores">Factores</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">CWEs mapeadas</th>
+<th style="text-align: center;">Tasa de incidencia máx</th>
+<th style="text-align: center;">Tasa de incidencia prom</th>
+<th style="text-align: center;">Explotabilidad ponderada prom</th>
+<th style="text-align: center;">Impacto ponderado prom</th>
+<th style="text-align: center;">Cobertura máx</th>
+<th style="text-align: center;">Cobertura prom</th>
+<th style="text-align: center;">Incidencias totales</th>
+<th style="text-align: center;">Total CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">14.84%</td>
+<td style="text-align: center;">2.55%</td>
+<td style="text-align: center;">7.40</td>
+<td style="text-align: center;">6.50</td>
+<td style="text-align: center;">79.51%</td>
+<td style="text-align: center;">45.72%</td>
+<td style="text-align: center;">132,195</td>
+<td style="text-align: center;">3,897</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resumen">Resumen</h2>
+<p>Previamente denominada como <em>Pérdida de Autenticación</em>, descendió desde la segunda posición, y ahora incluye CWEs que están más relacionados con fallas de identificación. Las CWE notables incluidas son <em>CWE-297: Validación incorrecta de Certificado con discrepancia de host</em>, <em>CWE-287: Autenticación incorrecta</em> y <em>CWE-384: Fijación de sesiones</em>.</p>
+<h2 id="descripcion">Descripción</h2>
+<p>La confirmación de la identidad, la autenticación y la gestión de sesiones del usuario son fundamentales para protegerse contra ataques relacionados con la autenticación. Puede haber debilidades de autenticación si la aplicación:</p>
+<ul>
+<li>
+<p>Permite ataques automatizados como la reutilización de credenciales conocidas, donde el atacante posee una lista de pares de usuario y contraseña válidos.</p>
+</li>
+<li>
+<p>Permite ataques de fuerza bruta u otros ataques automatizados.</p>
+</li>
+<li>
+<p>Permite contraseñas por defecto, débiles o bien conocidas, como "Password1" o "admin/admin".</p>
+</li>
+<li>
+<p>Posee procesos débiles o no efectivos para las funcionalidades de olvido de contraseña o recuperación de credenciales, como "respuestas basadas en el conocimiento", las cuales no se pueden implementar de forma segura.</p>
+</li>
+<li>
+<p>Almacena las contraseñas en texto claro, cifradas o utilizando funciones de hash débiles (consulte <a href="../A02_2021-Cryptographic_Failures.es/">A02: 2021-Fallas Criptográficas</a>).</p>
+</li>
+<li>
+<p>No posee una autenticación multi-factor o la implementada es ineficaz.</p>
+</li>
+<li>
+<p>Expone el identificador de sesión en la URL.</p>
+</li>
+<li>
+<p>Reutiliza el identificador de sesión después de iniciar sesión.</p>
+</li>
+<li>
+<p>No inválida correctamente los identificadores de sesión. Las sesiones de usuario o los tokens de autenticación (principalmente tokens de inicio de sesión único (SSO)) no son correctamente invalidados durante el cierre de sesión o luego de un período de inactividad.</p>
+</li>
+</ul>
+<h2 id="como-se-previene">Cómo se previene</h2>
+<ul>
+<li>
+<p>Cuando sea posible, implemente la autenticación multi-factor para evitar ataques automatizados de reutilización de credenciales conocidas, fuerza bruta y reúso de credenciales robadas.</p>
+</li>
+<li>
+<p>No incluya o implemente en su software credenciales por defecto, particularmente para usuarios administradores.</p>
+</li>
+<li>
+<p>Implemente un control contra contraseñas débiles, tal como verificar que una nueva contraseña o la utilizada en el cambio de contraseña no esté incluida en la lista de las 10,000 peores contraseñas.</p>
+</li>
+<li>
+<p>Alinear las políticas de largo, complejidad y rotación de las contraseñas con las pautas de la sección 5.1.1 para Secretos Memorizados de la guía del NIST 800-63b u otras políticas de contraseñas modernas, basadas en evidencias.</p>
+</li>
+<li>
+<p>Asegúrese que el registro, la recuperación de las credenciales y el uso de APIs, no permiten los ataques de enumeración de usuarios, mediante la utilización de los mismos mensajes genéricos en todas las salidas.</p>
+</li>
+<li>
+<p>Limite o incremente el tiempo de espera entre intentos fallidos de inicio de sesión, pero tenga cuidado de no crear un escenario de denegación de servicio. Registre todos los fallos y avise a los administradores cuando se detecten ataques de rellenos automatizados de credenciales, fuerza bruta u otros.</p>
+</li>
+<li>
+<p>Utilice un gestor de sesión en el servidor, integrado, seguro y que genere un nuevo ID de sesión aleatorio con alta entropía después de iniciar sesión. Los identificadores de sesión no deben incluirse en la URL, deben almacenarse de forma segura y deben ser invalidados después del cierre de sesión, luego de un tiempo de inactividad o por un tiempo de espera absoluto.</p>
+</li>
+</ul>
+<h2 id="ejemplos-de-escenarios-de-ataque">Ejemplos de escenarios de ataque</h2>
+<p><strong>Escenario #1:</strong> Relleno de credenciales, el uso de listas de contraseñas conocidas, es un ataque común. Supongamos que una aplicación no se implementa protección automatizada de relleno de credenciales. En ese caso, la aplicación puede usarse como oráculo de contraseñas para determinar si las credenciales son válidas.</p>
+<p><strong>Escenario #2:</strong> La mayoría de los ataques de autenticación ocurren debido al uso de contraseñas como único factor. Las consideradas mejores prácticas de requerir de una rotación y complejidad de las contraseñas, son vistos como alentadoras del uso y reúso de contraseñas débiles por parte de los usuarios. Se le recomienda a las organizaciones que detengan dichas prácticas y utilicen
+las prácticas recomendadas en la guía NIST 800-63 y utilicen autenticación multi-factor.</p>
+<p><strong>Escenario #3:</strong> Los tiempos de espera (timeouts) de las sesiones de aplicación no están configurados correctamente. Un usuario utiliza una computadora pública para acceder a una aplicación. En lugar de seleccionar "cerrar sesión", el usuario simplemente cierra la pestaña del navegador y se aleja. Un atacante usa el mismo navegador una hora más tarde, y el usuario continúa autenticado.</p>
+<h2 id="referencias">Referencias</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c6-digital-identity">OWASP Proactive Controls: Implement Digital Identity</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP Application Security Verification Standard: V2 authentication</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP Application Security Verification Standard: V3 Session Management</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/README">OWASP Testing Guide: Identity</a>, <a href="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/README">Authentication</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html">OWASP Cheat Sheet: Authentication</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Credential_Stuffing_Prevention_Cheat_Sheet.html">OWASP Cheat Sheet: Credential Stuffing</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html">OWASP Cheat Sheet: Forgot Password</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html">OWASP Cheat Sheet: Session Management</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-automated-threats-to-web-applications/">OWASP Automated Threats Handbook</a></p>
+</li>
+<li>
+<p>NIST 800-63b: 5.1.1 Memorized Secrets</p>
+</li>
+</ul>
+<h2 id="lista-de-cwes-mapeadas">Lista de CWEs mapeadas</h2>
+<p><a href="https://cwe.mitre.org/data/definitions/255.html">CWE-255 Credentials Management Errors</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/259.html">CWE-259 Use of Hard-coded Password</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/287.html">CWE-287 Improper Authentication</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/288.html">CWE-288 Authentication Bypass Using an Alternate Path or Channel</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/290.html">CWE-290 Authentication Bypass by Spoofing</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/294.html">CWE-294 Authentication Bypass by Capture-replay</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/295.html">CWE-295 Improper Certificate Validation</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/297.html">CWE-297 Improper Validation of Certificate with Host Mismatch</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/300.html">CWE-300 Channel Accessible by Non-Endpoint</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/302.html">CWE-302 Authentication Bypass by Assumed-Immutable Data</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/304.html">CWE-304 Missing Critical Step in Authentication</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/306.html">CWE-306 Missing Authentication for Critical Function</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/307.html">CWE-307 Improper Restriction of Excessive Authentication Attempts</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/346.html">CWE-346 Origin Validation Error</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/384.html">CWE-384 Session Fixation</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/521.html">CWE-521 Weak Password Requirements</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/613.html">CWE-613 Insufficient Session Expiration</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/620.html">CWE-620 Unverified Password Change</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/640.html">CWE-640 Weak Password Recovery Mechanism for Forgotten Password</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/798.html">CWE-798 Use of Hard-coded Credentials</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/940.html">CWE-940 Improper Verification of Source of a Communication Channel</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1216.html">CWE-1216 Lockout Mechanism Errors</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

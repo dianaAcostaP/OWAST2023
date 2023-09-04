@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A01 2021 Broken Access Control.zh TW - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A01_2021-Broken_Access_Control.zh_TW.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a012021" class="nav-link">A01:2021 – 權限控制失效</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">對照因素</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">概述</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">描述</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">如何預防</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">攻擊情境範例</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">參考</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cwe" class="nav-link">對應的CWE列表</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A01_2021-Broken_Access_Control/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A01_2021-Broken_Access_Control.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A01_2021-Broken_Access_Control.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A01_2021-Broken_Access_Control.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A01_2021-Broken_Access_Control.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A01_2021-Broken_Access_Control.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A01_2021-Broken_Access_Control.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A01_2021-Broken_Access_Control.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A01_2021-Broken_Access_Control.zh_CN/">zh_CN - 简体中文</a></li>
+</ul>
+<h1 id="a012021">A01:2021 – 權限控制失效</h1>
+<h2 id="_1">對照因素</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">可對照 CWEs 數量</th>
+<th style="text-align: center;">最大發生率</th>
+<th style="text-align: center;">平均發生率</th>
+<th style="text-align: center;">最大覆蓋範圍</th>
+<th style="text-align: center;">平均覆蓋範圍</th>
+<th style="text-align: center;">平均加權漏洞</th>
+<th style="text-align: center;">平均加權影響</th>
+<th style="text-align: center;">出現次數</th>
+<th style="text-align: center;">所有相關 CVEs 數量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">34</td>
+<td style="text-align: center;">55.97%</td>
+<td style="text-align: center;">3.81%</td>
+<td style="text-align: center;">94.55%</td>
+<td style="text-align: center;">47.72%</td>
+<td style="text-align: center;">6.92</td>
+<td style="text-align: center;">5.93</td>
+<td style="text-align: center;">318,487</td>
+<td style="text-align: center;">19,013</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">概述</h2>
+<p>從第五名晋升至第一名，94% 被測試的應用程式，都有被驗測到某種類別權限控制失效的問題。著名的CWE包括 <em>CWE-200：Exposure of Sensitive Information to an Unauthorized Actor</em>，<em>CWE-201：Exposure of Sensitive Information Through Sent Data</em> 和 *CWE-352 Cross-Site Request Forgery。</p>
+<h2 id="_3">描述</h2>
+<p>存取控制強化政策，使用戶不能採取在預期權限之外的行動。控制失效通常會導致未經授權的資訊洩露、修改或損壞所有資料，或執行超出用戶權限的業務功能。常見的存取控制弱點包括：</p>
+<ul>
+<li>
+<p>通過修改URL、內部應用程式狀態或HTML頁面，或僅使用自定義API攻擊工具來繞過存取控制檢查。</p>
+</li>
+<li>
+<p>容許主鍵被更改為其他用戶的記錄，允許查看或編輯其他人的帳戶。</p>
+</li>
+<li>
+<p>特權提升。未登入即成為用戶，或以用戶身份登入即成為管理員。</p>
+</li>
+<li>
+<p>中繼資料操作，例如重放或篡改JSON網站令牌(JWT)之存取控制令牌，或被操縱以提升特權或濫用JWT失效的cookie或隱藏欄位。</p>
+</li>
+<li>
+<p>CORS錯誤配置允許未經授權的API存取。</p>
+</li>
+<li>
+<p>以未經身份驗證的用戶身份強制瀏覽已驗證的頁面或以標準用戶身份存取特權頁面。存取缺少存取控制的API以進行POST、PUT 和 DELETE操作。</p>
+</li>
+</ul>
+<h2 id="_4">如何預防</h2>
+<p>存取控制僅在受信任的伺服器端代碼或無伺服器的API有效，攻擊者無法修改這裏的存取控制檢查或中繼資料。</p>
+<ul>
+<li>
+<p>除公開的資源外，默認為拒絕存取。</p>
+</li>
+<li>
+<p>一次性地建置存取控制機制，之後在整個應用程式中重複使用它們，包括最大限度地減少使用CORS。</p>
+</li>
+<li>
+<p>模型的存取控制措施應該強化記錄所有權，而不是讓用戶可以創建、讀取、更新或刪除任何記錄。</p>
+</li>
+<li>
+<p>獨特的應用程式業務限制要求應由領域模型予以強化。</p>
+</li>
+<li>
+<p>停用Web伺服器目錄列表，並確保檔案中繼資料（例如，.git)和備份檔案不在web根目錄中。</p>
+</li>
+<li>
+<p>記錄存取控制失效，並在適當的時間警示管理員（例如，重覆性失效）。</p>
+</li>
+<li>
+<p>對API和控制器存取進行流量限制，以最小化自動攻擊工具所帶來的損害。</p>
+</li>
+<li>
+<p>JWT令牌於登出後，在伺服器端應使其失效。</p>
+</li>
+</ul>
+<p>開發人員和QA品保人員應納入與功能有關之存取控制的單元和整合測試。</p>
+<h2 id="_5">攻擊情境範例</h2>
+<p><strong>情境 #1：</strong> 應用程式在存取帳戶資訊的SQL呼叫中使用未經驗證的資料：</p>
+<blockquote>
+<p>pstmt.setString(1, request.getParameter("acct"));</p>
+<p>ResultSet results = pstmt.executeQuery( );</p>
+</blockquote>
+<p>攻擊者只需修改瀏覽器的“acct”參數即可發送他們想要的任何帳號。如果沒有正確驗證，攻擊者可以存取任何用戶的帳戶。</p>
+<p>https://example.com/app/accountInfo?acct=notmyacct</p>
+<p><strong>情境#2：</strong> 攻擊者僅強迫瀏覽某些目標網址。存取管理頁面需要管理員權限。</p>
+<blockquote>
+<p>https://example.com/app/getappInfo</p>
+<p>https://example.com/app/admin_getappInfo</p>
+</blockquote>
+<p>如果未經身份驗證的用戶可以存取任一頁面，那就是一個缺陷。 如果一個非管理員可以存取管理頁面，這也是一個缺陷。</p>
+<h2 id="_6">參考</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c7-enforce-access-controls">OWASP Proactive Controls: Enforce Access
+    Controls</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP Application Security Verification Standard: V4 Access
+    Control</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/README">OWASP Testing Guide: Authorization
+    Testing</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html">OWASP Cheat Sheet: Authorization</a></p>
+</li>
+<li>
+<p><a href="https://portswigger.net/blog/exploiting-cors-misconfigurations-for-bitcoins-and-bounties">PortSwigger: Exploiting CORS
+    misconfiguration</a></p>
+</li>
+<li>
+<p><a href="https://www.oauth.com/oauth2-servers/listing-authorizations/revoking-access/">OAuth: Revoking Access</a></p>
+</li>
+</ul>
+<h2 id="cwe">對應的CWE列表</h2>
+<p><a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22 Improper Limitation of a Pathname to a Restricted Directory
+('Path Traversal')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/23.html">CWE-23 Relative Path Traversal</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/35.html">CWE-35 Path Traversal: '.../...//'</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/59.html">CWE-59 Improper Link Resolution Before File Access ('Link Following')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/200.html">CWE-200 Exposure of Sensitive Information to an Unauthorized Actor</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/201.html">CWE-201 Exposure of Sensitive Information Through Sent Data</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/219.html">CWE-219 Storage of File with Sensitive Data Under Web Root</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/264.html">CWE-264 Permissions, Privileges, and Access Controls (should no longer be used)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/275.html">CWE-275 Permission Issues</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/276.html">CWE-276 Incorrect Default Permissions</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/284.html">CWE-284 Improper Access Control</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/285.html">CWE-285 Improper Authorization</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/352.html">CWE-352 Cross-Site Request Forgery (CSRF)</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/359.html">CWE-359 Exposure of Private Personal Information to an Unauthorized Actor</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/377.html">CWE-377 Insecure Temporary File</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/402.html">CWE-402 Transmission of Private Resources into a New Sphere ('Resource Leak')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/425.html">CWE-425 Direct Request ('Forced Browsing')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/441.html">CWE-441 Unintended Proxy or Intermediary ('Confused Deputy')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/497.html">CWE-497 Exposure of Sensitive System Information to an Unauthorized Control Sphere</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/538.html">CWE-538 Insertion of Sensitive Information into Externally-Accessible File or Directory</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/540.html">CWE-540 Inclusion of Sensitive Information in Source Code</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/548.html">CWE-548 Exposure of Information Through Directory Listing</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/552.html">CWE-552 Files or Directories Accessible to External Parties</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/566.html">CWE-566 Authorization Bypass Through User-Controlled SQL Primary Key</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601 URL Redirection to Untrusted Site ('Open Redirect')</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/639.html">CWE-639 Authorization Bypass Through User-Controlled Key</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/651.html">CWE-651 Exposure of WSDL File Containing Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/668.html">CWE-668 Exposure of Resource to Wrong Sphere</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/706.html">CWE-706 Use of Incorrectly-Resolved Name or Reference</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/862.html">CWE-862 Missing Authorization</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/863.html">CWE-863 Incorrect Authorization</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/913.html">CWE-913 Improper Control of Dynamically-Managed Code Resources</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/922.html">CWE-922 Insecure Storage of Sensitive Information</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/1275.html">CWE-1275 Sensitive Cookie with Improper SameSite Attribute</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

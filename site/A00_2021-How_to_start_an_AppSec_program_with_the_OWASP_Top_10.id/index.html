@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A00 2021 How to start an AppSec program with the OWASP Top 10.id - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.id.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#bagaimana-cara-untuk-memulai-program-appsec-dengan-owasp-top-10" class="nav-link">Bagaimana cara untuk memulai program AppSec dengan OWASP Top 10</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#tahap-1-identifikasi-kesenjangan-dan-tujuan-dari-program-appsec-anda" class="nav-link">Tahap 1. Identifikasi kesenjangan dan tujuan dari program appsec anda</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tahap-2-rencana-untuk-siklus-hidup-pengembangan-yang-aman" class="nav-link">Tahap 2. Rencana untuk siklus hidup pengembangan yang aman</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tahap-3-mengimplementasikan-konsep-jalan-pengembangan-yang-aman-dengan-tim-pengembang-anda" class="nav-link">Tahap 3. Mengimplementasikan konsep jalan pengembangan yang aman dengan tim pengembang anda.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tahap-4-migrasikan-semua-aplikasi-yang-akan-datang-dan-yang-sudah-ada-ke-konsep-pengembangan-yang-aman" class="nav-link">Tahap 4. Migrasikan semua aplikasi yang akan datang dan yang sudah ada ke Konsep Pengembangan yang aman.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tahap-5-uji-apakah-konsep-pengembangan-yang-aman-telah-mengurangi-masalah-yang-ditemukan-di-owasp-top-10" class="nav-link">Tahap 5. Uji apakah konsep Pengembangan yang aman telah mengurangi masalah yang ditemukan di OWASP Top 10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tahap-6-bangun-program-anda-menjadi-program-keamanan-aplikasi-yang-matang" class="nav-link">Tahap 6. Bangun program anda menjadi program keamanan aplikasi yang matang</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#lakukan-yang-terbaik" class="nav-link">Lakukan yang terbaik</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="bagaimana-cara-untuk-memulai-program-appsec-dengan-owasp-top-10">Bagaimana cara untuk memulai program AppSec dengan OWASP Top 10</h1>
+<p>Sebelumnya, OWASP Top 10 tidak pernah dirancang untuk menjadi basis dari sebuah
+program AppSec. Bagaimanapun, hal ini diperlukan untuk memulai darimanapun bagi
+berbagai organisasi yang baru saja memulai perjalanan mereka dalam keamanan
+aplikasi OWASP Top 10 2021 merupakan awal yang baik sebagai landasan untuk daftar
+periksa dan sebagainya, tapi itu sendiri tidak cukup.</p>
+<h2 id="tahap-1-identifikasi-kesenjangan-dan-tujuan-dari-program-appsec-anda">Tahap 1. Identifikasi kesenjangan dan tujuan dari program appsec anda</h2>
+<p>Banyak program Keamanan Aplikasi (AppSec) mencoba untuk berlali sebelum mereka
+dapat merangkak atau berjalan. Usaha seperti ini pasti akan gagal. Kami sangat
+mendorong pimpinan CISO dan AppSec untuk menggunakan Jaminan Perangkat Lunak OWASP
+Model Kematangan (SAMM) [<a href="https://owaspsamm.org">https://owaspsamm.org</a>] untuk mengidentifikasi
+kelemahan dan wilayah untuk perbaikan selama periode 1-3 tahun. Tahap pertama
+adalah untuk evaluasi dimana anda sekarang, identifikasi kesenjangan pada
+pemerintahan, perencanaan, implementasi, verifikasi, dan operasi yang anda
+butuhkan untuk menyelesaikan segera versus yang bisa menunggu, dan memprioritaskan
+implementasi atau memperbaiki lima belas praktik keamanan OWASP SAMM. OWASP SAMM
+dapat membantu you build and measure improvements in your software assurance
+efforts. anda membangun dan menimbang perbaikan dalam jaminan usaha perangkat
+lunak anda.</p>
+<h2 id="tahap-2-rencana-untuk-siklus-hidup-pengembangan-yang-aman">Tahap 2. Rencana untuk siklus hidup pengembangan yang aman</h2>
+<p>Secara tradisional melestarikan apa yang disebut dengan "unicorns," konsep
+jalan beraspal adalah jalan termudah untuk membuat sumber daya Aplikasi Keamanan
+yang sangat berdampak dan berskala dengan kecepatan pengembangan tim, yang mana
+meningkat setiap tahun. </p>
+<p>Konsep pengembangan yang aman adalah "jalan termudah dan juga jalur teraman" dan harus
+melibatkan budaya kemitraan yang mendalam antara team pengembang dan tim
+keamanan, sebaiknya seperti mereka adalah satu dan dalam tim yang sama. Jalan
+beraspal bertujuan untuk terus memperbaiki, menimbang, mendeteksi dan mengubah
+alternatif yang tidak aman dengan memiliki sebuah perpustakaan dengan skala
+seluruh perusahaan untuk menempatkan perubahan yang aman dengan alat untuk
+membantu melihat dimana perbaikan dapat dibuat dengan mengadopsi konsep jalan
+beraspal. Ini memungkinkan alat pengembangan yang ada untuk melaporkan pembuatan
+dan membantu tim pengembang untuk mengoreksi kembali dari alternatif yang tidak
+aman.</p>
+<p>Konsep pengembangan yang aman mungkin tampak banyak yang harus dilalui, tetapi itu harus dibangun secara bertahap dari waktu ke waktu. Ada bentuk lain dari program keamanan aplikasi diluar sana, terutama Microsoft Agile Secure Development Lifecycle. Tidak semua metode program keamanan aplikasi sesuai dengan semua bisnis.</p>
+<h2 id="tahap-3-mengimplementasikan-konsep-jalan-pengembangan-yang-aman-dengan-tim-pengembang-anda">Tahap 3. Mengimplementasikan konsep jalan pengembangan yang aman dengan tim pengembang anda.</h2>
+<p>Konsep jalan beraspal dibentuk dengan persetujuan dan keterlibatan langsung dari tim pengembang dan operasi yang relevan. Pengembangan yang aman harus disejajarkan secara strategis dengan sisi bisnis dan membantu mengantarkan kembali aplikasi yang aman lebih cepat. Mengembangkan Konsep Pengembangan yang aman harus menjadi panduan penjagaan latihan yang mencakup seluruh perusahaan ataupun ekosistem aplikasi, bukan sebagai tambalan untuk aplikasi yang belum siap, seperti di hari-hari sebelumnya.</p>
+<h2 id="tahap-4-migrasikan-semua-aplikasi-yang-akan-datang-dan-yang-sudah-ada-ke-konsep-pengembangan-yang-aman">Tahap 4. Migrasikan semua aplikasi yang akan datang dan yang sudah ada ke Konsep Pengembangan yang aman.</h2>
+<p>Tambahkan Alat pendeteksi pada Konsep Pengembangan yang aman saat anda mengembangkannya 
+dan menyediakan informasi untuk tim pengembang untuk meningkatkan keamanan dari 
+aplikasi mereka dengan bagaimana mereka bisa langsung mengadopsi elemen dari konsep 
+jalan beraspal. Ketika sebuah aspekdari konsep jalan beraspal telah diadopsi, 
+organisasi harus mengimplementasikan pemeriksaan integrasi yang berkelanjutan yang 
+mana memeriksa kode yang telah ada dan check-in yang menggunakan alternatif terlarang 
+dan memperingatkan atau menolak build program atau check-in. Hal ini mencegah opsi 
+yang tidak aman dapat merayap ke dalam kode sepanjang waktu, mencegah hutang teknis 
+dan aplikasi tidak aman yang rusak. Peringatan semacam itu harus terhubung kepada 
+alternatif yang aman, sehingga tim pengembang dapat diberikan jawaban yang benar 
+sesegera mungkin. Mereka dapat melakukan refactoring dan mengadopsi kompnen pada 
+konsep jalan beraspal dengan cepat.</p>
+<h2 id="tahap-5-uji-apakah-konsep-pengembangan-yang-aman-telah-mengurangi-masalah-yang-ditemukan-di-owasp-top-10">Tahap 5. Uji apakah konsep Pengembangan yang aman telah mengurangi masalah yang ditemukan di OWASP Top 10</h2>
+<p>Komponen konsep Pengembangan yang aman harus mengatasi masalah  yang signifikan
+dengan OWASP Top 10, sebagai contohnya, bagaimana untuk mendeteksi secara
+otomatis atau memperbaiki komponen yang rentan, atau plugin IDE analisis
+kode statis untuk mendeteksi injeksi atau bahkan lebih seperti perpustakaan
+yang dikenal aman terhadap injeksi, seperti React atau Vue. Semakin banyak
+penggantian pengiriman aman yang diberikan kepada tim, semakin baik. sebuah
+tugas penting pada tim keamanan aplikasi adalah untuk memastikan bahwa
+keamanan komponen-komponen ini adalah ditingkatkan dan dievaluasi secara
+berkelanjutan. Setelah mereka diperbaiki, beberapa bentuk jalur komunikasi
+dengan konsumen dari komponen harus mengindikasikan bahwa peningkatan harus
+terjadi, sebaiknya secara otomatis, tapi apabila tidak, setidaknya disorot
+pada sebuah tampilan dasar atau sejenisnya.</p>
+<h2 id="tahap-6-bangun-program-anda-menjadi-program-keamanan-aplikasi-yang-matang">Tahap 6. Bangun program anda menjadi program keamanan aplikasi yang matang</h2>
+<p>Anda tidak boleh berhenti hanya di OWASP Top 10. Itu hanya mencakup
+10 kategori resiko. Kami sangat mendorong organisasi untuk mengadopsi
+Application Security Verification Standard dan semakin menambah
+komponen jalan beraspal dan menguji untuk tingkat 1, 2, dan 3,
+tergantung pada pengembangan tingkat resiko pada aplikasi </p>
+<h2 id="lakukan-yang-terbaik">Lakukan yang terbaik</h2>
+<p>Semua program aplikasi keamanan yang baik melakukan usaha yang lebih dari batas minimal.
+Semua orang harus terus melaju jika kita akan berada di atas untuk
+kerentanan keamanan aplikasi.</p>
+<ul>
+<li>
+<p><strong>Integritas Konseptual</strong>. Program aplikasi keamanan yang matang
+    harus mengandung beberapa konsep dari arsitektur keamanan,
+    Apakah berupa cloud yang formal atau arsitektur keamanan
+    perusahaan atau threat modeling.</p>
+</li>
+<li>
+<p><strong>Skala dan otomasi</strong>. Program aplikasi keamanan yang matang mencoba
+    untuk mengotomasi sebanyak pengiriman yang dapat dilakukan,
+    menggunakan skrip untuk meniru tahapan penetration testing yang
+    kompleks, alat analisis kode statis tersedia secara langsung ke
+    tim pengembang, membantu tim pengembang dalam membangun unit aplikasi
+    keamanan dan pengujian integrasi, dan banyak lagi.</p>
+</li>
+<li>
+<p><strong>Budaya</strong>. Program Aplikasi Keamanan yang matang mencoba untuk
+    membongkar rancangan yang tidak aman dan menghapuskan hutang teknis
+    dari kode yang telah ada dengan menjadi bagian dari tim pengembang
+    dan tidak menyampingkannya. tim aplikasi keamanan yang melihat tim
+    pengembang sebagai "kami" atau "mereka" ditakdirkan untuk gagal.</p>
+</li>
+<li>
+<p><strong>Peningkatan berkelanjutan</strong>. Program Aplikasi Keamanan yang matang
+    merujuk kepada peningkatan yang konstan. Apabila terjadi hal yang
+    tidak bekerja atau berhenti melakukan hal tersebut. Apabila sesuatu
+    kikuk atau tidak terukur, bekerjalah untuk meningkatkan nya. Apabila
+    sesuatu tidak digunakan oleh tim pengembang dan tidak memiliki atau
+    memiliki dampak yang terbatas, lakukan sesuatu yang berbeda. Hanya
+    karena kita telah melakukan pengujian seperti desk checks sejak
+    tahun 1970-an tidak berarti itu adalah ide bagus. Ukur, evaluasi, 
+    lalu bangun atau tingkatkan.</p>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

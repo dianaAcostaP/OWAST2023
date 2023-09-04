@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A08 2021 Software and Data Integrity Failures.it - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A08_2021-Software_and_Data_Integrity_Failures.it.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a082021-software-and-data-integrity-failures" class="nav-link">A08:2021 – Software and Data Integrity Failures</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#fattori" class="nav-link">Fattori</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#panoramica" class="nav-link">Panoramica</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#descrizione" class="nav-link">Descrizione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#come-prevenire" class="nav-link">Come prevenire</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#esempi-di-scenari-dattacco" class="nav-link">Esempi di scenari d'attacco</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#riferimenti" class="nav-link">Riferimenti</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#lista-dei-cwe-correlati" class="nav-link">Lista dei CWE correlati</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A08_2021-Software_and_Data_Integrity_Failures/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A08_2021-Software_and_Data_Integrity_Failures.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A08_2021-Software_and_Data_Integrity_Failures.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A08_2021-Software_and_Data_Integrity_Failures.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A08_2021-Software_and_Data_Integrity_Failures.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A08_2021-Software_and_Data_Integrity_Failures.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A08_2021-Software_and_Data_Integrity_Failures.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A08_2021-Software_and_Data_Integrity_Failures.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A08_2021-Software_and_Data_Integrity_Failures.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="a082021-software-and-data-integrity-failures">A08:2021 – Software and Data Integrity Failures    <img align="right" alt="icon" src="../assets/TOP_10_Icons_Final_Software_and_Data_Integrity_Failures.png" style="height:80px;width:80px" /></h1>
+<h2 id="fattori">Fattori</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">CWEs corrispondenti</th>
+<th style="text-align: center;">Tasso di incidenza Max</th>
+<th style="text-align: center;">Tasso di incidenza Medio</th>
+<th style="text-align: center;">Sfruttabilità pesata</th>
+<th style="text-align: center;">Impatto Medio</th>
+<th style="text-align: center;">Copertura Max</th>
+<th style="text-align: center;">Copertura media</th>
+<th style="text-align: center;">Occorrenze Totali</th>
+<th style="text-align: center;">CVE Totali</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">16.67%</td>
+<td style="text-align: center;">2.05%</td>
+<td style="text-align: center;">6.94</td>
+<td style="text-align: center;">7.94</td>
+<td style="text-align: center;">75.04%</td>
+<td style="text-align: center;">45.35%</td>
+<td style="text-align: center;">47,972</td>
+<td style="text-align: center;">1,152</td>
+</tr>
+</tbody>
+</table>
+<h2 id="panoramica">Panoramica</h2>
+<p>Una nuova categoria per il 2021 che è relativa alla verifica dell'integrità di aggiornamenti software, 
+dati critici, e pipeline di CI/CD. Uno dei più alti impatti pesati dai dati di 
+Common Vulnerability e Exposures/Common Vulnerability Scoring System (CVE/CVSS). 
+Le Common Weakness Enumerations (CWEs) incluse sono
+<em>CWE-829: Inclusion of Functionality from Untrusted Control Sphere</em>,
+<em>CWE-494: Download of Code Without Integrity Check</em>, e 
+<em>CWE-502: Deserialization of Untrusted Data</em>.</p>
+<h2 id="descrizione">Descrizione</h2>
+<p>Le problematiche dell'integrità del software e dei dati riguardano il codice e l'infrastruttura
+che non ne verificano adeguatamente l'integrità. Un esempio è quando un'applicazione si affida a plugin, librerie o moduli da fonti, repository e content delivery network (CDN) non attendibili.
+Una pipeline CI/CD insicura può aprire la porta ad accessi non autorizzati, codice dannoso o compromissione completa del sistema.
+Infine, molte applicazioni ora includono funzionalità di auto-aggiornamento, dove gli
+aggiornamenti vengono scaricati senza una sufficiente verifica dell'integrità e
+applicati all'applicazione. Gli attaccanti potrebbero
+potenzialmente caricare i propri aggiornamenti malevoli da distribuire e da eseguire su tutte le
+installazioni. Un altro esempio è la deserializzazione insicura, quando gli
+oggetti o i dati sono codificati o serializzati in una struttura che un
+attaccante può ispezionare e modificare liberamente.</p>
+<h2 id="come-prevenire">Come prevenire</h2>
+<ul>
+<li>
+<p>Usare firme digitali o meccanismi equivalenti per verificare che il software o i dati provengano dalla fonte prevista e non siano stati alterati.</p>
+</li>
+<li>
+<p>Assicurarsi che le librerie e le dipendenze, come npm o Maven, siano collegati a repository affidabili. Se avete un profilo di rischio più alto, considerate l'hosting di un repository interno ben conosciuto e controllato.</p>
+</li>
+<li>
+<p>Assicuratevi che venga usato uno strumento di sicurezza della supply chain del software, come OWASP
+    Dependency Check o OWASP CycloneDX, per verificare che i componenti non contengano vulnerabilità note</p>
+</li>
+<li>
+<p>Assicurarsi che ci sia un processo di revisione per le modifiche al codice e alla configurazione per ridurre al minimo la possibilità che codice o configurazione dannosi vengano introdotti nella pipeline del software.</p>
+</li>
+<li>
+<p>Assicurarsi che la pipeline CI/CD sia adeguatamente segregata, configurata adeguatamente e sia presente un meccanismo di controllo degli accessi per assicurare l'integrità del codice che passa attraverso i processi di compilazione e distribuzione.</p>
+</li>
+<li>
+<p>Assicuratevi che i dati serializzati non firmati o non crittografati non vengano inviati a
+    client non fidati senza qualche forma di controllo dell'integrità o firma digitale
+    per rilevare la manomissione o il replay dei dati serializzati.</p>
+</li>
+</ul>
+<h2 id="esempi-di-scenari-dattacco">Esempi di scenari d'attacco</h2>
+<p><strong>Scenario #1 Aggiornamenti senza firma:</strong> Molti router domestici, set-top box, 
+e altri dispositivi non verificano gli aggiornamenti attraverso una
+firma. Il firmware non firmato è sempre più spesso un obiettivo per gli attaccanti e 
+questo è un trend che sembra non essere destinato a cessare. Questa è una problematica rilevante in quanto molte volte 
+non è presente alcun meccanismo per rimediare se non quello di correggere in una versione futura e
+aspettare che le versioni precedenti invecchino.</p>
+<p><strong>Scenario #2 Aggiornamento malevolo di SolarWinds</strong>: Gli stati-nazione sono sempre stati noti 
+per perpetrare attacchi verso i meccanismi di aggiornamento, con un recente e degno di nota attacco
+a SolarWinds Orion. L'azienda che sviluppa il software aveva 
+processi per svolgere le build in modo sicuro e controlli sull'integrità degli aggiornamenti. 
+Tuttavia, questi controlli sono violati e per parecchi mesi l'azienda distribuì un aggiornamento malevolo altamente mirato
+a più di 18,000 organizzazioni, delle quali, circa 100 sono state infettate. Questo è uno dei breach di questa natura di più ampia portata e più significativo nella storia.</p>
+<p><strong>Scenario #3 Deserializzazione insicura:</strong> Un'applicazione React chiama un
+insieme di microservizi Spring Boot. Essendo stata scritta nel paradigma funzionale, 
+gli sviluppatori hanno cercato di garantire l'immutabilità del codice. La soluzione che hanno trovato
+è serializzare lo stato dell'utente e passarlo avanti e indietro ad
+ogni richiesta. Un attaccante nota la firma dell'oggetto Java "rO0" (in base64) e
+usa lo strumento Java Serial Killer per ottenere esecuzione di codice remoto sul
+server dell'applicazione.</p>
+<h2 id="riferimenti">Riferimenti</h2>
+<ul>
+<li>
+<p>[OWASP Cheat Sheet: Software Supply Chain Security](Coming Soon)</p>
+</li>
+<li>
+<p>[OWASP Cheat Sheet: Secure build and deployment](Coming Soon)</p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Infrastructure_as_Code_Security_Cheat_Sheet.html">OWASP Cheat Sheet: Infrastructure as Code</a> </p>
+</li>
+<li>
+<p><a href="https://www.owasp.org/index.php/Deserialization_Cheat_Sheet">OWASP Cheat Sheet: Deserialization</a></p>
+</li>
+<li>
+<p><a href="https://safecode.org/publication/SAFECode_Software_Integrity_Controls0610.pdf">SAFECode Software Integrity Controls</a></p>
+</li>
+<li>
+<p><a href="https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack">A 'Worst Nightmare' Cyberattack: The Untold Story Of The
+    SolarWinds
+    Hack</a></p>
+</li>
+<li>
+<p><a href="https://about.codecov.io/security-update">CodeCov Bash Uploader Compromise</a></p>
+</li>
+<li>
+<p><a href="https://www.manning.com/books/securing-devops">Securing DevOps by Julien Vehent</a></p>
+</li>
+</ul>
+<h2 id="lista-dei-cwe-correlati">Lista dei CWE correlati</h2>
+<p><a href="https://cwe.mitre.org/data/definitions/345.html">CWE-345 Insufficient Verification of Data Authenticity</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/353.html">CWE-353 Missing Support for Integrity Check</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/426.html">CWE-426 Untrusted Search Path</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/494.html">CWE-494 Download of Code Without Integrity Check</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502 Deserialization of Untrusted Data</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/565.html">CWE-565 Reliance on Cookies without Validation and Integrity Checking</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/784.html">CWE-784 Reliance on Cookies without Validation and Integrity Checking in a Security Decision</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/829.html">CWE-829 Inclusion of Functionality from Untrusted Control Sphere</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/830.html">CWE-830 Inclusion of Web Functionality from an Untrusted Source</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/915.html">CWE-915 Improperly Controlled Modification of Dynamically-Determined Object Attributes</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

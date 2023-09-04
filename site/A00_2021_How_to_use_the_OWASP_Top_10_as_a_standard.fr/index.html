@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A00 2021 How to use the OWASP Top 10 as a standard.fr - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.fr.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#comment-utiliser-le-top-10-owasp-en-tant-que-standard" class="nav-link">Comment utiliser le Top 10 OWASP en tant que standard</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="comment-utiliser-le-top-10-owasp-en-tant-que-standard">Comment utiliser le Top 10 OWASP en tant que standard</h1>
+<p>Le Top 10 OWASP est avant tout un document informatif. Cependant, cela n'a
+pas empêché un bon nombre d'organisations de l'utiliser en tant que standard
+de facto dans l'industrie de la sécurité des applications depuis son lancement
+en 2003. Si vous souhaitez utiliser le TOP 10 OWASP en tant que standard
+de développement ou de réalisation de tests, sachez qu'il doit être considéré
+comme point de départ et qu'il ne couvre que le strict minimum.</p>
+<p>Une des difficultés à utiliser le TOP 10 OWASP en tant que standard est que
+nous ne documentons que les risques de sécurité des applications et que
+certains problèmes ne sont pas nécessairement simples à tester. Par exemple,
+le [A04:2021-Conception non sécurisée] va au-delà de la plupart des méthodes
+de tests. Un autre exemple est le test de l'efficacité des pratiques de
+journalisation et de surveillance en place, qui ne peut être fait que par le biais
+d'interviews et d'une demande d'exemples concrets de réponses à incident.
+Un outil d'analyse de code statique peut vérifier l'absence de journalisation,
+mais il lui sera sans doute incapable de déterminer si les parties de
+logique métier ou de contrôle d'accès journalisent les atteintes critiques à 
+la sécurité. De même des pentesters ne pourraient qu'être capables de déterminer
+s'ils ont provoqué une réponse à incident dans un environnement de test,
+qui est rarement surveillé de la même manière qu'un environnement de
+production.</p>
+<p>Voici nos recommendations sur les utilisations appropriées du Top 10 OWASP :</p>
+<table>
+<thead>
+<tr>
+<th>Cas d'utilisation</th>
+<th style="text-align: center;">OWASP Top 10 2021</th>
+<th style="text-align: center;">Standard OWASP de vérification de la sécurité applicative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sensibilisation</td>
+<td style="text-align: center;">Oui</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Entraînement</td>
+<td style="text-align: center;">Niveau débutant</td>
+<td style="text-align: center;">Global</td>
+</tr>
+<tr>
+<td>Conception et architecture</td>
+<td style="text-align: center;">Parfois</td>
+<td style="text-align: center;">Oui</td>
+</tr>
+<tr>
+<td>Normes de codage</td>
+<td style="text-align: center;">Strict minimum</td>
+<td style="text-align: center;">Oui</td>
+</tr>
+<tr>
+<td>Revue de code</td>
+<td style="text-align: center;">Strict minimum</td>
+<td style="text-align: center;">Oui</td>
+</tr>
+<tr>
+<td>Examen par des pairs (checklist)</td>
+<td style="text-align: center;">Strict minimum</td>
+<td style="text-align: center;">Oui</td>
+</tr>
+<tr>
+<td>Tests unitaires</td>
+<td style="text-align: center;">Parfois</td>
+<td style="text-align: center;">Oui</td>
+</tr>
+<tr>
+<td>Tests d'integration</td>
+<td style="text-align: center;">Parfois</td>
+<td style="text-align: center;">Oui</td>
+</tr>
+<tr>
+<td>Tests d'intrusion</td>
+<td style="text-align: center;">Strict minimum</td>
+<td style="text-align: center;">Oui</td>
+</tr>
+<tr>
+<td>Outil de support</td>
+<td style="text-align: center;">Strict minimum</td>
+<td style="text-align: center;">Oui</td>
+</tr>
+<tr>
+<td>Chaîne logistique sécurisée</td>
+<td style="text-align: center;">Parfois</td>
+<td style="text-align: center;">Oui</td>
+</tr>
+</tbody>
+</table>
+<p>Nous encourageons quiconque voulant adopter un standard de sécurité des applications
+à utiliser le <a href="https://owasp.org/www-project-application-security-verification-standard/">Standard de vérification de sécurité des applications OWASP</a>
+(SVSA), celui-ci est conçu pour la vérification et les tests et peut
+être utilisé au cours de chaque étape d'un cycle de développement sécurisé.</p>
+<p>Le SVSA est le seul choix acceptable pour les fournisseurs de solutions.
+Les outils ne peuvent pas tester, détecter ou protéger de tous les risques
+du Top 10 OWASP en raison de la nature de plusieurs de ceux-ci 
+(ex. A04:2021-Conception non sécurisée). L'OWASP décourage toute affirmation
+qu'un outil offre une couverture complète du Top 10 OWASP, car c'est
+simplement faux.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

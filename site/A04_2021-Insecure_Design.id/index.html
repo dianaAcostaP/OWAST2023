@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A04 2021 Insecure Design.id - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A04_2021-Insecure_Design.id.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a042021-insecure-design" class="nav-link">A04:2021 – Insecure Design</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#faktor-faktor" class="nav-link">Faktor-Faktor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tinjauan" class="nav-link">Tinjauan</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#deskripsi" class="nav-link">Deskripsi</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cara-mencegah" class="nav-link">Cara Mencegah</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#contoh-skenario-penyerang" class="nav-link">Contoh Skenario Penyerang</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#referensi" class="nav-link">Referensi</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#daftar-klasifikasi-cwe" class="nav-link">Daftar Klasifikasi CWE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A04_2021-Insecure_Design/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A04_2021-Insecure_Design.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A04_2021-Insecure_Design.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A04_2021-Insecure_Design.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A04_2021-Insecure_Design.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A04_2021-Insecure_Design.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A04_2021-Insecure_Design.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A04_2021-Insecure_Design.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A04_2021-Insecure_Design.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="a042021-insecure-design">A04:2021 – Insecure Design</h1>
+<h2 id="faktor-faktor">Faktor-Faktor</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Klasifikasi CWE</th>
+<th style="text-align: center;">Tingkat Kejadian Maksimum</th>
+<th style="text-align: center;">Rata - Rata Tingkat kejadian</th>
+<th style="text-align: center;">Cakupan Maksimum</th>
+<th style="text-align: center;">Rata - Rata Cakupan</th>
+<th style="text-align: center;">Rata-rata Bobot Eksploitasi</th>
+<th style="text-align: center;">Rata - Rata Bobot Dampak</th>
+<th style="text-align: center;">Total Kejadian</th>
+<th style="text-align: center;">Total CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">24.19%</td>
+<td style="text-align: center;">3.00%</td>
+<td style="text-align: center;">77.25%</td>
+<td style="text-align: center;">42.51%</td>
+<td style="text-align: center;">6.46</td>
+<td style="text-align: center;">6.78</td>
+<td style="text-align: center;">262,407</td>
+<td style="text-align: center;">2,691</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tinjauan">Tinjauan</h2>
+<p>Kategori baru untuk 2021 ini berfokus pada resiko yang berhubungan ke desain dan kekurangan arsitektur, kategori ini mencakup penggunaan permodelan ancaman, design pattern yang jauh lebih aman dan referensi arsitektur. Sebagai sebuah komunitas kami perlu bergerak lebih dari "shift-left" dalam ruang pengodean untuk aktivitas-aktivtas pra-kode yang kritis bagi prinsip-prinsip Aman dari Disain. Contoh CWE termasuk <em>CWE-209: Generation of Error Message Containing Sensitive Information</em>, <em>CWE-256: Unprotected Storage of Credentials</em>, CWE-501: Trust Boundary Violation<em>, dan </em>CWE-522: Insufficiently Protected Credentials*.</p>
+<h2 id="deskripsi">Deskripsi</h2>
+<p>Desain yang tidak aman adalah sebuah representasi kategori yang luas dari banyak kelemahan yang berbeda, yang diekspresikan sebagai "desain kontrol yang tidak ada atau kurang efisien." Desain tidak aman bukan sumber dari semua kategori risiko Top 10 yang lain. Ada perbedaan antara desain tidak aman dan implementasi tidak aman. Kami membedakan antara cacat desain dan kerusakan implementasi karena suatu alasan, mereka memiliki root cause dan remediasi yang berbeda. Sebuah desain aman masih bisa memiliki kerusakan implementasi yang mengarah ke kerentanan yang dapat dieksploitasi. Suatu desain tidak aman tidak dapat diperbaiki oleh sebuah implementasi yang sempurna karena menurut definisi, kendali keamanan yang diperlukan tidak pernah dibuat untuk bertahan terhadap serangan tertentu. Satu dari faktor yang berkontribusi terhadap desain tidak aman adalah ketiadaan pembuatan profil risiko bisnis yang inheren dalam perangkat lunak atau sistem yang sedang dikembangkan, maka menjadi kegagagalan untuk menentukan desain keamanan level apa yang diperlukan.</p>
+<h3 id="persyaratan-dan-manajemen-sumber-daya">Persyaratan dan Manajemen Sumber Daya</h3>
+<p>Kumpulkan dan negosiasikan persyaratan bisnis bagi suatu aplikasi dengan pemilik bisnis, termasuk persyaratan perlindungan menyangkut kerahasiaan, integritas, ketersediaan, dan otentisitas dari semua aset data dan logika bisnis yang diharapkan. Perhitungkan akan seberapa terpapar aplikasi Anda dan bila Anda perlu segregasi tenant (sebagai tambahan ke kendali akses). Kompail persyaratkan teknis, termasuk persyaratan keamanan fungsional dan non-fungsional. Rencanakan dan negosiasikan budget yang mencakup semua desain, build, uji coba, dan operasi, termasuk aktivitas-aktivitas keamanan.</p>
+<h3 id="desain-aman">Desain Aman</h3>
+<p>Desain yang aman adalah sebuah budaya dan metodologi yang secara konstan mengevaluasi ancaman dan memastikan bahwa kode yang telah didesain dan dites sudah kuat (robust) untuk mencegah metode penyerangan yang telah diketahui. Pemodelan ancaman mesti diintegrasikan ke sesi-sesi 'refinement' (atau aktivitas-aktivitas serupa); cari perubahan dalam aliran data dan kendali akses atau kendali keamanan lain. Dalam pengembangan cerita pengguna tentukan aliran yang benar dan keadaan-keadaan gagal, memastikan bahwa mereka dipahami dengan baik dan disetujui oleh pihak-pihak yang bertanggung jawab dan terdampak. Analisis asumsi dan kondisi bagi aliran gagal dan yang diharapkan, pastikan bahwa mereka masih akurat dan dikehendaki. Tentukan bagaimana memvalidasi asumsi dan menegakkan kondisi yang diperlukan untuk perilaku yang layak. Pastikan hasil didokumentasikan dalam cerita pengguna. Belajar dari kesalahan dan tawarkan insentif positif untuk mempromosikan perbaikan. Desain aman bukanlah tambahan atau perkakas yang dapat Anda tambahkan ke perangkat lunak.</p>
+<h3 id="siklus-hidup-pengembangan-aman">Siklus Hidup Pengembangan Aman</h3>
+<p>Perangkat lunak aman memerlukan sebuah siklus hidup pengembangan aman, beberapa bentuk pola desain aman, metodologi 'paved road', pustaka komponen yang diamankan, 'tooling', dan pemodelan ancaman. Hubungi spesialis keamanan Anda di awal proyek perangkat lunak untuk keseluruhan proyek dan pemeliharaan perangkat lunak Anda. Pertimbangkan untuk memanfaatkan Software Assurance Maturity Model (SAMM) untuk membantu menstrukturkan upaya pengembangan perangkat lunak aman Anda.</p>
+<h2 id="cara-mencegah">Cara Mencegah</h2>
+<ul>
+<li>Buat dan gunakan alur pengembangan aman dengan profesional untuk membantu dalam mengevaluasi dan mendesain keamanan serta kontrol yang terkait privasi</li>
+<li>Buat dan gunakan sebuah pustaka dari design pattern yang aman atau gunakan komponen yang sudah dapat dipakai</li>
+<li>Gunakan permodelan ancaman untuk autentikasi genting, kontrol akses, business logic, dan key flows</li>
+<li>Integrasikan kendali dan bahasa keamanan ke dalam cerita pengguna</li>
+<li>Integrasikan uji plausabilitu pada setiap tier dari aplikasi Anda (dari frontend ke backend)</li>
+<li>Tulis tes unit dan tes integrasi untuk memvalidasi bahwa semua aliran genting tahan ke permodelan ancaman. Kompail use-case dan misuse-case bagi setiap tier aplikasi Anda</li>
+<li>Segregasikan lapisan tier pada sistem dan lapisan jaringa bergantung pada kebutuhan eksposur dan proteksi</li>
+<li>Segregasikan tenant secara robust dengan desain pada seluruh tier</li>
+<li>Batasi konsumsi sumber daya oleh pengguna atau layanan</li>
+</ul>
+<h2 id="contoh-skenario-penyerang">Contoh Skenario Penyerang</h2>
+<p><strong>Skenario #1:</strong> Sebuah alur kerja untuk pemulihan kredensial mungkin
+termasuk "Pertanayaan dan Jawaban" Dimana telah di larang oleh NIST 800-63b,
+OWASP ASVS dan OWASP TOP 10. Pertanyaan dan Jawaban tidak dapat dipercayai
+sebagai bukti dari identitas dimana bisa jadi jawaban diketaui lebih
+dari satu orang, dimana inilah mengapa mereka di larang. Kode seperti
+tersebut harus di hilangkan dan di ganti dengan desain yang lebih aman.</p>
+<p><strong>Skenario #2:</strong> Sebuah bioskop memungkinkan agar mendapatkan diskon bila
+membooking secara grup dan memiliki maksimal 15 peserta sebelum memerlukan deposit.
+Penyerang dapat memodelkan sebuah ancaman untuk alur ini dan mereka melakukan
+pengujian apaklah mereka dapat membooking enam ratus kursi dan semua bioskop
+dalam satu waktu dengan request yang sedikit, hal ini menyebabkan hilangnya pemasukan
+secara besar-besaran oleh bioskop tersebut.</p>
+<p><strong>Skenario #3:</strong>  Sebuah rantai retail e-commerce website tidak memiliki 
+perlindungan dari bot yang dijalankan oleh "Scalper" untuk membeli kartu grafis
+kelas tinggi untuk dijual kembali diwebsite tersebut. hal ini membuat image jelek dari
+pembuat kartu grafis dan pemiliki rantai retail dan membuat penggemar kecewa
+dikarenakan tidak dapat mendapat kartu ini dalam harga apapun. hati-hati juga
+desain anti-bot dan aturan logika domain, seperti membeli dengan beberapa detik
+ketersediaan dapat kemungkinan mengidentifikasikan pembelian tidak autentik
+dan menolak beberapa transaksi.</p>
+<h2 id="referensi">Referensi</h2>
+<ul>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Secure_Product_Design_Cheat_Sheet.html">OWASP Cheat Sheet: Secure Design Principles</a></p>
+</li>
+<li>
+<p>NIST - Pedoman Standar Minimum Untuk Verivikasi Pengembang Dari
+    &gt; Perangkat Lunak
+    &gt; https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8397.pdf</p>
+</li>
+</ul>
+<h2 id="daftar-klasifikasi-cwe">Daftar Klasifikasi CWE</h2>
+<p>CWE-73 External Control of File Name or Path</p>
+<p>CWE-183 Permissive List of Allowed Inputs</p>
+<p>CWE-209 Generation of Error Message Containing Sensitive Information</p>
+<p>CWE-213 Exposure of Sensitive Information Due to Incompatible Policies</p>
+<p>CWE-235 Improper Handling of Extra Parameters</p>
+<p>CWE-256 Unprotected Storage of Credentials</p>
+<p>CWE-257 Storing Passwords in a Recoverable Format</p>
+<p>CWE-266 Incorrect Privilege Assignment</p>
+<p>CWE-269 Improper Privilege Management</p>
+<p>CWE-280 Improper Handling of Insufficient Permissions or Privileges</p>
+<p>CWE-311 Missing Encryption of Sensitive Data</p>
+<p>CWE-312 Cleartext Storage of Sensitive Information</p>
+<p>CWE-313 Cleartext Storage in a File or on Disk</p>
+<p>CWE-316 Cleartext Storage of Sensitive Information in Memory</p>
+<p>CWE-419 Unprotected Primary Channel</p>
+<p>CWE-430 Deployment of Wrong Handler</p>
+<p>CWE-434 Unrestricted Upload of File with Dangerous Type</p>
+<p>CWE-444 Inconsistent Interpretation of HTTP Requests ('HTTP Request
+Smuggling')</p>
+<p>CWE-451 User Interface (UI) Misrepresentation of Critical Information</p>
+<p>CWE-472 External Control of Assumed-Immutable Web Parameter</p>
+<p>CWE-501 Trust Boundary Violation</p>
+<p>CWE-522 Insufficiently Protected Credentials</p>
+<p>CWE-525 Use of Web Browser Cache Containing Sensitive Information</p>
+<p>CWE-539 Use of Persistent Cookies Containing Sensitive Information</p>
+<p>CWE-579 J2EE Bad Practices: Non-serializable Object Stored in Session</p>
+<p>CWE-598 Use of GET Request Method With Sensitive Query Strings</p>
+<p>CWE-602 Client-Side Enforcement of Server-Side Security</p>
+<p>CWE-642 External Control of Critical State Data</p>
+<p>CWE-646 Reliance on File Name or Extension of Externally-Supplied File</p>
+<p>CWE-650 Trusting HTTP Permission Methods on the Server Side</p>
+<p>CWE-653 Insufficient Compartmentalization</p>
+<p>CWE-656 Reliance on Security Through Obscurity</p>
+<p>CWE-657 Violation of Secure Design Principles</p>
+<p>CWE-799 Improper Control of Interaction Frequency</p>
+<p>CWE-807 Reliance on Untrusted Inputs in a Security Decision</p>
+<p>CWE-840 Business Logic Errors</p>
+<p>CWE-841 Improper Enforcement of Behavioral Workflow</p>
+<p>CWE-927 Use of Implicit Intent for Sensitive Communication</p>
+<p>CWE-1021 Improper Restriction of Rendered UI Layers or Frames</p>
+<p>CWE-1173 Improper Use of Validation Framework</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

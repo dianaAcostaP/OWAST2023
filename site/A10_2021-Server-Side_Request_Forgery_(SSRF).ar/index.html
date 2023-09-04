@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A10 2021 Server Side Request Forgery (SSRF).ar - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A10_2021-Server-Side_Request_Forgery_(SSRF).ar.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a102021-ssrf" class="nav-link">A10:2021 – تزوير الطلبات من جانب الخادم SSRF</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">العوامل</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">نظرة عامة</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">الوصف</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">كيفية الحماية منها</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">من خلال طبقات الشبكة</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">من خلال طبقات التطبيقات</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_7" class="nav-link">أمثلة على سيناريوهات الهجوم</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_8" class="nav-link">المصادر</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cwes" class="nav-link">قائمة الربط مع إطار CWEs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="a102021-ssrf">A10:2021 – تزوير الطلبات من جانب الخادم SSRF</h1>
+<h2 id="_1">العوامل</h2>
+<table>
+<thead>
+<tr>
+<th>ربطها مع CWEs</th>
+<th>الحد الأقصى للحدوث</th>
+<th>متوسط معدل الحدوث</th>
+<th>التغطية القصوى</th>
+<th>متوسط معدل التغطية</th>
+<th>متوسط استغلال الثغرات</th>
+<th>متوسط التأثير</th>
+<th>إجمالي التكرار</th>
+<th>إجمالي نقاط الضعف CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2.72%</td>
+<td>2.72%</td>
+<td>67.72%</td>
+<td>67.72%</td>
+<td>8.28</td>
+<td>6.72</td>
+<td>9,503</td>
+<td>385</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">نظرة عامة</h2>
+<p>حيث تُظهر البيانات أن معدّل الحوادث كان مُنخفض نسبيًا بهذا التصنيف مع أن نسبة الاختبار التي تم إجراؤها كانت فوق المتوسط وأن معدّل الاختراقات التي حدثت واثارها المترتبة ستكون أعلى من المتوسط ومن المحتمل أن تكون هناك مجموعة من المساهمات الصغيرة أو الفردية لهذا التصنيف في إطار CWEs وذلك من أجل رفع الوعي الأمني، لذا نأمل أن يتم التركيز عليها وأن يتم إدراجها ضمن تصنيف أكبر في الإصدارات المُقبلة.</p>
+<h2 id="_3">الوصف</h2>
+<p>يتم تزوير طلبات الخادم عندما يقوم تطبيق الويب بجلب موارد عن بعد دون عملية التحقّق من صحة العنوان المقدّم من قِبل المستخدم، حيث يسمح ذلك للمهاجم بإجبار التطبيق على إرسال طلب معدّل إلى وجهة غير متوقعة للخادم، حتى عندما يكون محميّ بجدار حماية، أو شبكة خاصة افتراضية VPN أو أية نوع من قائمة التحكم بالوصول إلى الشبكة.</p>
+<p>نظرًا لأن تطبيقات الويب (المواقع الإلكترونية) الحديثة توفّر للمستخدمين مُميزات متقدّمة، فإن جلب العناوين من الخادم أصبح سيناريو شائع. نتيجة لذلك، فإن معدّل حدوث تزوير لطلبات الخادم آخذ في الازدياد، لذلك أصبح استغلال هذه الثغرة أشد خطورة على الخادم عندما ظهرت الخدمات السحابيّة وكذلك تعقيد البنية التحتيّة.</p>
+<h2 id="_4">كيفية الحماية منها</h2>
+<p>يستطيع المُطوّرين منع تزوير طلبات الخادم بتنفيذ بعض أو كل وسائل الدفاع التالية في ضوابط الدفاع العميق (Defense in Depth) :</p>
+<h2 id="_5"><strong>من خلال طبقات الشبكة</strong></h2>
+<ul>
+<li>
+<p>تقسيم وظائف الوصول إلى الموارد عن بعد في شبكات مُنفصلة لتقليل تأثير تزوير طلبات الخادم.</p>
+</li>
+<li>
+<p>فرض سياسات جدار الحماية "الرفض افتراضيًا" أو ضبط آليات التحكّم في الوصول إلى الشبكة لحظر جميع حركات المرور للشبكة الداخلية باستثناء حركات المرور الأساسية.</p>
+</li>
+</ul>
+<h2 id="_6"><strong>من خلال طبقات التطبيقات</strong></h2>
+<ul>
+<li>
+<p>التصّفية والتحقّق من صحة جميع بيانات الإدخال المقدّمة من قِبل المستخدم.</p>
+</li>
+<li>
+<p>استخدام عناوين محدّدة في الروابط، URL استخدام منافذ محدّدة مع تحديد قائمة من العناوين المحدّدة مسبقًا في قائمة مسموح بها.</p>
+</li>
+<li>
+<p>لا تقم برد الطلبات للعميل على شكل بيانات خام</p>
+</li>
+<li>
+<p>قم بتعطيل إعادة التوجيه إلى HTTP.</p>
+</li>
+<li>
+<p>كن على حذر من هجمات إعادة الترتيب الرابط أو الأحرف والتي قد تأتي في بعض الهجمات من خلال بروتوكول DNS أو من خلال استخدام TOCTOU.</p>
+</li>
+</ul>
+<p>لا تقم بتخفيف المخاطر على هجمات SSRF من خلال استخدام سياسة المنع المبنيّة على قائمة التعبيرات المنطقية أو (Regular Expression). حيث أن المهاجمين لديهم قوائم مُعدّة مسبقًا ومتعدّدة لمحاولة تخطّي عمليات الحجب تلك.</p>
+<h2 id="_7">أمثلة على سيناريوهات الهجوم</h2>
+<p>يستطيع المهاجمين استخدام تزوير طلبات الخادم لمهاجمة الأنظمة المحميّة خلف جدران حماية تطبيقات الويب(WAF)، وجدران الحماية أو قائمة التحكّم للوصول للشبكة باستخدام سيناريو مثل:</p>
+<p><strong>سيناريو #1:</strong> فحص المنافذ للخوادم الداخلية في معمارية الشبكة:
+الشبكات الغير مقسّمة بشكل جيّد تُمكّن المهاجمين من رسم الشبكات الداخلية بشكل دقيق ويصل إلى تمكين المهاجم لمعرفة في حال كانت المنافذ مفتوحة أم مُغلقة للخوادم والخدمات الداخلية من خلال دراسة أو استجابة الخادم لطلبات أو من خلال الوقت المُستغرق لكل طلب على كل منفذ مختلف وذلك لمعرفة في حال كان استغلال SSRF نجح أم فشل.</p>
+<p><strong>سيناريو #2:</strong> بيانات حساسة غير محميّة والتي يستطيع المهاجم الوصول إليها:
+يستطيع المهاجم الوصول للبيانات الحساسة الداخلية مثل ملف (  file:///etc/passwd)أو حتى للخدمات الداخلية من خلال استغلال هذه الثغرة</p>
+<p><strong>سيناريو #3:</strong> الوصول إلى تخزين البيانات الوصفيّة للخدمات السحابيّة :
+يمتلك معظم موفرّي السحابة تخزين البيانات الوصفيّة مثل http://169.254.169.254    ويمكن للمهاجم قراءة تلك البيانات الوصفيّة للحصول على معلومات حساسة منها.</p>
+<p><strong>سيناريو #4:</strong> اختراق الخدمات الداخلية وإساءة استخدامها من قِبل المهاجم:
+يمكن للمهاجم إساءة استخدام الخدمات الداخلية لإجراء مزيد من الهجمات مثل تنفيذ التعليمات البرمجية عن بُعد (RCE) أو هجوم حجب الخدمة (DoS).</p>
+<h2 id="_8">المصادر</h2>
+<ul>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html">OWASP - Server-Side Request Forgery Prevention Cheat Sheet</a></p>
+</li>
+<li>
+<p><a href="https://portswigger.net/web-security/ssrf">PortSwigger - Server-side request forgery (SSRF)</a></p>
+</li>
+<li>
+<p><a href="https://www.acunetix.com/blog/articles/server-side-request-forgery-vulnerability/">Acunetix - What is Server-Side Request Forgery (SSRF)?</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/assets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet_SSRF_Bible.pdf">SSRF bible</a></p>
+</li>
+<li>
+<p><a href="https://www.blackhat.com/docs/us-17/thursday/us-17-Tsai-A-New-Era-Of-SSRF-Exploiting-URL-Parser-In-Trending-Programming-Languages.pdf">A New Era of SSRF - Exploiting URL Parser in Trending Programming Languages!</a></p>
+</li>
+</ul>
+<h2 id="cwes">قائمة الربط مع إطار CWEs</h2>
+<p><a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918 Server-Side Request Forgery (SSRF)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

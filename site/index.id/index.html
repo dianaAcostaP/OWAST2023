@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Index.id - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/index.id.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#pengantar" class="nav-link">Pengantar</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#selamat-datang-ke-owasp-top-10-2021" class="nav-link">Selamat datang ke OWASP Top 10 - 2021</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#apa-yang-berubah-di-top-10-untuk-2021" class="nav-link">Apa yang berubah di Top 10 untuk 2021</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#metodologi" class="nav-link">Metodologi</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bagaimana-kategori-disusun" class="nav-link">Bagaimana kategori disusun</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bagaimana-data-digunakan-untuk-memilih-kategori" class="nav-link">Bagaimana data digunakan untuk memilih kategori</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#kenapa-tidak-hanya-bersumber-dari-data-statistik-murni" class="nav-link">Kenapa tidak hanya bersumber dari data statistik murni?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mengapa-tingkatan-insiden-bukan-bersumber-dari-frekuensi" class="nav-link">Mengapa tingkatan insiden bukan bersumber dari frekuensi?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#apa-proses-pengumpulan-dan-analisis-data-anda" class="nav-link">Apa proses pengumpulan dan analisis data Anda?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#faktor-faktor-data" class="nav-link">Faktor-faktor Data</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#thank-you-to-our-sponsor" class="nav-link">Thank you to our sponsor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../index.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../index.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../index.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../index.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../index.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../index.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../index.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../index.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="pengantar">Pengantar</h1>
+<h2 id="selamat-datang-ke-owasp-top-10-2021">Selamat datang ke OWASP Top 10 - 2021</h2>
+<p><img alt="OWASP Top 10 Logo" class="img-responsive" src="../assets/TOP_10_logo_Final_Logo_Colour.png" /></p>
+<p>Selamat datang ke versi terakhir dari OWASP Top 10! OWASP Top 10 2021 semua baru, dengan desain grafis baru dan suatu infografis satu-halaman yang dapat Anda cetak atau dapatkan dari beranda kami.</p>
+<p>Terima kasih sebesar-besarnya ke semua orang yang menyumbangkan waktu dan data mereka ke iterasi ini. Tanpa Anda, versi ini tidak akan ada. <strong>TERIMA KASIH</strong></p>
+<h2 id="apa-yang-berubah-di-top-10-untuk-2021">Apa yang berubah di Top 10 untuk 2021</h2>
+<p>Terdapat tiga kategori baru, empat kategori dengan penamaan dan perbuahan ruang lingkup, dan beberapa konsolidasi baru di Top 10 untuk 2021</p>
+<p><img alt="license" src="../assets/mapping.png" /></p>
+<ul>
+<li><strong>A01:2021-Broken Access Control</strong> naik dari posisi kelima; 94% dari aplikasi yang telah diuji dengan broken access kontrol dalam beberapa bentuk. 34 CWE yang dipetakan ke Broken Access Control memiliki lebih banyak kemunculan dalam aplikasi daripada kategori lainnya.</li>
+<li><strong>A02:2021-Cryptographic Failures</strong> menggeser satu posisi menjadi #2, sebelumnya dikenal sebagai Pengungkapan Data Sensitif, yang merupakan gejala luas dan bukan penyebab utama. Fokus baru di sini adalah pada kegagalan yang terkait dengan Kriptografi yang sering mengarah pada Pengungkapan Data Sensitif atau sistem yang telah terinfeksi oleh hacker.</li>
+<li><strong>A03:2021-Injection</strong> turun ke posisi ketiga. 94% aplikasi diuji untuk beberapa bentuk injeksi, dan 33 CWE yang dipetakan ke dalam kategori ini memiliki kejadian terbanyak kedua dalam aplikasi. Skrip cross-site sekarang menjadi bagian dari kategori ini dalam edisi ini. </li>
+<li><strong>A04:2021-Insecure Design</strong> adalah kategori baru untuk tahun 2021, dengan fokus pada resiko yang terkait dengan kekurangan desain. Jika kita ingin benar-benar bergerak sebagai industri, itu membutuhkan lebih banyak penggunaan pemodelan ancaman, pola dan desain yang aman, dan arsitektur referensi</li>
+<li><strong>A05:2021-Security Misconfiguration</strong> naik dari #6 di edisi sebelumnya; 90% aplikasi diuji untuk beberapa bentuk kesalahan konfigurasi. Dengan lebih banyak perubahan ke software dengan konfigurasi yang banyak, tidak mengherankan melihat kategori ini naik. Kategori sebelumnya untuk XML External Entities (XXE) sekarang menjadi bagian dari kategori ini.</li>
+<li><strong>A06:2021-Vulnerable and Outdated Components</strong> sebelumnya berjudul Using Components with Known Vulnerabilities dan #2 dalam survei industri, tapi juga memiliki cukup data untuk masuk TOP 10 melalui analisis data. Kategori ini naik dari #9 di tahun 2017 dan merupakan masalah umum yang kami perjuangkan untuk menguji dan menilai resiko. Ini adalah satu-satunya kategori yang tidak memiliki CVE yang dipetakan ke CWE yang disertakan, jadi eksploitasi default dan bobot dampak 5.0 diperhitungkan dalam skornya.</li>
+<li><strong>A07:2021-Identification and Authentication Failures</strong> sebelumnya dalah Broken Authentication dan turun dari posisi kedua, dan sekarang termasuk CWE yang lebih terkait dengan kegagalan identifikasi. Kategori ini masih merupakan bagian integral dari Top 10, tetapi peningkatan ketersediaan framework yang telah distandarisasi tampaknya membantu.</li>
+<li><strong>A08:2021-Software and Data Integrity Failures</strong> adalah kategori baru untuk tahun 2021, yang berfokus pada pembuatan asusmsi terkait pembaruan perangkat lunak, data penting, dan pipeline CI/CD tanpa memverifikasi integritas. Salah satu dampak tertinggi dari CVE/CVSS yang dipetakan ke 10 CWE dalam kategori ini. Insecure Deserialization dari tahun 2017 sekarang menjadi bagian dari kategori yang lebih besar ini.</li>
+<li><strong>A09:2021-Security Logging and Monitoring Failures</strong> sebelumnya Logging dan Monitoring tidak memadai dan ditambahkan dari survei industri (#3), naik dari #10 sebelumnya. Kategori ini diperluas untuk mencakup lebih banyak jenis kegagalan, suatu tantangan untuk diiuji, dan tidak terwakili dengan baik dalam data CVE/CVSS. Namun, kegagalan dalam kategori ini dapat secara langsung mempengaruhi visibilitas, alert pada insiden, dan forensik</li>
+<li><strong>A10:2021-Server-Side Request Forgery</strong> ditambahkan dari survei industri (#1). Data menunjukkan tingkat insiden yang relatif rendah dengan cakupan pengujian di atas rata-rata, bersama dengan peringkat di atas rata-rata untuk potensi eksploitasi dan dampak. Kategori ini mewakili skenario di mana para profesional industri memberi tahu kami bahwa ini penting, meskipun tidak diilustrasikan dalam data saat ini.</li>
+</ul>
+<h2 id="metodologi">Metodologi</h2>
+<p>Penyusunan dari Top 10 ini lebih didorong oleh data daripada sebelumnya tetapi tidak didorong oleh data yang tidak di verifikasi dahulu. Kami memilih delapan dari sepuluh kategori dari kontribusi data dan 2 kategori dari survei industri tingkat tinggi. Kami melakukan ini karena alasan mendasar, melihat data yang telah dikumpulkan sama dengan melihat ke masa lalu. Peneliti AppSec membutuhkan waktu untuk menemukan kerentanan baru dan cara baru untuk mengujinya. Dibutuhkan waktu untuk mengintegrasikan tes ini ke dalam alat dan proses. Pada saat kita dapat dengan andal menguji kelemahan dalam skala, tahun-tahun kemungkinan telah berlalu. Untuk menyeimbangkan pandangan itu, kami menggunakan survei industri untuk bertanya kepada orang-orang di garis depan apa yang mereka lihat sebagai kelemahan penting yang mungkin belum ditunjukkan oleh data.</p>
+<p>Ada beberapa perubahan penting yang kami adopsi untuk terus mematangkan Top 10.</p>
+<h2 id="bagaimana-kategori-disusun">Bagaimana kategori disusun</h2>
+<p>Beberapa kategori telah berubah dari pemasangan OWASP Top 10 sebelumnya. Berikut adalah ringkasan tingkat tinggi dari perubahan kategori</p>
+<p>Upaya pengumpulan data sebelumnya difokuskan pada subset yang ditentukan sekitar 30 CWE dengan bidang yang meminta temuan tambahan. Kami mengetahui bahwa organisasi akan fokus hanya pada 30 CWE tersebut dan jarang menambahkan CWE tambahan yang mereka lihat. Dalam iterasi ini, kami membukanya dan hanya meminta data, tanpa batasan pada CWE. Kami meminta jumlah aplikasi yang diuji untuk tahun tertentu (mulai 2017), dan jumlah aplikasi dengan setidaknya satu contoh CWE yang ditemukan dalam pengujian. Format ini memungkinkan kami untuk melacak seberapa lazim setiap CWE dalam populasi aplikasi. Kami mengabaikan frekuensi untuk tujuan kami; sementara mungkin diperlukan untuk situasi lain, itu hanya menyembunyikan prevalensi aktual dalam populasi aplikasi. Apakah sebuah aplikasi memiliki empat instans CWE atau 4.000 instans bukanlah bagian dari perhitungan untuk 10 Besar. Kami beralih dari sekitar 30 CWE menjadi hampir 400 CWE untuk dianalisis dalam kumpulan data. Kami berencana untuk melakukan analisis data tambahan sebagai suplemen di masa depan. Peningkatan jumlah CWE yang signifikan ini memerlukan perubahan pada struktur kategori.</p>
+<p>Kami menghabiskan beberapa bulan untuk mengelompokkan dan mengkategorikan CWE dan dapat melanjutkannya selama beberapa bulan lagi. Kami harus berhenti di beberapa titik. Ada akar penyebab dan jenis gejala CWE, di mana jenis akar penyebab seperti "Kegagalan Kriptografis" dan "Kesalahan Konfigurasi" kontras dengan jenis gejala seperti "Pengungkapan Data Sensitif" dan "Penolakan Layanan." Kami memutuskan untuk fokus pada akar penyebab bila memungkinkan karena lebih logis untuk memberikan panduan identifikasi dan perbaikan. Berfokus pada akar penyebab di atas gejala bukanlah konsep baru; Sepuluh Besar telah menjadi campuran gejala dan akar penyebab. CWE juga merupakan campuran dari gejala dan akar penyebab; kami hanya menjadi lebih berhati-hati tentang hal itu dan menyebutnya. Ada rata-rata 19,6 CWE per kategori dalam pemasangan ini, dengan batas bawah pada 1 CWE untuk A10:2021-Server-Side Request Forgery (SSRF) hingga 40 CWE dalam A04:2021-Insecure Design. Struktur kategori yang diperbarui ini menawarkan manfaat pelatihan tambahan karena perusahaan dapat fokus pada CWE yang masuk akal untuk bahasa/kerangka kerja.    </p>
+<h2 id="bagaimana-data-digunakan-untuk-memilih-kategori">Bagaimana data digunakan untuk memilih kategori</h2>
+<p>Pada tahun 2017, kami memilih kategori berdasarkan tingkat insiden untuk menentukan kemungkinan, lalu memeringkatnya berdasarkan diskusi tim berdasarkan pengalaman puluhan tahun untuk Exploitability, Detectability (juga kemungkinan), dan Dampak Teknis. Untuk tahun 2021, kami ingin menggunakan data untuk Exploitability and Impact jika memungkinkan.</p>
+<p>Kami mengunduh Pemeriksaan Ketergantungan OWASP dan mengekstrak Eksploitasi CVSS, dan skor Dampak yang dikelompokkan berdasarkan CWE terkait. Butuh sedikit riset dan usaha karena semua CVE memiliki skor CVSSv2, tetapi ada kekurangan dalam CVSSv2 yang harus diatasi oleh CVSSv3. Setelah titik waktu tertentu, semua CVE juga diberi skor CVSSv3. Selain itu, rentang penilaian dan formula diperbarui antara CVSSv2 dan CVSSv3.</p>
+<p>Di CVSSv2, Eksploitasi dan Dampak bisa mencapai 10,0, tetapi rumusnya akan menjatuhkannya hingga 60% untuk Eksploitasi dan 40% untuk Dampak. Di CVSSv3, maks secara teori dibatasi hingga 6,0 untuk Eksploitasi dan 4,0 untuk Dampak. Dengan mempertimbangkan pembobotan, skor Dampak bergeser lebih tinggi, rata-rata hampir satu setengah poin di CVSSv3, dan kemampuan eksploitasi turun rata-rata hampir setengah poin.</p>
+<p>Ada 125 ribu catatan CVE yang dipetakan ke CWE dalam data NVD yang diekstraksi dari OWASP Dependency Check, dan ada 241 CWE unik yang dipetakan ke CVE. Peta CWE 62 ribu memiliki skor CVSSv3, yang kira-kira setengah dari populasi dalam kumpulan data.</p>
+<p>Untuk Top 10, kami menghitung rata-rata skor eksploitasi dan dampak dengan cara berikut. Kami mengelompokkan semua CVE dengan skor CVSS berdasarkan CWE dan memberi bobot pada skor eksploitasi dan dampak berdasarkan persentase populasi yang memiliki skor CVSSv3 + populasi yang tersisa dari skor CVSSv2 untuk mendapatkan rata-rata keseluruhan. Kami memetakan rata-rata ini ke CWE dalam kumpulan data untuk digunakan sebagai skor Eksploitasi dan Dampak untuk separuh persamaan risiko lainnya.</p>
+<h2 id="kenapa-tidak-hanya-bersumber-dari-data-statistik-murni">Kenapa tidak hanya bersumber dari data statistik murni?</h2>
+<p>Hasil dalam data utamanya terbatas pada apa yang dapat kami uji secara otomatis. Bicaralah dengan seorang Profesional AppSec, dan mereka akan memberi tahu Anda tentang hal-hal yang mereka temukan dan tren yang mereka lihat yang belum ada dalam data. Dibutuhkan waktu bagi orang untuk mengembangkan metodologi pengujian untuk jenis kerentanan tertentu dan kemudian lebih banyak waktu agar pengujian tersebut diotomatisasi dan dijalankan terhadap populasi aplikasi yang besar. Semua yang kami temukan adalah melihat kembali ke masa lalu dan mungkin kehilangan tren dari tahun lalu, yang tidak ada dalam data.</p>
+<p>Oleh karena itu, kami hanya memilih delapan dari sepuluh kategori dari data karena tidak lengkap. Dua kategori lainnya berasal dari survei industri. Hal ini memungkinkan para praktisi di garis depan untuk memilih apa yang mereka lihat sebagai risiko tertinggi yang mungkin tidak ada dalam data (dan mungkin tidak pernah diungkapkan dalam data).</p>
+<h2 id="mengapa-tingkatan-insiden-bukan-bersumber-dari-frekuensi">Mengapa tingkatan insiden bukan bersumber dari frekuensi?</h2>
+<p>Ada tiga sumber data utama. Kami mengidentifikasi mereka sebagai Human-assisted Tooling (HaT), Tool-assisted Human (TaH), dan raw Tooling.</p>
+<p>Tooling dan HaT adalah generator pencarian frekuensi tinggi. Alat akan mencari kerentanan tertentu dan tanpa lelah berusaha untuk menemukan setiap contoh kerentanan itu dan akan menghasilkan jumlah temuan yang tinggi untuk beberapa jenis kerentanan. Lihatlah Cross-Site Scripting, yang biasanya merupakan salah satu dari dua rasa: itu kesalahan kecil yang terisolasi atau masalah sistemik. Jika ini merupakan masalah sistemik, jumlah temuan bisa mencapai ribuan untuk sebuah aplikasi. Frekuensi tinggi ini menenggelamkan sebagian besar kerentanan lain yang ditemukan dalam laporan atau data.
+TaH, di sisi lain, akan menemukan jenis kerentanan yang lebih luas tetapi pada frekuensi yang jauh lebih rendah karena kendala waktu. Ketika manusia menguji aplikasi dan melihat sesuatu seperti Cross-Site Scripting, mereka biasanya akan menemukan tiga atau empat instance dan berhenti. Mereka dapat menentukan temuan sistemik dan menuliskannya dengan rekomendasi untuk diperbaiki pada skala aplikasi yang luas. Tidak perlu (atau waktu) untuk menemukan setiap contoh.</p>
+<p>Misalkan kita mengambil dua kumpulan data yang berbeda ini dan mencoba menggabungkannya pada frekuensi. Dalam hal ini, data Tooling dan HaT akan menenggelamkan data TaH yang lebih akurat (tetapi luas) dan merupakan bagian yang baik dari mengapa sesuatu seperti Cross-Site Scripting memiliki peringkat yang sangat tinggi di banyak daftar ketika dampaknya umumnya rendah hingga sedang. Itu karena banyaknya temuan. (Cross-Site Scripting juga cukup mudah untuk diuji, jadi ada lebih banyak tes untuk itu juga).
+Pada tahun 2017, kami memperkenalkan penggunaan tingkat insiden sebagai gantinya untuk melihat data baru dan menggabungkan data Tooling dan HaT dengan data TaH dengan rapi. Tingkat insiden menanyakan berapa persentase populasi aplikasi yang memiliki setidaknya satu contoh jenis kerentanan. Kami tidak peduli apakah itu satu kali atau sistemik. Itu tidak relevan untuk tujuan kita; kita hanya perlu mengetahui berapa banyak aplikasi yang memiliki setidaknya satu instance, yang membantu memberikan pandangan yang lebih jelas tentang pengujian temuan di beberapa jenis pengujian tanpa menenggelamkan data dalam hasil frekuensi tinggi.</p>
+<h2 id="apa-proses-pengumpulan-dan-analisis-data-anda">Apa proses pengumpulan dan analisis data Anda?</h2>
+<p>Kami meresmikan proses pengumpulan data OWASP Top 10 di Open Security Summit pada 2017. Para Leader OWASP Top 10 dan komunitas telah menghabiskan dua hari untuk memformalkan proses pengumpulan data yang transparan. Edisi 2021 adalah kedua kalinya kami menggunakan metodologi ini.
+Kami mempublikasikan panggilan untuk data melalui saluran media sosial yang tersedia untuk kami, baik projek maupun OWASP. Pada halaman Projek OWASP, kami mencantumkan elemen dan struktur data yang kami cari dan cara mengirimkannya. Dalam proyek GitHub, kami memiliki file contoh yang berfungsi sebagai template. Kami bekerja dengan organisasi yang diperlukan untuk membantu mengetahui struktur dan pemetaan ke CWE.
+Kami mendapatkan data dari organisasi yang menguji vendor berdasarkan perdagangan, vendor bug bounty, dan organisasi yang menyumbangkan data pengujian internal. Setelah kami memiliki data, kami memuatnya bersama dan menjalankan analisis fundamental tentang apa yang dipetakan CWE ke kategori risiko. Ada tumpang tindih antara beberapa CWE, dan yang lainnya sangat erat kaitannya (mis. Kerentanan kriptografis). Setiap keputusan yang terkait dengan data mentah yang dikirimkan didokumentasikan dan dipublikasikan agar terbuka dan transparan dengan cara kami menormalkan data.</p>
+<p>Kami melihat delapan kategori dengan tingkat insiden tertinggi untuk dimasukkan dalam Top 10. Kami juga melihat hasil survei industri untuk melihat mana yang mungkin sudah ada dalam data. Dua suara teratas yang belum ada dalam data akan dipilih untuk dua tempat lainnya di Top 10. Setelah kesepuluh dipilih, kami menerapkan faktor umum untuk eksploitabilitas dan dampak; untuk membantu menentukan peringkat 10 Besar secara berurutan.</p>
+<h2 id="faktor-faktor-data">Faktor-faktor Data</h2>
+<p>Ada data faktor yang dicantumkan untuk masing-masing dari 10 Kategori Teratas, berikut artinya:</p>
+<ul>
+<li>CWEs Mapped: Jumlah CWE yang dipetakan ke kategori oleh 10 tim teratas.</li>
+<li>Incidence Rate: Tingkat insiden adalah persentase aplikasi yang rentan terhadap CWE tersebut dari populasi yang diuji oleh organisasi tersebut untuk tahun tersebut.</li>
+<li>(Pengujian) Cakupan: Persentase aplikasi yang diuji oleh semua organisasi untuk CWE tertentu.</li>
+<li>Weighted Exploit: Sub-skor Eksploitasi dari skor CVSSv2 dan CVSSv3 yang ditetapkan ke CVE yang dipetakan ke CWE, dinormalisasi, dan ditempatkan pada skala 10pt.</li>
+<li>Weighted Impact: Sub-skor Dampak dari skor CVSSv2 dan CVSSv3 yang ditetapkan ke CVE dipetakan ke CWE, dinormalisasi, dan ditempatkan pada skala 10pt.</li>
+<li>Total Kejadian: Jumlah total aplikasi yang ditemukan memiliki CWE yang dipetakan ke suatu kategori.</li>
+<li>Total CVE: Jumlah total CVE dalam NVD DB yang dipetakan ke CWE yang dipetakan ke suatu kategori.</li>
+</ul>
+<h3 id="hubungan-kategori-dari-2017">Hubungan Kategori dari 2017</h3>
+<p>Ada banyak pembicaraan tentang tumpang tindih antara risiko Top 10. Menurut definisi masing-masing (daftar CWE yang termasuk), sebenarnya tidak ada tumpang tindih. Namun, secara konseptual, dapat terjadi tumpang tindih atau interaksi berdasarkan penamaan tingkat yang lebih tinggi. Diagram Venn berkali-kali digunakan untuk menunjukkan tumpang tindih seperti ini.</p>
+<p>Diagram Venn di atas merepresentasikan interaksi antara Sepuluh Kategori Risiko Teratas 2017. Saat melakukannya, beberapa poin penting menjadi jelas:</p>
+<ol>
+<li>Orang bisa berargumen bahwa Cross-Site Scripting pada akhirnya termasuk dalam Injeksi karena pada dasarnya adalah Injeksi Konten. Melihat data tahun 2021, semakin jelas bahwa XSS perlu pindah ke Injeksi.</li>
+<li>Tumpang tindih hanya satu arah. Kita akan sering mengklasifikasikan kerentanan berdasarkan manifestasi akhir atau "gejala", bukan akar penyebab (yang berpotensi dalam). Misalnya, "Pengungkapan Data Sensitif" mungkin merupakan hasil dari "Kesalahan Konfigurasi Keamanan"; namun, Anda tidak akan melihatnya ke arah lain. Akibatnya, panah digambar di zona interaksi untuk menunjukkan arah mana itu terjadi.</li>
+<li>Terkadang diagram ini digambar dengan semua yang ada di A06:2021 Menggunakan Komponen dengan Kerentanan yang Diketahui. Sementara beberapa kategori risiko ini mungkin menjadi akar penyebab kerentanan pihak ketiga, mereka umumnya dikelola secara berbeda dan dengan tanggung jawab yang berbeda. Jenis lainnya biasanya mewakili risiko pihak pertama.</li>
+</ol>
+<h3 id="terima-kasih-kepada-kontributor-data-kami">Terima kasih kepada kontributor data kami</h3>
+<p>Organisasi berikut (bersama dengan beberapa donor anonim) dengan baik hati menyumbangkan data untuk lebih dari 500.000 aplikasi untuk menjadikan ini kumpulan data keamanan aplikasi terbesar dan terlengkap. Tanpa Anda, ini tidak akan mungkin.</p>
+<ul>
+<li>AppSec Labs</li>
+<li>Cobalt.io</li>
+<li>Contrast Security</li>
+<li>GitLab</li>
+<li>HackerOne</li>
+<li>HCL Technologies</li>
+<li>Micro Focus</li>
+<li>PenTest-Tools</li>
+<li>Probely</li>
+<li>Sqreen</li>
+<li>Veracode</li>
+<li>WhiteHat (NTT)</li>
+</ul>
+<h2 id="thank-you-to-our-sponsor">Thank you to our sponsor</h2>
+<p>The OWASP Top 10 2021 team gratefully acknowledge the financial support of Secure Code Warrior.</p>
+<p><a href="https://securecodewarrior.com"><img alt="Secure Code Warrior" src="../assets/securecodewarrior.png" /></a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

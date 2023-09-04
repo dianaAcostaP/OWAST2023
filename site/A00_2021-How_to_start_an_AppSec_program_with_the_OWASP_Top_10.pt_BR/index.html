@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A00 2021 How to start an AppSec program with the OWASP Top 10.pt BR - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.pt_BR.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#como-iniciar-um-programa-appsec-com-o-owasp-top-10" class="nav-link">Como iniciar um programa AppSec com o OWASP Top 10</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#etapa-1-identifique-as-lacunas-e-os-objetivos-de-seu-programa-appsec" class="nav-link">Etapa 1. Identifique as lacunas e os objetivos de seu programa appsec</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#etapa-2-plano-para-um-ciclo-de-vida-de-desenvolvimento-de-um-paved-road-seguro" class="nav-link">Etapa 2. Plano para um ciclo de vida de desenvolvimento de um Paved Road seguro</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#etapa-3-implemente-o-paved-road-com-suas-equipes-de-desenvolvimento" class="nav-link">Etapa 3. Implemente o Paved Road com suas equipes de desenvolvimento</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#etapa-4-migre-todos-os-aplicativos-futuros-e-existentes-para-o-paved-road" class="nav-link">Etapa 4. Migre todos os aplicativos futuros e existentes para o Paved Road</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#etapa-5-teste-se-o-paved-road-mitigou-os-problemas-encontrados-no-owasp-top-10" class="nav-link">Etapa 5. Teste se o Paved Road mitigou os problemas encontrados no OWASP Top 10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#etapa-6-construa-o-seu-programa-em-um-programa-appsec-maduro" class="nav-link">Etapa 6. Construa o seu programa em um programa AppSec maduro</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#indo-alem" class="nav-link">Indo além</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="como-iniciar-um-programa-appsec-com-o-owasp-top-10">Como iniciar um programa AppSec com o OWASP Top 10</h1>
+<p>Antes, o OWASP Top 10 nunca foi projetado para ser a base de um programa AppSec.
+No entanto, é essencial começar de algum lugar para muitas organizações que
+estão apenas começando em sua jornada de segurança de aplicações.
+O OWASP Top 10 2021 é um bom começo como base para listas de verificação de segurança
+e assim por diante, mas não é suficiente por si só.</p>
+<h2 id="etapa-1-identifique-as-lacunas-e-os-objetivos-de-seu-programa-appsec">Etapa 1. Identifique as lacunas e os objetivos de seu programa appsec</h2>
+<p>Muitos programas de Aplicações de Segurança (AppSec) tentam correr antes 
+que possam engatinhar ou andar. Esses esforços estão fadados ao fracasso. 
+Incentivamos fortemente os CISOs e a liderança de AppSec a usar
+o Modelo de Maturidade de Garantia de Software OWASP 
+(Software Assurance Maturity Model - SAMM)[<a href="https://owaspsamm.org">https://owaspsamm.org</a>] para identificar 
+pontos fracos e áreas de melhoria em um período de 1-3 anos. A primeira etapa
+é avaliar onde você está agora, identificar as lacunas na governança,
+design, implementação, verificação e operações que você precisa resolver
+imediatamente em comparação com aquelas que podem esperar, e priorizar
+a implementação ou melhoria das quinze práticas de segurança OWASP SAMM.
+O OWASP SAMM pode ajudá-lo a construir e medir melhorias em seus
+esforços de garantia de software.</p>
+<h2 id="etapa-2-plano-para-um-ciclo-de-vida-de-desenvolvimento-de-um-paved-road-seguro">Etapa 2. Plano para um ciclo de vida de desenvolvimento de um Paved Road seguro</h2>
+<p>Tradicionalmente, a preservação dos chamados "unicórnios", o conceito de
+paved road é a maneira mais fácil de causar o máximo impacto e
+dimensionar os recursos do AppSec com a velocidade da equipe de desenvolvimento,
+que só aumenta a cada ano.</p>
+<p>O conceito de paved road é "o caminho mais fácil é também o mais seguro" e
+deve envolver uma cultura de parcerias profundas entre a equipe de desenvolvimento
+e a equipe de segurança, de preferência de forma que sejam uma só equipe.
+O paved road visa melhorar, medir, detectar e substituir continuamente
+alternativas inseguras por meio de uma biblioteca corporativa de reduções de
+substituições seguras, com ferramentas para ajudar a ver onde melhorias podem ser
+feitas ao adotar o paved road. Isso permite que as ferramentas
+de desenvolvimento existentes relatem compilações inseguras e ajudem
+as equipes de desenvolvimento a se autocorrigirem, evitando alternativas inseguras.</p>
+<p>O paved road pode parecer muito a fazer, mas deve ser construída gradativamente ao
+longo do tempo. Existem outras formas de programas appsec, notavelmente o 
+<em>Microsoft Agile Secure Development Lifecycle</em>. Nem toda metodologia de programa
+appsec se adapta a todas as empresas.</p>
+<h2 id="etapa-3-implemente-o-paved-road-com-suas-equipes-de-desenvolvimento">Etapa 3. Implemente o Paved Road com suas equipes de desenvolvimento</h2>
+<p>Paved roads são construídos com o consentimento e envolvimento direto das equipes
+de desenvolvimento e operações relevantes. O paved road deve estar estrategicamente
+alinhado com os negócios e ajudar a entregar aplicativos mais seguros com mais rapidez.
+O desenvolvimento do paved road deve ser um exercício holístico cobrindo toda a empresa
+ou ecossistema de aplicativos, não um band-aid por aplicativo, como nos velhos tempos.</p>
+<h2 id="etapa-4-migre-todos-os-aplicativos-futuros-e-existentes-para-o-paved-road">Etapa 4. Migre todos os aplicativos futuros e existentes para o Paved Road</h2>
+<p>Adicione ferramentas de detecção de paved road conforme você as desenvolve e fornece
+informações para equipes de desenvolvimento para melhorar a segurança de seus aplicativos
+por meio de como eles podem adotar diretamente elementos do paved road. Uma vez que
+um aspecto do paved road tenha sido adotado, as organizações devem implementar verificações
+de integração contínua que inspecionam o código existente e check-ins que usam alternativas
+proibidas e avisam ou rejeitam a compilação ou check-in. Isso evita que opções inseguras
+entrem no código ao longo do tempo, evitando dívidas técnicas e um aplicativo inseguro
+com defeito. Esses avisos devem ser vinculados à alternativa segura, para que a equipe
+de desenvolvimento receba a resposta correta imediatamente. Eles podem refatorar
+e adotar o componente do paved road rapidamente.</p>
+<h2 id="etapa-5-teste-se-o-paved-road-mitigou-os-problemas-encontrados-no-owasp-top-10">Etapa 5. Teste se o Paved Road mitigou os problemas encontrados no OWASP Top 10</h2>
+<p>Os componentes do paved road devem abordar um problema significativo do OWASP Top 10,
+por exemplo, como detectar ou consertar componentes vulneráveis automaticamente ou um plug-in IDE
+de análise de código estático para detectar injeções ou, melhor ainda, uma biblioteca
+que é sabidamente segura contra injeção, como React ou Vue. Quanto mais dessas substituições
+seguras forem fornecidas às equipes, melhor. Uma tarefa vital da equipe do appsec é
+garantir que a segurança desses componentes seja continuamente avaliada e aprimorada.
+Depois de aprimoradas, alguma forma de via de comunicação com os consumidores do componente
+deve indicar que uma atualização deve ocorrer, de preferência automaticamente,
+mas se não, pelo menos destacada em um painel ou similar.</p>
+<h2 id="etapa-6-construa-o-seu-programa-em-um-programa-appsec-maduro">Etapa 6. Construa o seu programa em um programa AppSec maduro</h2>
+<p>Você não deve parar no OWASP Top 10. Ele cobre apenas 10 categorias de riscos.
+Recomendamos fortemente que as organizações adotem o Padrão de Verificação de Segurança
+de Aplicativos (ASVS) e adicionem progressivamente componentes de paved road e testes para
+os Níveis 1, 2 e 3, dependendo do nível de risco dos aplicativos desenvolvidos.</p>
+<h2 id="indo-alem">Indo além</h2>
+<p>Todos os grandes programas AppSec vão além do mínimo. Todos devem continuar
+se quisermos superar as vulnerabilidades do appsec.</p>
+<ul>
+<li>
+<p><strong>Integridade conceitual</strong>. Os programas AppSec maduros devem conter
+    algum conceito de arquitetura de segurança, seja uma nuvem formal
+    ou arquitetura de segurança corporativa ou modelagem de ameaças.</p>
+</li>
+<li>
+<p><strong>Automação e escala</strong>. Programas maduros de AppSec tentam automatizar
+    o máximo possível de seus resultados, usando scripts para emular
+    etapas de teste de penetração complexas, ferramentas de análise
+    de código estático disponíveis diretamente para as equipes de
+    desenvolvimento, auxiliando as equipes de desenvolvimento na construção
+    de unidades de appsec e testes de integração e muito mais.</p>
+</li>
+<li>
+<p><strong>Cultura</strong>. Programas maduros de AppSec tentam construir o design
+    inseguro e eliminar a dívida técnica do código existente, sendo
+    parte da equipe de desenvolvimento e não à margem. As equipes da 
+    AppSec que veem as equipes de desenvolvimento como "nós" e "eles"
+    estão fadadas ao fracasso.</p>
+</li>
+<li>
+<p><strong>Melhoria continua</strong>. Programas maduros de AppSec procuram melhorar
+    constantemente. Se algo não estiver funcionando, pare de fazer isso.
+    Se algo é desajeitado ou não escalável, trabalhe para melhorá-lo.
+    Se algo não está sendo usado pelas equipes de desenvolvimento e não
+    tem impacto ou tem impacto limitado, faça algo diferente. Só porque
+    temos feito testes como <em>deskcheck</em> desde os anos 1970, não significa
+    que seja uma boa ideia. Meça, avalie e depois construa ou melhore.</p>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

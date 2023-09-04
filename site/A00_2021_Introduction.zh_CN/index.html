@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A00 2021 Introduction.zh CN - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A00_2021_Introduction.zh_CN.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#owasp-top-10-2021" class="nav-link">OWASP Top 10 2021 介紹</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#top-10-for-2021" class="nav-link">Top 10 for 2021 有什么新的变化？</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">分析方法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">为什么就不纯粹做统计分析？</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">为什么用事故率而不是用发生次数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#what-is-your-data-collection-and-analysis-process" class="nav-link">What is your data collection and analysis process?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#data-factors" class="nav-link">Data Factors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#category-relationships-from-2017" class="nav-link">Category Relationships from 2017</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#thank-you-to-our-data-contributors" class="nav-link">Thank you to our data contributors</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#thank-you-to-our-sponsors" class="nav-link">Thank you to our sponsors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A00_2021_Introduction/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A00_2021_Introduction.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A00_2021_Introduction.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A00_2021_Introduction.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A00_2021_Introduction.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A00_2021_Introduction.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A00_2021_Introduction.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A00_2021_Introduction.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A00_2021_Introduction.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="owasp-top-10-2021">OWASP Top 10 2021 介紹</h1>
+<p>欢迎來到最新版本的 OWASP Top 10！! OWASP Top 10 2021 是一个全新的名单，包含了你可以打印下來的新图示说明，若有需要的话，你可以从我们的网页上面下载。</p>
+<p>在此我们想对所有贡献了他们时间和资料的人給予极大的感谢。没有你们，这一个新版本不会产生。<strong>谢谢</strong>。</p>
+<h2 id="top-10-for-2021">Top 10 for 2021 有什么新的变化？</h2>
+<p>这次在 OWASP Top 10 for 2021 有三个全新的分类，有四个分类有做名称和范围的修正，并有将一些类别做合并。</p>
+<p><img src="./assets/image1.png" style="width:6.5in;height:1.78889in" alt="Mapping of the relationship between the Top 10 2017 and the new Top 10 2021" /></p>
+<p><strong>A01:2021-权限控制失效</strong> 从第五名移上來; 94% 被测试的应用程式都有验证到某种类别权限控制失效的问题。在权限控制失效这个类别中被对应到的 34 个 CWEs 在验测资料中出现的次数都高于其他的弱点类别。</p>
+<p><strong>A02:2021-加密机制失效</strong> 提升一名到第二名，在之前为 <em>敏感资料外曝</em>，在此定义下比较类似于一个广泛的问题而非根本原因。在此重新定义并将问题核心定义在加密机制的失败，并因此造成敏感性资料外泄或是系統被破坏。</p>
+<p><strong>A03:2021-注入式攻击</strong> 下滑到第三名。94% 被测试的应用程式都有验测到某种类別注入式攻击的问题。在注入式攻击这个类別中被对应到的 33 个 CWEs 在验测资料中出现的次数为弱点问题的第二高。跨站脚本攻击现在在新版本属于这个类別。</p>
+<p><strong>A04:2021-不安全设计</strong> 这是 2021 年版本的新类別，并特別聚焦在设计相关的缺陷。如果我们真的希望让整个产业"向左移动"＊注一＊，那我们必须进一步的往威胁建模，安全设计模块的观念，和安全參考架构前进。</p>
+<p>＊注一: Move Left 于英文原文中代表在软件开发及交付过程中，在早期找出及处理相关问题，同 Shift Left Testing。＊</p>
+<p><strong>A05:2021-安全设定缺陷</strong> 从上一版本的第六名移动上來。90% 被测试的应用程式都有验测到某种类別的安全设定缺陷。在更多的软件往更高度和有弹性的设定移动，我们并不意外这个类別的问题往上移动。在前版本中的 XML 外部实体注入攻击 （XML External Entities）现在属于这个类別。</p>
+<p><strong>A06:2021-危险或过旧的组件</strong> 在之前标题为 <em>使用有已知弱点的组件</em>。在本次版本中于业界问卷中排名第二，但也有足够的统计资料让它可以进入 Top 10。这个类別从 2017 版本的第九名爬升到第六，也是我们持续挣扎做测试和评估风险的类別。这也是唯一一个沒有任何 CVE 能被对应到 CWE 內的类別，所以预设的威胁及影响权重在这类別的分数上被预设为 5.0。</p>
+<p><strong>A07:2021-认证及验证机制失效</strong> 在之前标题为 <em>错误的认证机制</em>。在本次版本中由第二名下滑至此，并同时包含了将认证相关缺失的 CWE 包含在內。这个类別仍是 Top 10 不可缺少的一环，但同时也有发现现在标准化的架构有协助降低次风险发生机率。</p>
+<p><strong>A08:2021-软件及资料完整性失效</strong> 这是 2021 年版本全新的类別，并在软件更新，敏感及重要资料，和 CI/CD 管道中并沒有做完整性的确认为前提做假设并进行评估。在评估中影响权重最高分的 CVE/CVSS 资料都与这类別中的 10 个 CWE 对应到。2017 年版本中不安全的反序列化现在被合并至此类別。</p>
+<p><strong>A09:2021-安全记录及监控失效</strong> 在之前为<em>不完整的记录及监控</em>并纳入在业界问卷中在本次列名为第三名并从之前的第十名上移。这个类別将扩充去纳入更多相关的缺失，但这也是相当难去验证，并沒有相当多的 CVE/CVSS 资料可以佐证。但是在这个类別中的缺失会直接影响到整体安全的可视性，事件告警及取证。</p>
+<p><strong>A10:2021-服务器端请求伪造</strong> 这个类別是在业界问卷排名第一名，并在此版本內纳入。由资料显示此问题有较低被验测次数和范围，但有高于平均的威胁及影响权重比率。这个类別的出现也是因为业界专家重复申明这类別的问题相当重要，即使在本次资料中并沒有足够的资料去显示这个问题。</p>
+<h2 id="_1">分析方法</h2>
+<p>本次 Top 10 的选择方式比以往更重视资料分析，但并不是完全以资料分析为主。我们从资料分析中挑选了八个风险类別，然后由业界问卷中挑选两个风险类別。我们从过往的分享资料中去了解，并有我们一个基本的理由。原因是所有的资安研究人员都不断的在找新的弱点并找出方法去验证弱点，但会需要时间才能将这些验测方法纳入到既有的工具和测试流程中。当我们能有效的大量测试这个弱点时，有可能已经过了多年的时间。为了要让两者之间有平衡，我们使用业界问卷请教在前线的资安研究专家们并了解他们觉得有哪些是他们觉得严重但尚未出现在测试资料中的漏洞及问题。</p>
+<p>这是几个我们为了要让 OWASP Top 10 更加成熟的重要改变。</p>
+<h3 id="_2">如何建构风险类別</h3>
+<p>有別于上一个版本，在这次的 OWASP Top 10 有一些风险类別的修改。我们在此以比较高的角度说明一下这次的类別修改。</p>
+<p>在上一次的资料收集当中，我们将资料收集的重心放在预先定义好的约 30 个 CWEs 并纳入一个领域以求其他的发现。从这里我们看到绝大多数的组织都只会专注在这 30 个 CWEs 而不常加入其他他们可能发现的 CWEs。在这次的改版中，我们将所有的问题都以开放式的方法处理，并沒有限制在任何一个 CWEs。我们请教了从 2017 年开始所测试的网页应用程式数量，然后在这些程式中至少有一个 CWE 被发现的数量。这个格式让我们能够追踪每个 CWE 跟所有被验测及统计的应用程式的数量跟关系。我们也忽略了 CWE 出现的频率，虽然在某些状况下这也许是必须的，但这却隐藏了风险类別本身与应用程式数量整体的关系。所以一个应用程式有 4 个或是 4,000 个弱点并不是被计算在 Top 10 的基础。但同时我们也从原本的 30 多个 CWEs 增长到快 400 多个 CWEs 去进行分析。我们因此也计划未來做更多的资料分析，并在对此版本进行补充说明。而这些增加的 CWEs 也同时影响了这次风险类別的规划。</p>
+<p>我们花了好几个月将 CWEs 进行分组跟分类，而且其实可以一直花更多时间去做这件事情。但我们必须在某一个时间点停住。在 CWEs 当中，同时有 <em>根本原因</em> 以及 <em>症状</em> 的问题，而像是 "加密机制失效" 和 "设定问题" 这类型的 <em>原因</em> 与 "敏感资料外泄" 和 "阻断服务" 这类型的 <em>症状</em> 是对立的。因此我们决定在可以的时候要更专注于底层的原因，因为这是可以有效指出问题的本体跟同时提供问题的解决大方向。专注在问题核心而不将重心放在症状并不是一个新的概念 ，Top Ten 有史以來一直是症状跟问题核心的綜合体，只是这次我们更刻意的将他突显出來。在这次的新版本中，每一个类別內的平均有 19.6 个 CWE，而最低的 <em>A10:2021-服务器端请求伪造</em> 有一个 CWE 到 <em>A04:2021-不安全设计</em> 有四十个 CWE。这个新的类別架构能提供企业更多的资安训练的好处，因为在新的架构下可以更专注在某个语系或平台上的 CWE。</p>
+<h3 id="_3">选择类別时资料的使用方式</h3>
+<p>在 2017 年，我们用事件发生次数去判断可能发生的机率去选择类別，然后透过一群在业界拥有数十年经验的专家团对讨论并依照 <em>可发生性</em>，<em>可发现性（同可能性）</em>，和 <em>技术影响力</em> 去做排名。在 2021 年，我们希望如果可以的话用资料证明可发生性和技术影响性。</p>
+<p>我们下载了 OWASP Depndency Check 并取出了 CVSS 漏洞，并将相关的 CWE 用影响力分数分群。这花了一些时间和力气去研究因为所有的 CVEs 都有 CVSSv2 分数，但是在其中因为 CVSSv2 跟 CVSSv3 之间有一些缺失是必须被修正的。经过了一段时间后，所有的 CVEs 都会有对应的 CVSSv3 的分数。再者，分数的范围和计算的公式在 CVSSv2 和 CVSSv3 之间也做了更新。</p>
+<p>在 CVSSv2 中，漏洞和影响力两者都可达到 10.0 分，但是公式本身会将两者调整为漏洞占 60%，然后影响力占 40%。在 CVSSv3 中，理论上的最高值将漏洞限制在 6.0 分而影响力在 4.0 分。当考率到权重比率时，影响力的分数会偏高，在 CVSSv3 中几乎平均会多出 1.5 分，而漏洞分数却会平均少 0.5 分。</p>
+<p>从 OWASP Dependcy Check 翠取出的 NVD 资料当中有将近 12.5 万笔 CVE 资料有对应到 CWE，而有 241 笔独特的 CWEs 有对应到 CVE。6.2 万笔 CWE 有对应到 CVSSv3 分数，所以大约是整体资料中一半的部分。</p>
+<p>而在 Top Ten，我们计算漏洞和影响力的平均分数的方式如下。我们将所有有 CVSS 分数的 CVE 依照 CWE 分组，然后依照有 CVSSv3 的漏洞和影响力在所有资料中的百分比作权重，在加上资料中有 CVSSv2 的资料去做平均。我们将这些平均后的 CWEs 对应到资料中，然后将他的漏洞和引想力分数使用在另一半的风险公式中。</p>
+<h2 id="_4">为什么就不纯粹做统计分析？</h2>
+<p>这些资料的結果最主要是被限制在能使用自动工具测试出來的結果。可是当你跟一位有经验的应用程式安全专家聊的时候，他们会跟你说绝大多数他们找到的问题都不在这些资料里面。原因是一个测试要被自动化的时候，需要花时间去开发这些弱点测试的方法论，当你需要将这个测试自动化并能对大量的应用程式去验证时，又会花上更多的时间。当我们回头看去年或以前有可能沒出现的一些问题的趋势，我们发现其实都沒有在这些资料当中。</p>
+<p>因此，由于资料不完全的关系，我们只有从资料中选出 8 个类別，而并不是 10 个。剩下的两个类別是从业界问卷中所选出的。这会允许在前线的參与者去选出他们认为的高风险，而不是纯粹依据资料去判断（甚至可能资料永远都不会有出现的踪跡）。</p>
+<h2 id="_5">为什么用事故率而不是用发生次数</h2>
+<p>There are three primary sources of data. We identify them as
+Human-assisted Tooling (HaT), Tool-assisted Human (TaH), and raw
+Tooling.</p>
+<p>Tooling and HaT are high-frequency finding generators. Tools will look
+for specific vulnerabilities and tirelessly attempt to find every
+instance of that vulnerability and will generate high finding counts for
+some vulnerability types. Look at Cross-Site Scripting, which is
+typically one of two flavors: it's either a more minor, isolated mistake
+or a systemic issue. When it's a systemic issue, the finding counts can
+be in the thousands for an application. This high frequency drowns out
+most other vulnerabilities found in reports or data.</p>
+<p>TaH, on the other hand, will find a broader range of vulnerability types
+but at a much lower frequency due to time constraints. When humans test
+an application and see something like Cross-Site Scripting, they will
+typically find three or four instances and stop. They can determine a
+systemic finding and write it up with a recommendation to fix on an
+application-wide scale. There is no need (or time) to find every
+instance.</p>
+<p>Suppose we take these two distinct data sets and try to merge them on
+frequency. In that case, the Tooling and HaT data will drown the more
+accurate (but broad) TaH data and is a good part of why something like
+Cross-Site Scripting has been so highly ranked in many lists when the
+impact is generally low to moderate. It's because of the sheer volume of
+findings. (Cross-Site Scripting is also reasonably easy to test for, so
+there are many more tests for it as well).</p>
+<p>In 2017, we introduced using incidence rate instead to take a fresh look
+at the data and cleanly merge Tooling and HaT data with TaH data. The
+incidence rate asks what percentage of the application population had at
+least one instance of a vulnerability type. We don't care if it was
+one-off or systemic. That's irrelevant for our purposes; we just need to
+know how many applications had at least one instance, which helps
+provide a clearer view of the testing is findings across multiple
+testing types without drowning the data in high-frequency results.</p>
+<h2 id="what-is-your-data-collection-and-analysis-process">What is your data collection and analysis process?</h2>
+<p>We formalized the OWASP Top 10 data collection process at the Open
+Security Summit in 2017. OWASP Top 10 leaders and the community spent
+two days working out formalizing a transparent data collection process.
+The 2021 edition is the second time we have used this methodology.</p>
+<p>We publish a call for data through social media channels available to
+us, both project and OWASP. On the <a href="https://owasp.org/www-project-top-ten/#div-data_2020">OWASP Project
+page</a>, we list the
+data elements and structure we are looking for and how to submit them.
+In the <a href="https://github.com/OWASP/Top10/tree/master/2021/Data">GitHub
+project</a>, we have
+example files that serve as templates. We work with organizations as
+needed to help figure out the structure and mapping to CWEs.</p>
+<p>We get data from organizations that are testing vendors by trade, bug
+bounty vendors, and organizations that contribute internal testing data.
+Once we have the data, we load it together and run a fundamental
+analysis of what CWEs map to risk categories. There is overlap between
+some CWEs, and others are very closely related (ex. Cryptographic
+vulnerabilities). Any decisions related to the raw data submitted are
+documented and published to be open and transparent with how we
+normalized the data.</p>
+<p>We look at the eight categories with the highest incidence rates for
+inclusion in the Top 10. We also look at the industry survey results to
+see which ones may already be present in the data. The top two votes
+that aren't already present in the data will be selected for the other
+two places in the Top 10. Once all ten were selected, we applied
+generalized factors for exploitability and impact; to help rank the Top
+10 in order.</p>
+<h2 id="data-factors">Data Factors</h2>
+<p>There are data factors that are listed for each of the Top 10
+Categories, here is what they mean:</p>
+<ul>
+<li>
+<p><em>CWEs Mapped</em>: The number of CWEs mapped to a category by the Top 10
+  team.</p>
+</li>
+<li>
+<p><em>Incidence Rate</em>: Incidence rate is the percentage of applications
+  vulnerable to that CWE from the population tested by that org for
+  that year.</p>
+</li>
+<li>
+<p>(Testing) <em>Coverage</em>: The percentage of applications tested by all
+  organizations for a given CWE.</p>
+</li>
+<li>
+<p><em>Weighted Exploit</em>: The Exploit sub-score from CVSSv2 and CVSSv3
+  scores assigned to CVEs mapped to CWEs, normalized, and placed on a
+  10pt scale.</p>
+</li>
+<li>
+<p><em>Weighted Impact</em>: The Impact sub-score from CVSSv2 and CVSSv3
+  scores assigned to CVEs mapped to CWEs, normalized, and placed on a
+  10pt scale.</p>
+</li>
+<li>
+<p><em>Total Occurrences</em>: Total number of applications found to have the
+  CWEs mapped to a category.</p>
+</li>
+<li>
+<p><em>Total CVEs</em>: Total number of CVEs in the NVD DB that were mapped to
+  the CWEs mapped to a category.</p>
+</li>
+</ul>
+<h2 id="category-relationships-from-2017">Category Relationships from 2017</h2>
+<p>There has been a lot of talk about the overlap between the Top Ten
+risks. By the definition of each (list of CWEs included), there really
+isn't any overlap. However, conceptually, there can be overlap or
+interactions based on the higher-level naming. Venn diagrams are many
+times used to show overlap like this.</p>
+<p><img src="./assets/image2.png" style="width:4.31736in;height:3.71339in" alt="Diagram Description automatically generated" /></p>
+<p>The Venn diagram above represents the interactions between the Top Ten
+2017 risk categories. While doing so, a couple of essential points
+became obvious:</p>
+<ol>
+<li>
+<p>One could argue that Cross-Site Scripting ultimately belongs within
+    Injection as it's essentially Content Injection. Looking at the 2021
+    data, it became even more evident that XSS needed to move into
+    Injection.</p>
+</li>
+<li>
+<p>The overlap is only in one direction. We will often classify a
+    vulnerability by the end manifestation or "symptom," not the
+    (potentially deep) root cause. For instance, "Sensitive Data
+    Exposure" may have been the result of a "Security Misconfiguration";
+    however, you won't see it in the other direction. As a result,
+    arrows are drawn in the interaction zones to indicate which
+    direction it occurs.</p>
+</li>
+<li>
+<p>Sometimes these diagrams are drawn with everything in <em>A06:2021
+    Using Components with Known Vulnerabilities</em>. While some of these
+    risk categories may be the root cause of third-party
+    vulnerabilities, they are generally managed differently and with
+    different responsibilities. The other types are typically
+    representing first-party risks.</p>
+</li>
+</ol>
+<h1 id="thank-you-to-our-data-contributors">Thank you to our data contributors</h1>
+<p>The following organizations (along with some anonymous donors) kindly
+donated data for over 500,000 applications to make this the largest and
+most comprehensive application security data set. Without you, this
+would not be possible.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">AppSec Labs</td>
+<td style="text-align: center;">GitLab</td>
+<td style="text-align: center;">Micro Focus</td>
+<td style="text-align: center;">Sqreen</td>
+</tr>
+<tr>
+<td style="text-align: center;">Cobalt.io</td>
+<td style="text-align: center;">HackerOne</td>
+<td style="text-align: center;">PenTest-Tools</td>
+<td style="text-align: center;">Veracode</td>
+</tr>
+<tr>
+<td style="text-align: center;">Contrast Security</td>
+<td style="text-align: center;">HCL Technologies</td>
+<td style="text-align: center;">Probely</td>
+<td style="text-align: center;">WhiteHat (NTT)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="thank-you-to-our-sponsors">Thank you to our sponsors</h2>
+<p>The OWASP Top 10 2021 team gratefully acknowledge the financial support of Secure Code Warrior and Just Eat.</p>
+<p><a href="https://securecodewarrior.com"><img alt="Secure Code Warrior" src="../assets/securecodewarrior.png" width="256" /></a></p>
+<p><a href="https://www.just-eat.co.uk/"><img alt="Just Eats" src="../assets/JustEat.png" width="256" /></a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

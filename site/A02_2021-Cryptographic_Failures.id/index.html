@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A02 2021 Cryptographic Failures.id - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A02_2021-Cryptographic_Failures.id.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a022021-kegagalan-kriptografi" class="nav-link">A02:2021 – Kegagalan Kriptografi</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#faktor-faktor" class="nav-link">Faktor-Faktor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ikhtisar" class="nav-link">Ikhtisar</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#deskripsi" class="nav-link">Deskripsi</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cara-mengatasi" class="nav-link">Cara Mengatasi</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#contoh-skenario-serangan" class="nav-link">Contoh Skenario Serangan</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#referensi" class="nav-link">Referensi</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#daftar-klasifikasi-cwe" class="nav-link">Daftar Klasifikasi CWE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A02_2021-Cryptographic_Failures/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A02_2021-Cryptographic_Failures.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A02_2021-Cryptographic_Failures.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A02_2021-Cryptographic_Failures.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A02_2021-Cryptographic_Failures.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A02_2021-Cryptographic_Failures.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A02_2021-Cryptographic_Failures.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A02_2021-Cryptographic_Failures.zh_CN/">zh_CN - 简体中文</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_TW"><a href="../A02_2021-Cryptographic_Failures.zh_TW/">zh_TW - 繁體中文</a></li>
+</ul>
+<h1 id="a022021-kegagalan-kriptografi">A02:2021 – Kegagalan Kriptografi</h1>
+<h2 id="faktor-faktor">Faktor-Faktor</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Klasifikasi CWE</th>
+<th style="text-align: center;">Tingkat Kejadian Maksimum</th>
+<th style="text-align: center;">Rata-rata Tingkat kejadian</th>
+<th style="text-align: center;">Cakupan Maksimum</th>
+<th style="text-align: center;">Rata-rata Cakupan</th>
+<th style="text-align: center;">Rata-rata Bobot Eksploitasi</th>
+<th style="text-align: center;">Rata-rata Bobot Dampak</th>
+<th style="text-align: center;">Total Kejadian</th>
+<th style="text-align: center;">Total CVEs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">46.44%</td>
+<td style="text-align: center;">4.49%</td>
+<td style="text-align: center;">79.33%</td>
+<td style="text-align: center;">34.85%</td>
+<td style="text-align: center;">7.29</td>
+<td style="text-align: center;">6.81</td>
+<td style="text-align: center;">233,788</td>
+<td style="text-align: center;">3,075</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ikhtisar">Ikhtisar</h2>
+<p>Bergeser satu posisi ke #2, sebelumnya dikenal sebagai <em>Sensitive Data
+Exposure</em>, yang lebih merupakan gejala yang luas daripada akar penyebab,
+fokusnya adalah kegagalan yang terkait dengan kriptografi (atau ketiadaannya),
+yang sering menyebabkan paparan data sensitif. CWE terkenal yang disertakan
+adalah <em>CWE-259: Use of Hard-coded Password</em>, <em>CWE-327: Broken or Risky
+Crypto Algorithm</em>, dan <em>CWE-331 Insufficient Entropy</em>.</p>
+<h2 id="deskripsi">Deskripsi</h2>
+<p>Hal pertama adalah menentukan kebutuhan perlindungan data dalam perjalanan
+dan pada saat istirahat. Misalnya, kata sandi, nomor kartu kredit, catatan 
+kesehatan, informasi pribadi, dan rahasia bisnis yang memerlukan ekstra
+perlindungan, terutama jika data tersebut termasuk dalam undang-undang privasi, 
+misalnya, General Data Protection Regulation (GDPR) Uni Eropa, atau peraturan, 
+misalnya, perlindungan data keuangan seperti PCI Data Security Standard (PCI DSS).
+Untuk semua data tersebut:</p>
+<ul>
+<li>
+<p>Apakah ada data yang dikirimkan dalam bentuk teks yang jelas? 
+    ini menyangkut protokol seperti  HTTP, SMTP, and FTP. Lalu lintas internet 
+    luar yang berbahaya. Verifikasi semua lalu lintas yang ada di internal,
+    misalnya antara penyeimbang beban, server web, atau sistem back-end.</p>
+</li>
+<li>
+<p>Apakah ada algoritma kriptografi lama atau lemah yang digunakan baik secara
+    default atau dalam kode yang lebih lama?</p>
+</li>
+<li>
+<p>Apakah kunci kripto bawaan sedang digunakan, 
+    kunci kripto yang lemah dihasilkan atau digunakan kembali, 
+    atau apakah kurangnya manajemen atau rotasi kunci yang tepat?</p>
+</li>
+<li>
+<p>Apakah enkripsi tidak diterapkan, misalnya, apakah ada agen pengguna (browser) 
+    yang arahan atau header keamanan hilang?</p>
+</li>
+<li>
+<p>Apakah agen pengguna (misalnya, aplikasi, klien email) tidak memverifikasi jika
+    sertifikat yang diterima server valid?</p>
+</li>
+</ul>
+<p>Lihat ASVS Crypto (V7), Data Protection (V9), dan SSL/TLS (V10)</p>
+<h2 id="cara-mengatasi">Cara Mengatasi</h2>
+<p>Lakukan minimal hal berikut, dan lihat referensi: </p>
+<ul>
+<li>
+<p>Mengklasifikasikan data yang diproses, disimpan, atau dikirim oleh aplikasi.
+    Identifikasi data mana yang sensitif menurut undang-undang privasi,
+    persyaratan peraturan, atau kebutuhan bisnis.</p>
+</li>
+<li>
+<p>Tetapkan kontrol sesuai klasifikasi.</p>
+</li>
+<li>
+<p>Jangan menyimpan data sensitif yang tidak perlu. Buang sesegera
+    mungkin atau gunakan tokenisasi yang sesuai dengan PCI DSS atau bahkan pemotongan.
+    Data yang tidak disimpan tidak dapat dicuri.</p>
+</li>
+<li>
+<p>Pastikan untuk mengenkripsi semua data sensitif saat istirahat.</p>
+</li>
+<li>
+<p>Pastikan gunakan standar algoritma, protokol yang mutakhir dan kuat, serta 
+    kunci berada pada tempatnya; menggunakan manajemen kunci yang tepat.</p>
+</li>
+<li>
+<p>Enkripsi semua data dalam perjalanan dengan protokol aman seperti TLS dengan
+    cipher perfect forward secrecy (PFS), prioritas cipher oleh
+    server, dan parameter yang aman. Terapkan enkripsi menggunakan arahan
+    seperti HTTP Strict Transport Security (HSTS).</p>
+</li>
+<li>
+<p>Menonaktifkan caching untuk respons yang berisi data sensitif.</p>
+</li>
+<li>
+<p>Simpan kata sandi menggunakan fungsi hashing adaptif dan salted yang kuat
+    dengan faktor kerja (faktor penundaan), seperti Argon2, scrypt, bcrypt, atau
+    PBKDF2.</p>
+</li>
+<li>
+<p>Verifikasi secara independen efektivitas konfigurasi dan pengaturan.</p>
+</li>
+</ul>
+<h2 id="contoh-skenario-serangan">Contoh Skenario Serangan</h2>
+<p><strong>Skenario #1</strong>: Aplikasi mengenkripsi nomor kartu kredit dalam
+database menggunakan enkripsi database otomatis. Namun, data ini
+secara otomatis didekripsi ketika diambil, memungkinkan cacat injeksi SQL untuk
+mengambil nomor kartu kredit dalam teks polos.</p>
+<p><strong>Skenario #2</strong>: Situs tidak menggunakan atau menerapkan TLS untuk semua halaman atau
+mendukung enkripsi yang lemah. Penyerang memantau lalu lintas jaringan (misalnya, di
+jaringan nirkabel yang tidak aman), menurunkan versi koneksi dari HTTPS ke
+HTTP, memotong permintaan, dan mencuri cookie sesi pengguna.
+Penyerang kemudian replay cookie ini dan membajak pengguna sesi (dikonfirmasi), mengakses 
+atau memodifikasi data pribadi pengguna. Alih-alih di atas, 
+mereka dapat mengubah semua data yang diangkut, misalnya, penerima
+mentransfer uang.</p>
+<p><strong>Skenario #3</strong>: Kata sandi pada database menggunakan hash tanpa salt atau sederhana untuk
+menyimpan kata sandi semua orang. Cacat unggah file memungkinkan penyerang untuk
+mengambil basis data kata sandi. Semua unsalted hashes dapat diekspos
+dengan tabel pelangi dari hash yang telah dihitung sebelumnya. Hash yang dihasilkan oleh
+fungsi hash sederhana atau cepat dapat dipecahkan oleh GPU, meskipun telah
+di-salt.</p>
+<h2 id="referensi">Referensi</h2>
+<ul>
+<li>
+<p><a href="https://owasp.org/www-project-proactive-controls/v3/en/c8-protect-data-everywhere">OWASP Proactive Controls: Protect Data
+    Everywhere</a></p>
+</li>
+<li>
+<p><a href="https://owasp.org/www-project-application-security-verification-standard">OWASP Application Security Verification Standard (V7,
+    9, 10)</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html">OWASP Cheat Sheet: Transport Layer
+    Protection</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/User_Privacy_Protection_Cheat_Sheet.html">OWASP Cheat Sheet: User Privacy
+    Protection</a></p>
+</li>
+<li>
+<p>OWASP Cheat Sheet: Password and Cryptographic Storage</p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html">OWASP Cheat Sheet:
+    HSTS</a></p>
+</li>
+<li>
+<p>OWASP Testing Guide: Testing for weak cryptography</p>
+</li>
+</ul>
+<h2 id="daftar-klasifikasi-cwe">Daftar Klasifikasi CWE</h2>
+<p>CWE-261 Weak Encoding for Password</p>
+<p>CWE-296 Improper Following of a Certificate's Chain of Trust</p>
+<p>CWE-310 Cryptographic Issues</p>
+<p>CWE-319 Cleartext Transmission of Sensitive Information</p>
+<p>CWE-321 Use of Hard-coded Cryptographic Key</p>
+<p>CWE-322 Key Exchange without Entity Authentication</p>
+<p>CWE-323 Reusing a Nonce, Key Pair in Encryption</p>
+<p>CWE-324 Use of a Key Past its Expiration Date</p>
+<p>CWE-325 Missing Required Cryptographic Step</p>
+<p>CWE-326 Inadequate Encryption Strength</p>
+<p>CWE-327 Use of a Broken or Risky Cryptographic Algorithm</p>
+<p>CWE-328 Reversible One-Way Hash</p>
+<p>CWE-329 Not Using a Random IV with CBC Mode</p>
+<p>CWE-330 Use of Insufficiently Random Values</p>
+<p>CWE-331 Insufficient Entropy</p>
+<p>CWE-335 Incorrect Usage of Seeds in Pseudo-Random Number Generator
+(PRNG)</p>
+<p>CWE-336 Same Seed in Pseudo-Random Number Generator (PRNG)</p>
+<p>CWE-337 Predictable Seed in Pseudo-Random Number Generator (PRNG)</p>
+<p>CWE-338 Use of Cryptographically Weak Pseudo-Random Number Generator
+(PRNG)</p>
+<p>CWE-340 Generation of Predictable Numbers or Identifiers</p>
+<p>CWE-347 Improper Verification of Cryptographic Signature</p>
+<p>CWE-523 Unprotected Transport of Credentials</p>
+<p>CWE-720 OWASP Top Ten 2007 Category A9 - Insecure Communications</p>
+<p>CWE-757 Selection of Less-Secure Algorithm During Negotiation
+('Algorithm Downgrade')</p>
+<p>CWE-759 Use of a One-Way Hash without a Salt</p>
+<p>CWE-760 Use of a One-Way Hash with a Predictable Salt</p>
+<p>CWE-780 Use of RSA Algorithm without OAEP</p>
+<p>CWE-818 Insufficient Transport Layer Protection</p>
+<p>CWE-916 Use of Password Hash With Insufficient Computational Effort</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

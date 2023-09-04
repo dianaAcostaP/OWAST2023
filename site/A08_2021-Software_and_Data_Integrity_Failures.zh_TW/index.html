@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>A08 2021 Software and Data Integrity Failures.zh TW - OWASP Top 10:2021</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">OWASP Top 10:2021</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../0x00-notice/" class="nav-link">Notice (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_Introduction/" class="nav-link">Introduction (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021_How_to_use_the_OWASP_Top_10_as_a_standard/" class="nav-link">How to use the OWASP Top 10 as a standard (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00_2021-How_to_start_an_AppSec_program_with_the_OWASP_Top_10/" class="nav-link">How to start an AppSec program with the OWASP Top 10 (en - English)</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A00-about-owasp/" class="nav-link">About OWASP (en - English)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Top 10:2021 List <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../A01_2021-Broken_Access_Control/" class="dropdown-item">A01 Broken Access Control (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A02_2021-Cryptographic_Failures/" class="dropdown-item">A02 Cryptographic Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A03_2021-Injection/" class="dropdown-item">A03 Injection (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A04_2021-Insecure_Design/" class="dropdown-item">A04 Insecure Design (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A05_2021-Security_Misconfiguration/" class="dropdown-item">A05 Security Misconfiguration (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A06_2021-Vulnerable_and_Outdated_Components/" class="dropdown-item">A06 Vulnerable and Outdated Components (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A07_2021-Identification_and_Authentication_Failures/" class="dropdown-item">A07 Identification and Authentication Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A08_2021-Software_and_Data_Integrity_Failures/" class="dropdown-item">A08 Software and Data Integrity Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A09_2021-Security_Logging_and_Monitoring_Failures/" class="dropdown-item">A09 Security Logging and Monitoring Failures (en - English)</a>
+</li>
+                                    
+<li>
+    <a href="../A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" class="dropdown-item">A10 Server Side Request Forgery (SSRF) (en - English)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../A11_2021-Next_Steps/" class="nav-link">Next Steps (en - English)</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="https://github.com/OWASP/Top10/edit/master/docs/A08_2021-Software_and_Data_Integrity_Failures.zh_TW.md" class="nav-link">Edit on OWASP/Top10
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a082021-software-and-data-integrity-failures" class="nav-link">A08:2021 – Software and Data Integrity Failures</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#factors" class="nav-link">Factors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link">弱點因素</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">弱點簡介</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#description" class="nav-link">Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">弱點描述</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-to-prevent" class="nav-link">How to Prevent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">弱點描述</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#example-attack-scenarios" class="nav-link">Example Attack Scenarios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">攻擊情境範例</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">參考文獻</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#list-of-mapped-cwes" class="nav-link">List of Mapped CWEs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cwes" class="nav-link">對應的 CWEs 清單</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<ul>
+<li class="i18n-link i18n-link-found i18n-link-en"><a href="../A08_2021-Software_and_Data_Integrity_Failures/">en - English</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ar"><a href="../A08_2021-Software_and_Data_Integrity_Failures.ar/">ar - العربية</a></li>
+<li class="i18n-link i18n-link-found i18n-link-es"><a href="../A08_2021-Software_and_Data_Integrity_Failures.es/">es - Español</a></li>
+<li class="i18n-link i18n-link-found i18n-link-fr"><a href="../A08_2021-Software_and_Data_Integrity_Failures.fr/">fr - Français</a></li>
+<li class="i18n-link i18n-link-found i18n-link-id"><a href="../A08_2021-Software_and_Data_Integrity_Failures.id/">id - Indonesian</a></li>
+<li class="i18n-link i18n-link-found i18n-link-it"><a href="../A08_2021-Software_and_Data_Integrity_Failures.it/">it - Italiano</a></li>
+<li class="i18n-link i18n-link-found i18n-link-ja"><a href="../A08_2021-Software_and_Data_Integrity_Failures.ja/">ja - 日本語</a></li>
+<li class="i18n-link i18n-link-found i18n-link-pt_BR"><a href="../A08_2021-Software_and_Data_Integrity_Failures.pt_BR/">pt_BR - Português (Brasil)</a></li>
+<li class="i18n-link i18n-link-found i18n-link-zh_CN"><a href="../A08_2021-Software_and_Data_Integrity_Failures.zh_CN/">zh_CN - 简体中文</a></li>
+</ul>
+<h1 id="a082021-software-and-data-integrity-failures">A08:2021 – Software and Data Integrity Failures</h1>
+<h2 id="factors">Factors</h2>
+<h1 id="_1">弱點因素</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">對應的 CWEs數量</th>
+<th style="text-align: center;">最大發生率</th>
+<th style="text-align: center;">平均發生率</th>
+<th style="text-align: center;">最大覆蓋範圍</th>
+<th style="text-align: center;">平均覆蓋範圍</th>
+<th style="text-align: center;">平均加權漏洞</th>
+<th style="text-align: center;">平均加權影響</th>
+<th style="text-align: center;">出現次數</th>
+<th style="text-align: center;">相關 CVEs 總量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">16.67%</td>
+<td style="text-align: center;">2.05%</td>
+<td style="text-align: center;">75.04%</td>
+<td style="text-align: center;">45.35%</td>
+<td style="text-align: center;">6.94</td>
+<td style="text-align: center;">7.94</td>
+<td style="text-align: center;">47,972</td>
+<td style="text-align: center;">1,152</td>
+</tr>
+</tbody>
+</table>
+<h2 id="overview">Overview</h2>
+<h2 id="_2">弱點簡介</h2>
+<p>A new category for 2021 focuses on making assumptions related to
+software updates, critical data, and CI/CD pipelines without verifying
+integrity. One of the highest weighted impacts from CVE/CVSS data.
+Notable CWEs include <em>CWE-502: Deserialization of Untrusted Data</em>,
+<em>CWE-829: Inclusion of Functionality from Untrusted Control Sphere</em>, and
+<em>CWE-494: Download of Code Without Integrity Check</em>.</p>
+<p>這是2021年的新類型，著重在軟體更新，關鍵資料及持續性整合/部署(CI/CD)流程未經完整性驗證之假設。同時在CVE/CVSS資料加權後之最高影響之一。值得注意的CWE包含CWE-502：不受信任資料之反序列化，CWE-829：包含來自不受信任控制領域之功能及CWE-494：下載未經完整性驗證之程式碼。</p>
+<h2 id="description">Description</h2>
+<h2 id="_3">弱點描述</h2>
+<p>Software and data integrity failures relate to code and infrastructure
+that does not protect against integrity violations. For example, where
+objects or data are encoded or serialized into a structure that an
+attacker can see and modify is vulnerable to insecure deserialization.
+Another form of this is where an application relies upon plugins,
+libraries, or modules from untrusted sources, repositories, and content
+delivery networks (CDNs). An insecure CI/CD pipeline can introduce the
+potential for unauthorized access, malicious code, or system compromise.
+Lastly, many applications now include auto-update functionality, where
+updates are downloaded without sufficient integrity verification and
+applied to the previously trusted application. Attackers could
+potentially upload their own updates to be distributed and run on all
+installations.</p>
+<p>程式碼或基礎架構未能保護軟體及資料之完整性受到破壞。舉例來說，物件或資料經編碼或序列化到一個對攻擊者可讀寫之結構中將導致不安全的反序列化。另一種形式則是應用程式依賴來自於不受信任來源，典藏庫及內容遞送網路之外掛，函式庫或模組。不安全的持續性整合/部署(CI/CD)流程則會造成潛在的未經授權存取，惡意程式碼或系統破壞。最後，現在許多應用程式擁有自動更新功能，但自動更新功能在缺乏充足完整性驗證功能時就下載並安裝更新到處於安全狀態下的應用程式。攻擊者能上傳自製更新檔案，更新檔案將傳播到所有已安裝之應用程式並在這些應用程式上執行。</p>
+<h2 id="how-to-prevent">How to Prevent</h2>
+<h2 id="_4">弱點描述</h2>
+<ul>
+<li>
+<p>Ensure that unsigned or unencrypted serialized data is not sent to
+    untrusted clients without some form of integrity check or digital
+    signature to detect tampering or replay of the serialized data</p>
+</li>
+<li>
+<p>確保不受信任之客戶端不會收到未簽署或加密之序列化資料並利用完整性檢查或數位簽章來偵測竄改或重放攻擊。</p>
+</li>
+<li>
+<p>Verify the software or data is from the expected source via signing
+    or similar mechanisms</p>
+</li>
+<li>
+<p>利用數位簽章或類似機制確保軟體或資料來自預期之提供者</p>
+</li>
+<li>
+<p>Ensure libraries and dependencies, such as npm or Maven, are
+    consuming trusted repositories</p>
+</li>
+<li>
+<p>確保函式庫及從屬套件，例如npm或Maven，是從受信任的典藏庫取得。</p>
+</li>
+<li>
+<p>Ensure that a software supply chain security tool, such as OWASP
+    Dependency Check or OWASP CycloneDX, is used to verify that
+    components do not contain known vulnerabilities</p>
+</li>
+<li>
+<p>使用軟體供應鏈安全工具(例如OWASP Dependency Check 或 OWASP CycloneDX)確保元件沒有已知弱點。</p>
+</li>
+<li>
+<p>Ensure that your CI/CD pipeline has proper configuration and access
+    control to ensure the integrity of the code flowing through the
+    build and deploy processes.</p>
+</li>
+<li>
+<p>適當地設定持續性整合/部署(CI/CD)流程的組態及存取控制以確保程式碼在組建及部署流程中的完整性。</p>
+</li>
+</ul>
+<h2 id="example-attack-scenarios">Example Attack Scenarios</h2>
+<h2 id="_5">攻擊情境範例</h2>
+<p><strong>Scenario #1 Insecure Deserialization:</strong> A React application calls a
+set of Spring Boot microservices. Being functional programmers, they
+tried to ensure that their code is immutable. The solution they came up
+with is serializing the user state and passing it back and forth with
+each request. An attacker notices the "R00" Java object signature and
+uses the Java Serial Killer tool to gain remote code execution on the
+application server.</p>
+<p>情境1 不安全的反序列化：一個反應式應用程式呼叫Spring Boot微服務。程式設計師們試圖確保他們的代碼是不可變的。他們的解決方案是在雙向所有請求訊息中包含序列化的用戶狀態。攻擊者注意到“R00”Java物件簽章並使用 Java Serial Killer 工具(用來執行Java反序列化攻擊)在應用程式伺服器遠端執行程式碼。</p>
+<p><strong>Scenario #2 Update without signing:</strong> Many home routers, set-top
+boxes, device firmware, and others do not verify updates via signed
+firmware. Unsigned firmware is a growing target for attackers and is
+expected to only get worse. This is a major concern as many times there
+is no mechanism to remediate other than to fix in a future version and
+wait for previous versions to age out.</p>
+<p>情境2 未簽署之更新：許多家用路由器、機上盒、裝置韌體等未以通過簽署之韌體驗證更新檔案。未簽署韌體是越來越多攻擊者的目標且情況只會變得更糟。這是一個主要問題，因為只能以新版本修復此機制並期待舊版本自然淘汰，沒有其他方法。</p>
+<p><strong>Scenario #3 SolarWinds malicious update</strong>: Nation-states have been
+known to attack update mechanisms, with a recent notable attack being
+the SolarWinds Orion attack. The company that develops the software had
+secure build and update integrity processes. Still, these were able to
+be subverted, and for several months, the firm distributed a highly
+targeted malicious update to more than 18,000 organizations, of which
+around 100 or so were affected. This is one of the most far-reaching and
+most significant breaches of this nature in history.</p>
+<p>情境3 SolarWinds 惡意更新：眾所周知，某些國家會攻擊更新機制，最近一次值得注意的是對SolarWinds Orion的攻擊。該軟體開發商擁有安全組建和更新完整性流程。儘管如此，這些流程仍被破壞並在幾個月時間中向 18,000 多個組織送出高度針對性的惡意更新，其中大約 100 個組織受到了影響。 這是歷史上此類性質最深遠、最重大的資安事件之一。</p>
+<h2 id="references">References</h2>
+<h2 id="_6">參考文獻</h2>
+<ul>
+<li>
+<p>[OWASP Cheat Sheet: Deserialization](
+    <a href="https://www.owasp.org/index.php/Deserialization_Cheat_Sheet">https://www.owasp.org/index.php/Deserialization_Cheat_Sheet</a>)</p>
+</li>
+<li>
+<p>[OWASP Cheat Sheet: Software Supply Chain Security]()</p>
+</li>
+<li>
+<p>[OWASP Cheat Sheet: Secure build and deployment]()</p>
+</li>
+<li>
+<p>[SAFECode Software Integrity Controls](
+    https://safecode.org/publication/SAFECode_Software_Integrity_Controls0610.pdf)</p>
+</li>
+<li>
+<p>[A 'Worst Nightmare' Cyberattack: The Untold Story Of The
+    SolarWinds
+    Hack](<a href="https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack">https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack</a>)</p>
+</li>
+<li>
+<p><a href="https://www.manning.com/books/securing-devops">https://www.manning.com/books/securing-devops</a></p>
+</li>
+</ul>
+<h2 id="list-of-mapped-cwes">List of Mapped CWEs</h2>
+<h2 id="cwes">對應的 CWEs 清單</h2>
+<p>CWE-345 Insufficient Verification of Data Authenticity</p>
+<p>CWE-345 不足的資料真實性驗證</p>
+<p>CWE-353 Missing Support for Integrity Check</p>
+<p>CWE-353 缺乏對完整性確認之支援</p>
+<p>CWE-426 Untrusted Search Path</p>
+<p>CWE-426 不受信任的搜尋路徑</p>
+<p>CWE-494 Download of Code Without Integrity Check</p>
+<p>CWE-494 下載未經完整性驗證之程式碼</p>
+<p>CWE-502 Deserialization of Untrusted Data</p>
+<p>CWE-502 不受信任資料之反序列化</p>
+<p>CWE-565 Reliance on Cookies without Validation and Integrity Checking</p>
+<p>CWE-565 信任未經驗證及完整性確認的Cookies</p>
+<p>CWE-784 Reliance on Cookies without Validation and Integrity Checking in
+a Security Decision</p>
+<p>CWE-784 在安全性決策中信任未經驗證及完整性確認的Cookies</p>
+<p>CWE-829 Inclusion of Functionality from Untrusted Control Sphere</p>
+<p>CWE-829 包含來自不受信任控制領域之功能</p>
+<p>CWE-830 Inclusion of Web Functionality from an Untrusted Source</p>
+<p>CWE-830 包含來自不受信任控制來源之網頁功能</p>
+<p>CWE-915 Improperly Controlled Modification of Dynamically-Determined
+Object Attributes</p>
+<p>CWE-915 動態決定物件屬性於不當控制下之修改</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© Copyright 2021 - OWASP Top 10 team - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
